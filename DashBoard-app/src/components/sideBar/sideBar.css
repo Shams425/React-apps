@@ -29,7 +29,7 @@
 .sideBarItem {
   display: flex;
   align-items: center;
-  margin: 15px 0;
+  margin: 12px 0;
   padding: 8px;
   cursor: pointer;
   border-radius: 8px;
