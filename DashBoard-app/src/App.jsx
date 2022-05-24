@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./app.css";
 import Users from "./components/pages/UsersList/Users";
+import { rows } from "./Shared/dummyData";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
            * look for other paths like /users will say that the / means root and will think it's
            * home page while it's not, Because we want the root for home page only
            */}
-          <Route path="/users" element={<Users />} />
+          <Route path="/users" element={<Users dataRow={rows} />} />
         </Routes>
       </div>
     </Router>

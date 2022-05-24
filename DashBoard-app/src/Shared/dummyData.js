@@ -1,3 +1,4 @@
+//home page chart data
 export const UserData = [
   {
     name: "Jan",
@@ -48,3 +49,65 @@ export const UserData = [
     ActiveUser: 3300,
   },
 ];
+
+// the @material/ui table data row
+export const rows = [
+  {
+    id: 1,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$120.00",
+  },
+  {
+    id: 2,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$200.00",
+  },
+  {
+    id: 3,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$170.00",
+  },
+  {
+    id: 4,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$250.00",
+  },
+  {
+    id: 5,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$100.00",
+  },
+  {
+    id: 6,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$300.00",
+  },
+  {
+    id: 7,
+    username: "John Snow",
+    Avatar: "../../../assets/img/profile.jpg",
+    email: "john@gmail.com",
+    status: "active",
+    transaction: "$380.00",
+  },
+];
+
+// the @material/ui table data column
