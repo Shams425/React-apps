@@ -1,0 +1,14 @@
+.Chart {
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 2px 7px 15px 3px rgb(114 114 114 / 34%);
+  color: #000;
+}
+
+.Chart .chartTitle {
+  font-size: 25px;
+}
+
+.recharts-responsive-container {
+  padding: 20px 5px;
+}

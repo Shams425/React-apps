@@ -1,0 +1,56 @@
+.widgetSmall {
+  flex: 1;
+  box-shadow: 2px 7px 15px 3px rgb(114 114 114 / 34%);
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.widgetSmall ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widgetSmall ul li {
+  margin: 15px 0;
+}
+
+.widgetSmTitle {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.widgetSmImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-image: url(../../../../assets/img/profile.jpg);
+}
+
+.widgetSmListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.WidgetSmUser {
+  display: flex;
+  flex-direction: column;
+}
+
+.widgetSmButton {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 10px;
+  background-color: white;
+  color: #555;
+  cursor: pointer;
+}
+
+.widgetSmIcon {
+  font-size: 14px;
+  margin-right: 10px;
+}

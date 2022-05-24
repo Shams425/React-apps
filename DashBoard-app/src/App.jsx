@@ -1,18 +1,29 @@
 import React, { Component } from "react";
 import TopBar from "./components/header/TopBar";
 import SideBar from "./components/sideBar/SideBar";
-import "./app.css";
 import Home from "./components/pages/home/Home";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import "./app.css";
+import Users from "./components/pages/UsersList/Users";
 
 function App() {
   return (
-    <div>
+    <Router>
       <TopBar />
       <div className="container">
         <SideBar />
-        <Home />
+        <Routes>
+          <Route exact path="" element={<Home />} />
+          {/** exact is to make sure that this is the home page, the router when
+           * look for other paths like /users will say that the / means root and will think it's
+           * home page while it's not, Because we want the root for home page only
+           */}
+          <Route path="/users" element={<Users />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
