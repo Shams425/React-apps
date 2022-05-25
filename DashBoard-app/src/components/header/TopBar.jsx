@@ -21,7 +21,9 @@ export default function TopBar() {
           <div className="iconContainer">
             <Settings />
           </div>
-          <div className="profilePic"></div>
+          <div className="profilePic">
+            <img src={require("../../assets/img/profile.jpg")} alt="" />
+          </div>
         </div>
       </div>
     </div>

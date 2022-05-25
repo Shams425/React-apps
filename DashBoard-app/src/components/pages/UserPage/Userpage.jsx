@@ -1,5 +1,7 @@
 import React from "react";
 import "./userpage.css";
+import { profile } from "../../../assets/img/profile.jpg";
+
 import {
   CalendarToday,
   LocationSearching,
@@ -23,7 +25,7 @@ export default function Userpage() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src="../../../assets/img/profile.jpg"
+              src={require("../../../assets/img/profile.jpg")}
               alt=""
               className="userShowImg"
             />
@@ -120,7 +122,7 @@ export default function Userpage() {
         <div className="userUpdateRight">
           <div className="profile">
             <img
-              src="../../../assets/img/profile.jpg"
+              src={require("../../../assets/img/profile.jpg")}
               alt=""
               className="userUpdateImg"
             />

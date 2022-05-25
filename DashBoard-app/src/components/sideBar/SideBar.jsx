@@ -13,6 +13,7 @@ import {
   Message,
   ManageAccounts,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export default function SideBar() {
   return (
@@ -21,10 +22,12 @@ export default function SideBar() {
         <div className="sideBarMenu">
           <h3 className="sideBarTitle">DashBoard</h3>
           <ul className="sideBarList">
-            <li className="sideBarItem active">
-              <House className="sideBarIcon" />
-              <p>Home</p>
-            </li>
+            <Link className="sideBarLink" to="/">
+              <li className="sideBarItem active">
+                <House className="sideBarIcon" />
+                <p>Home</p>
+              </li>
+            </Link>
             <li className="sideBarItem">
               <Analytics className="sideBarIcon" />
               <p>Analytics</p>
@@ -38,14 +41,18 @@ export default function SideBar() {
         <div className="sideBarMenu">
           <h3 className="sideBarTitle">Quick Menu</h3>
           <ul className="sideBarList">
-            <li className="sideBarItem">
-              <Person className="sideBarIcon" />
-              <p>Users</p>
-            </li>
-            <li className="sideBarItem">
-              <Store className="sideBarIcon" />
-              <p>Products</p>
-            </li>
+            <Link className="sideBarLink" to="/users">
+              <li className="sideBarItem">
+                <Person className="sideBarIcon" />
+                <p>Users</p>
+              </li>
+            </Link>
+            <Link className="sideBarLink" to="/products">
+              <li className="sideBarItem">
+                <Store className="sideBarIcon" />
+                <p>Products</p>
+              </li>
+            </Link>
             <li className="sideBarItem">
               <Money className="sideBarIcon" />
               <p>Transactions</p>

@@ -8,8 +8,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./app.css";
 import Users from "./components/pages/UsersList/Users";
 import { rows } from "./Shared/dummyData";
+import { productRows } from "./Shared/dummyData";
 import Userpage from "./components/pages/UserPage/Userpage";
 import NewUser from "./components/pages/newUser/NewUser";
+import Products from "./components/pages/products/Products";
+import ProductPage from "./components/pages/productPage/ProductPage";
+import NewProduct from "./components/pages/newProduct/NewProduct";
 
 function App() {
   return (
@@ -26,6 +30,13 @@ function App() {
           <Route exact path="/users" element={<Users dataRow={rows} />} />
           <Route exact path="/user/:id" element={<Userpage />} />
           <Route exact path="/newUser" element={<NewUser />} />
+          <Route
+            exact
+            path="/products"
+            element={<Products dataRow={productRows} />}
+          />
+          <Route exact path="/product/:id" element={<ProductPage />} />
+          <Route exact path="/newProduct" element={<NewProduct />} />
         </Routes>
       </div>
     </Router>

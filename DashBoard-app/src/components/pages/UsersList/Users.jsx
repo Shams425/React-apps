@@ -5,6 +5,7 @@ import { rows } from "../../../Shared/dummyData";
 import { useState } from "react";
 import { DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import {} from "../../../assets/img/profile.jpg";
 
 export default function DataTable({ dataRow, dataCol }) {
   const [data, setData] = useState(rows);

@@ -111,3 +111,61 @@ export const rows = [
 ];
 
 // the @material/ui table data column
+export const productRows = [
+  {
+    id: 1,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 2,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$200.00",
+  },
+  {
+    id: 3,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$170.00",
+  },
+  {
+    id: 4,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$250.00",
+  },
+  {
+    id: 5,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$100.00",
+  },
+  {
+    id: 6,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$300.00",
+  },
+  {
+    id: 7,
+    name: "Apple Airpods",
+    img: "../../../assets/img/profile.jpg",
+    stock: 123,
+    status: "active",
+    price: "$380.00",
+  },
+];

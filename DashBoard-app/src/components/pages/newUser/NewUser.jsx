@@ -33,7 +33,13 @@ export default function NewUser() {
         <div className="newUserItem Gender">
           <p>Gender</p>
           <div className="male">
-            <input type="radio" name="gender" id="female" value="male" />
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="male"
+              checked
+            />
             <label htmlFor="male">male</label>
           </div>
           <div className="female">

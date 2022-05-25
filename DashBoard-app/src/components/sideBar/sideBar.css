@@ -1,10 +1,11 @@
 .sideBar {
   flex: 1;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   background-color: rgb(255, 255, 255);
   color: wheat;
-  position: static;
-  top: 80px;
+  position: sticky;
+  top: 70px;
+  margin-right: 15px;
 }
 
 .sideBarWrapper {
@@ -48,4 +49,9 @@
 
 .sideBarIcon {
   font-size: 20px !important;
+}
+
+.sideBarLink {
+  text-decoration: none;
+  color: inherit;
 }
