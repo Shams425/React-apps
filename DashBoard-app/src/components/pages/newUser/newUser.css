@@ -1,0 +1,75 @@
+.newUser {
+  flex: 6;
+  padding: 20px;
+}
+
+.newUserForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newUserItem {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 720px) {
+  .newUserItem {
+    width: 100%;
+  }
+}
+
+.newUserItem > label {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: gray;
+}
+
+.newUserItem > input {
+  height: 10px;
+  padding: 20px;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 5px;
+}
+
+.newUserItem input[type="radio"] {
+  margin: 10px 10px 10px 0;
+}
+
+.newUserItem > select {
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.Gender {
+  margin-top: 20px;
+}
+
+.Gender label {
+  font-size: 18px;
+  color: #555;
+}
+
+.addButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+
+.newUserButton {
+  width: 150px;
+  height: 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: darkblue;
+  cursor: pointer;
+}

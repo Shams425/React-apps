@@ -9,6 +9,7 @@ import "./app.css";
 import Users from "./components/pages/UsersList/Users";
 import { rows } from "./Shared/dummyData";
 import Userpage from "./components/pages/UserPage/Userpage";
+import NewUser from "./components/pages/newUser/NewUser";
 
 function App() {
   return (
@@ -17,13 +18,14 @@ function App() {
       <div className="container">
         <SideBar />
         <Routes>
-          <Route exact path="" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           {/** exact is to make sure that this is the home page, the router when
            * look for other paths like /users will say that the / means root and will think it's
            * home page while it's not, Because we want the root for home page only
            */}
-          <Route path="/users" element={<Users dataRow={rows} />} />
-          <Route path="/user/:userId" element={<Userpage />} />
+          <Route exact path="/users" element={<Users dataRow={rows} />} />
+          <Route exact path="/user/:id" element={<Userpage />} />
+          <Route exact path="/newUser" element={<NewUser />} />
         </Routes>
       </div>
     </Router>
