@@ -1,4 +1,4 @@
-//home page chart data
+//data for the home page chart
 export const UserData = [
   {
     name: "Jan",
@@ -168,4 +168,56 @@ export const productRows = [
     status: "active",
     price: "$380.00",
   },
+];
+
+//data for the product page
+export const ProductData = [
+  {
+    name: "Jan",
+    Sales: 4000,
+  },
+  {
+    name: "Feb",
+    Sales: 3200,
+  },
+  {
+    name: "Mar",
+    Sales: 4500,
+  },
+  // {
+  //   name: "Apr",
+  //   ActiveUser: 2900,
+  // },
+  // {
+  //   name: "May",
+  //   ActiveUser: 2600,
+  // },
+  // {
+  //   name: "Jun",
+  //   ActiveUser: 2300,
+  // },
+  // {
+  //   name: "Jul",
+  //   ActiveUser: 2600,
+  // },
+  // {
+  //   name: "Aug",
+  //   ActiveUser: 3400,
+  // },
+  // {
+  //   name: "Sep",
+  //   ActiveUser: 2500,
+  // },
+  // {
+  //   name: "Oct",
+  //   ActiveUser: 1200,
+  // },
+  // {
+  //   name: "Nov",
+  //   ActiveUser: 3600,
+  // },
+  // {
+  //   name: "Dec",
+  //   ActiveUser: 3300,
+  // },
 ];
