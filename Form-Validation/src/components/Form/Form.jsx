@@ -13,20 +13,26 @@ export default function Form() {
     confirmPassword: "",
   });
 
-  const inputsArry = [
+  const inputsArray = [
     {
       id: 1,
       name: "username",
       type: "text",
       placeholder: "Username",
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
       label: "Username",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
     },
     {
       id: 2,
       name: "email",
       type: "email",
       placeholder: "E-mail",
+      errorMessage: "should be valid email",
       label: "Your Email",
+      required: true,
     },
     {
       id: 3,
@@ -40,39 +46,54 @@ export default function Form() {
       name: "password",
       type: "password",
       placeholder: "Your password",
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character",
       label: "password",
+      pattern:
+        "^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$",
+      required: true,
     },
     {
       id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: "confirm your password",
+      errorMessage: "Password don't match",
       label: "password confirm",
+      pattern: values.password,
+      required: true,
     },
   ];
 
   // another thing you can use is the formData() method
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
   };
 
   const changeHandler = (e) => {
-    setValues({ ...values, [e.target.value]: e.target.value });
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
+  console.log(values);
 
-  console.log("re-render");
   return (
-    <form action="POST" onSubmit={handleSubmit}>
-      {inputsArry.map((input) => {
-        <FormInput
-          key={input.id}
-          {...input}
-          value={values[input.name]}
-          onChange={changeHandler}
-        />;
-      })}
-      <button type="submit">Submit</button>
-    </form>
+    <div className="container">
+      <form action="POST" onSubmit={handleSubmit}>
+        <h1>Register</h1>
+        {inputsArray.map((input) => (
+          <FormInput
+            key={input.id}
+            value={values[input.name]}
+            {...input}
+            onChange={changeHandler}
+          />
+        ))}
+        <button type="submit">Submit</button>
+      </form>
+      <img
+        src={require("../../assets/img/wallpaperflare.com_wallpaper (18).jpg")}
+        alt=""
+        className="background"
+      />
+    </div>
   );
 }

@@ -1,8 +1,50 @@
 form {
+  flex-direction: column;
+  margin-top: 50px;
+  min-height: 450px;
+  padding: 10px 50px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin-top: 50px;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(rgb(0 169 231 / 60%), rgb(183 0 0 / 77%));
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  background-position: center;
+}
+
+h1 {
+  color: blueviolet;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: rebeccapurple;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  margin: 20px 0 30px;
+  border-radius: 10px;
 }
