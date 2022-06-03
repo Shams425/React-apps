@@ -44,19 +44,18 @@ export default function Form() {
     {
       id: 4,
       name: "password",
-      type: "password",
+      type: "text",
       placeholder: "Your password",
       errorMessage:
         "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character",
       label: "password",
-      pattern:
-        "^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
     {
       id: 5,
       name: "confirmPassword",
-      type: "password",
+      type: "text",
       placeholder: "confirm your password",
       errorMessage: "Password don't match",
       label: "password confirm",
@@ -65,7 +64,6 @@ export default function Form() {
     },
   ];
 
-  // another thing you can use is the formData() method
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -73,7 +71,6 @@ export default function Form() {
   const changeHandler = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-  console.log(values);
 
   return (
     <div className="container">
