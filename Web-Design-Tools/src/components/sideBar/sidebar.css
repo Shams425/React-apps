@@ -1,0 +1,27 @@
+.sideWrapper {
+  flex: 4;
+  height: 100vh;
+}
+
+span {
+  width: 23px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+li p {
+  flex: 1;
+  margin-left: 10px;
+}
+
+li .cursorIcon {
+  width: 20px;
+  height: 20px;
+}
