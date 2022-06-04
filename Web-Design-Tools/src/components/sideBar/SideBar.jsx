@@ -8,8 +8,9 @@ import {
   Transform,
   Palette,
   Filter,
+  MouseOutlined,
 } from "@mui/icons-material";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import BoxShadow from "../Tools/boxShadow/BoxShadow";
 
 export default function SideBar() {
@@ -28,47 +29,43 @@ export default function SideBar() {
             <p>Text Shadow</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="/gradient">
           <li>
             <Gradient />
             <p>Gradient</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="/cursor">
           <li>
-            <img
-              src={require("../../assets/images/icons/icons8-cursor-26.png")}
-              alt=""
-              className="cursorIcon"
-            />
+            <MouseOutlined />
             <p>Cursor</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="/border">
           <li>
             <CheckBoxOutlineBlank />
             <p>Border</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link border-radius" to="/borderRadius">
           <li>
             <span className="borderRadius"></span>
             <p>Border-radius</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="/transform">
           <li>
             <Transform />
             <p>Transform</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="/colors">
           <li>
             <Palette />
             <p>Colors</p>
           </li>
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="/filter">
           <li>
             <Filter />
             <p>Filter</p>

@@ -19,7 +19,8 @@ ul {
 }
 
 .wrapper {
-  flex: 8;
+  flex: 10;
+  padding-top: 15px;
 }
 
 .link {
@@ -27,7 +28,8 @@ ul {
   color: black;
 }
 
-li img {
-  width: 20px;
-  height: 20px;
+input,
+button,
+textarea {
+  box-shadow: none !important;
 }

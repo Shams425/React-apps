@@ -1,14 +1,24 @@
 .sideWrapper {
-  flex: 4;
+  flex: 2;
   height: 100vh;
+  padding-top: 15px;
 }
 
-span {
-  width: 23px;
+@media screen and (max-width: 990px) {
+  .sideWrapper {
+    flex: 3;
+  }
+}
+
+a.border-radius:hover span {
+  border-color: #0d6efd;
+}
+
+li span {
+  width: 22px;
   height: 20px;
   border: 2px solid black;
   border-radius: 6px;
-  margin-right: 4px;
 }
 
 li {
@@ -24,4 +34,5 @@ li p {
 li .cursorIcon {
   width: 20px;
   height: 20px;
+  margin-right: 4px;
 }

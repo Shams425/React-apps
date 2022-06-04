@@ -4,7 +4,7 @@ import "./header.css";
 export default function Header() {
   return (
     <header className="bg-dark ">
-      <h1 className="text-light">CSS assets tools</h1>
+      <h1 className="text-light">CSS Assets Tools</h1>
     </header>
   );
 }
