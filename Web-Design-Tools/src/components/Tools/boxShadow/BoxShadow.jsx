@@ -33,12 +33,12 @@ export default function BoxShadow() {
   return (
     <div className="wrapper">
       <div className="container">
-        <div className="show-gradient">
-          <div className="result">
+        <div className="show-shadow">
+          <div className="result" title="click to copy">
             <span>click to copy</span>
           </div>
         </div>
-        <div className="gradient-input mb-5">
+        <div className="shadow-input mb-5">
           <div className="offset-x mb-3">
             <label htmlFor="" className="form-label">
               Offset-X
