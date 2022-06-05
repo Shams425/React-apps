@@ -1,0 +1,209 @@
+.cursorContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cursorContainer .cursor {
+  border: 1px solid rgba(54, 54, 54, 0.3);
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.cursorContainer .cursor:hover {
+  transform: scale(1.1);
+}
+
+.cursorContainer .cursor:active {
+  transform: scale(0.95);
+}
+
+.cursor.eg1 {
+  cursor: pointer;
+}
+
+.cursor.eg1::before {
+  content: "pointer";
+}
+
+.cursor.eg2 {
+  cursor: alias;
+}
+
+.cursor.eg2::before {
+  content: "alias";
+}
+
+.cursor.eg3 {
+  cursor: all-scroll;
+}
+
+.cursor.eg3::before {
+  content: "all-scroll";
+}
+
+.cursor.eg4 {
+  cursor: col-resize;
+}
+
+.cursor.eg4::before {
+  content: "col-resize";
+}
+
+.cursor.eg5 {
+  cursor: crosshair;
+}
+
+.cursor.eg5::before {
+  content: "crosshair";
+}
+
+.cursor.eg6 {
+  cursor: context-menu;
+}
+
+.cursor.eg6::before {
+  content: "context-menu";
+}
+
+.cursor.eg7 {
+  cursor: copy;
+}
+
+.cursor.eg7::before {
+  content: "copy";
+}
+
+.cursor.eg8 {
+  cursor: cell;
+}
+
+.cursor.eg8::before {
+  content: "cell";
+}
+
+.cursor.eg9 {
+  cursor: grabbing;
+}
+
+.cursor.eg9::before {
+  content: "grabbing";
+}
+
+.cursor.eg10 {
+  cursor: help;
+}
+
+.cursor.eg10::before {
+  content: "help";
+}
+
+.cursor.eg11 {
+  cursor: move;
+}
+
+.cursor.eg11::before {
+  content: "move";
+}
+
+.cursor.eg12 {
+  cursor: nesw-resize;
+}
+
+.cursor.eg12::before {
+  content: "nesw-resize";
+}
+
+.cursor.eg13 {
+  cursor: no-drop;
+}
+
+.cursor.eg13::before {
+  content: "no-drop";
+}
+
+.cursor.eg14 {
+  cursor: none;
+}
+
+.cursor.eg14::before {
+  content: "none";
+}
+
+.cursor.eg15 {
+  cursor: not-allowed;
+}
+
+.cursor.eg15::before {
+  content: "not-allowed";
+}
+
+.cursor.eg16 {
+  cursor: progress;
+}
+
+.cursor.eg16::before {
+  content: "progress";
+}
+
+.cursor.eg17 {
+  cursor: row-resize;
+}
+
+.cursor.eg17::before {
+  content: "row-resize";
+}
+
+.cursor.eg18 {
+  cursor: text;
+}
+
+.cursor.eg18::before {
+  content: "text";
+}
+
+.cursor.eg19 {
+  cursor: vertical-text;
+}
+
+.cursor.eg19::before {
+  content: "vertical-text";
+}
+
+.cursor.eg19 {
+  cursor: vertical-text;
+}
+
+.cursor.eg19::before {
+  content: "vertical-text";
+}
+
+.cursor.eg20 {
+  cursor: wait;
+}
+
+.cursor.eg20::before {
+  content: "wait";
+}
+
+.cursor.eg21 {
+  cursor: zoom-in;
+}
+
+.cursor.eg21::before {
+  content: "zoom-in";
+}
+
+.cursor.eg22 {
+  cursor: zoom-out;
+}
+
+.cursor.eg22::before {
+  content: "zoom-out";
+}
