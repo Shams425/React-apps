@@ -1,32 +1,26 @@
-import React, { useCallback, useEffect, useMemo } from "react";
+import { CopyAll } from "@mui/icons-material";
+import { width } from "@mui/system";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import "./cursor.css";
 
 export default function Cursor() {
+  const [cursor, setCursor] = useState("pointer");
+  function copyHandler(e) {
+    navigator.clipboard.writeText(
+      `cursor: ${window.getComputedStyle(e.target).cursor}`
+    );
+    setCursor(`${window.getComputedStyle(e.target).cursor}`);
+  }
   return (
     <div className="wrapper">
+      <div className="showCode">
+        <code>cursor: {cursor}</code>
+        <CopyAll className="copyIcon" titleAccess="copy" />
+      </div>
       <div className="cursorContainer">
-        <div className="cursor eg1"></div>
-        <div className="cursor eg2"></div>
-        <div className="cursor eg3"></div>
-        <div className="cursor eg4"></div>
-        <div className="cursor eg5"></div>
-        <div className="cursor eg6"></div>
-        <div className="cursor eg7"></div>
-        <div className="cursor eg8"></div>
-        <div className="cursor eg9"></div>
-        <div className="cursor eg10"></div>
-        <div className="cursor eg11"></div>
-        <div className="cursor eg12"></div>
-        <div className="cursor eg13"></div>
-        <div className="cursor eg14"></div>
-        <div className="cursor eg15"></div>
-        <div className="cursor eg16"></div>
-        <div className="cursor eg17"></div>
-        <div className="cursor eg18"></div>
-        <div className="cursor eg19"></div>
-        <div className="cursor eg20"></div>
-        <div className="cursor eg21"></div>
-        <div className="cursor eg22"></div>
+        {[...Array(22)].map((_, index) => (
+          <div className={`cursor eg${index + 1}`} onClick={copyHandler}></div>
+        ))}
       </div>
     </div>
   );
