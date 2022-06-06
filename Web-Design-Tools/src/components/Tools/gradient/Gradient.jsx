@@ -5,26 +5,28 @@ import {
   ArrowForward,
   ArrowUpward,
   ArrowDownward,
+  ContentCopy,
 } from "@mui/icons-material";
 
 export default function Gradient() {
   const [values, setValues] = useState({
-    dir: "left",
+    dir: "to left",
     color1: "#356ed5",
     color1Percent: 20,
     color2: "#00ffad",
     color2Percent: 80,
+    angle: 0,
   });
 
-  const copyHandler = (e) => {
+  function copyHandler(e) {
     const gradientBox = document.querySelector(".gradientBox");
     navigator.clipboard.writeText(
-      `background: linear-gradient(to ${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%);`
+      `background: linear-gradient(${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%);`
     );
     console.log(gradientBox);
-  };
+  }
 
-  const activeHandler = (e) => {
+  function activeHandler(e) {
     //set arrows active className
     const arrowIcons = document.querySelectorAll(".arrowIcon");
     arrowIcons.forEach((icon) => {
@@ -49,16 +51,33 @@ export default function Gradient() {
           e.target.parentElement.parentElement.value,
       });
     }
-  };
+  }
 
   useEffect(() => {
     const gradientBox = document.querySelector(".gradientBox");
-    gradientBox.style.backgroundImage = `linear-gradient(to ${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%)`;
+    gradientBox.style.backgroundImage = `linear-gradient(${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%)`;
   }, [values]);
 
   return (
     <div className="wrapper">
       <div className="showGradient">
+        <div className="showCode">
+          <code>
+            background: liner-gradient({values.dir}, {values.color1}{" "}
+            {values.color1Percent}%,
+            {values.color2} {values.color2Percent}%);
+          </code>
+          <ContentCopy
+            className="copyIcon"
+            titleAccess="copy"
+            onClick={() =>
+              navigator.clipboard
+                .writeText(`background: liner-gradient(${values.dir}, ${values.color1}
+            ${values.color1Percent}%,
+            ${values.color2} ${values.color2Percent}%);`)
+            }
+          />
+        </div>
         <div className="gradientResult mb-5">
           <button className="gradientBox" onClick={copyHandler}></button>
         </div>
@@ -69,7 +88,15 @@ export default function Gradient() {
               <button
                 className="arrowIcon"
                 name="dir"
-                value="top"
+                value="to top"
+                onClick={activeHandler}
+              >
+                <ArrowUpward />
+              </button>
+              <button
+                className="arrowIcon rotate"
+                name="dir"
+                value="45deg"
                 onClick={activeHandler}
               >
                 <ArrowUpward />
@@ -77,7 +104,15 @@ export default function Gradient() {
               <button
                 className="arrowIcon"
                 name="dir"
-                value="right"
+                value="to right"
+                onClick={activeHandler}
+              >
+                <ArrowForward name="dir" value="right" />
+              </button>
+              <button
+                className="arrowIcon rotate"
+                name="dir"
+                value="135deg"
                 onClick={activeHandler}
               >
                 <ArrowForward name="dir" value="right" />
@@ -85,7 +120,15 @@ export default function Gradient() {
               <button
                 className="arrowIcon"
                 name="dir"
-                value="bottom"
+                value="to bottom"
+                onClick={activeHandler}
+              >
+                <ArrowDownward />
+              </button>
+              <button
+                className="arrowIcon rotate"
+                name="dir"
+                value="225deg"
                 onClick={activeHandler}
               >
                 <ArrowDownward />
@@ -93,11 +136,52 @@ export default function Gradient() {
               <button
                 className="arrowIcon"
                 name="dir"
-                value="left"
+                value="to left"
                 onClick={activeHandler}
               >
                 <ArrowBack />
               </button>
+              <button
+                className="arrowIcon rotate"
+                name="dir"
+                value="315deg"
+                onClick={activeHandler}
+              >
+                <ArrowBack />
+              </button>
+            </div>
+            <div className="angle">
+              <h2>Gradient angle: </h2>
+              <div className="showAngle">
+                <div className="showAngleDeg">
+                  <span className="deg"></span>
+                  <span className="degArrow"></span>
+                </div>
+                <div className="showValue">
+                  <input
+                    type="range"
+                    name="angle"
+                    value={values.angle}
+                    min={0}
+                    max={360}
+                    id=""
+                    data-change="dir"
+                    onChange={(e) => {
+                      document.querySelector(
+                        ".deg"
+                      ).style.transform = `rotate(${e.target.value}deg)`;
+                      setValues({
+                        ...values,
+                        [e.target.name]: e.target.value,
+                        [e.target.getAttribute(
+                          "data-change"
+                        )]: `${e.target.value}deg`,
+                      });
+                    }}
+                  />
+                  <span className="showPercent">{values.angle}deg</span>
+                </div>
+              </div>
             </div>
             <div className="colors mt-5">
               <div className="color1">
@@ -119,13 +203,14 @@ export default function Gradient() {
                     name="color1Percent"
                     min={0}
                     max={100}
-                    change="color2Percent"
+                    data-change="color2Percent"
                     value={values.color1Percent}
                     onChange={(e) =>
                       setValues({
                         ...values,
                         [e.target.name]: e.target.value,
-                        [e.target.getAttribute("change")]: 100 - e.target.value,
+                        [e.target.getAttribute("data-change")]:
+                          100 - e.target.value,
                       })
                     }
                   />
@@ -151,13 +236,14 @@ export default function Gradient() {
                     name="color2Percent"
                     min={0}
                     max={100}
-                    change="color1Percent"
+                    data-change="color1Percent"
                     value={values.color2Percent}
                     onChange={(e) =>
                       setValues({
                         ...values,
                         [e.target.name]: e.target.value,
-                        [e.target.getAttribute("change")]: 100 - e.target.value,
+                        [e.target.getAttribute("data-change")]:
+                          100 - e.target.value,
                       })
                     }
                   />

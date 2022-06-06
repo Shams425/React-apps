@@ -33,3 +33,33 @@ button,
 textarea {
   box-shadow: none !important;
 }
+
+.showCode {
+  max-width: 70%;
+  min-height: 70px;
+  margin: 0 auto 50px;
+  background-color: rgb(17, 44, 66);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  flex-wrap: wrap;
+}
+
+.showCode code {
+  margin: 10px 0;
+}
+
+.showCode .copyIcon {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 990px) {
+  .showCode code {
+    font-size: 13px;
+  }
+}

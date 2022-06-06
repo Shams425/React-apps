@@ -4,23 +4,6 @@
   flex-wrap: wrap;
 }
 
-.showCode {
-  max-width: 50%;
-  height: 70px;
-  margin: 0 auto 50px;
-  background-color: rgb(17, 44, 66);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.showCode .copyIcon {
-  color: white;
-  font-size: 25px;
-  cursor: pointer;
-}
-
 .cursorContainer .cursor {
   border: 1px solid rgba(54, 54, 54, 0.3);
   width: 150px;

@@ -1,3 +1,4 @@
+import { ContentCopy } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import "./boxshadow.css";
 import BoxExamples from "./examples/BoxExamples";
@@ -33,6 +34,21 @@ export default function BoxShadow() {
   return (
     <div className="wrapper">
       <div className="container">
+        <div className="showCode">
+          <code>
+            box-shadow: {values.offsetX}px {values.offsetY}px {values.blur}px
+            {values.spread}px {values.color}
+          </code>
+          <ContentCopy
+            className="copyIcon"
+            titleAccess="copy"
+            onClick={() =>
+              navigator.clipboard.writeText(
+                `box-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color}`
+              )
+            }
+          />
+        </div>
         <div className="show-shadow">
           <div className="result" title="click to copy">
             <span>click to copy</span>

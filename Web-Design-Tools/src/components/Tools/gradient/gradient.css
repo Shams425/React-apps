@@ -8,7 +8,7 @@
   width: 250px;
   height: 250px;
   border: 1px solid black;
-  background: linear-gradient(to left, #356ed5 20%, #00ffad 80%);
+  background: linear-gradient(to top, #356ed5 20%, #00ffad 80%);
   position: relative;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -54,17 +54,24 @@
 
 .arrows {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .arrows .arrowIcon {
-  width: 150px;
-  height: 150px;
+  width: 10.5%;
+  height: 80px;
+  margin: 25px 0;
   cursor: pointer;
   border: none;
   outline: none;
   z-index: 99;
   transition: all 0.3s ease;
+}
+
+.arrows .arrowIcon.rotate svg {
+  transform: rotate(45deg);
 }
 
 .arrows button:hover {
@@ -79,14 +86,24 @@
 
 .arrows button.active,
 .arrows button:hover {
-  background-color: black;
+  background-color: #0b62ffcc;
   color: white;
   transition: all 0.3s ease;
 }
 
 .arrows .arrowIcon svg {
-  font-size: 65px;
+  font-size: 35px;
 }
+
+/* .angle .showValue {
+}
+
+.angle .showValue .showPercent {
+  margin-left: 50px;
+  border: 1px solid black;
+  width: 80px;
+  height: 80px;
+} */
 
 .colors .color1,
 .colors .color2 {
@@ -96,12 +113,65 @@
   margin: 35px 0;
 }
 
-.colors .showValue {
+.showGradient .showValue {
   flex: 1;
   margin-left: 30px;
   height: 47px;
   display: flex;
   align-items: center;
+}
+
+.showGradient .showValue .showPercent {
+  width: 68px;
+  height: 55px;
+  border: 1px solid rgba(90, 90, 90, 0.3);
+  margin: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showAngle {
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+}
+
+.showAngle .showAngleDeg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(90, 90, 90, 0.3);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.angle .showValue {
+  margin: 50px 0;
+  flex: 1;
+}
+
+.angle .showAngleDeg .deg {
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  background-color: black;
+  transform: rotate(0deg);
+}
+
+.angle .showAngleDeg .deg::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+  border-width: 5px;
+  top: -10px;
+  left: -4px;
 }
 
 .colors .info {
@@ -113,16 +183,8 @@
   margin-right: 15px;
 }
 
-.colors input[type="range"] {
+.colors input[type="range"],
+.angle input[type="range"] {
   margin-right: 25px;
-}
-
-.colors .showValue .showPercent {
-  width: 68px;
-  height: 55px;
-  border: 1px solid rgba(90, 90, 90, 0.3);
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 65%;
 }

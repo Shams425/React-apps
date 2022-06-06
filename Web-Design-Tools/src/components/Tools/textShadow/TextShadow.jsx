@@ -1,3 +1,4 @@
+import { ContentCopy } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import "./textshadow.css";
 
@@ -30,6 +31,21 @@ export default function TextShadow() {
   return (
     <div className="wrapper">
       <div className="showTextShadow">
+        <div className="showCode">
+          <code>
+            text-shadow: {values.offsetX}px {values.offsetY}px {values.blur}px{" "}
+            {values.color}
+          </code>
+          <ContentCopy
+            className="copyIcon"
+            titleAccess="copy"
+            onClick={() =>
+              navigator.clipboard.writeText(
+                `text-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.color}`
+              )
+            }
+          />
+        </div>
         <div className="resultBox text-center mb-5" title="click to copy">
           <p className="result">Example</p>
         </div>
