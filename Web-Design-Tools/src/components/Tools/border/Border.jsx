@@ -5,7 +5,7 @@ import "./border.css";
 const initialValue = {
   width: 1,
   style: "solid",
-  color: "#000",
+  color: "#c4c4c4",
 };
 
 function reducer(state, action) {
@@ -101,6 +101,7 @@ export default function Border() {
             <input
               type="color"
               name="width"
+              value={values.color}
               onChange={(e) =>
                 dispatch({ type: "color", value: e.target.value })
               }

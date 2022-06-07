@@ -13,6 +13,7 @@ import BorderRaduis from "./components/Tools/border-raduis/BorderRadius";
 import Transform from "./components/Tools/transform/Transform";
 import Color from "./components/Tools/colors/Color";
 import Filter from "./components/Tools/filter/Filter";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/filter" element={<Filter />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
