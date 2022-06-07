@@ -2,16 +2,20 @@
   width: 100%;
   position: relative;
   height: 85px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .showCodeContainer .all,
 .showCodeContainer .each {
   position: absolute;
-  height: 100%;
   width: 80%;
   left: 10%;
   display: none;
+}
+
+.showCodeContainer .each {
+  min-height: 150px;
+  margin-bottom: 25px;
 }
 
 .showCodeContainer .show {
@@ -36,9 +40,13 @@ select {
   justify-content: center;
   width: 100%;
   margin-bottom: 50px;
+  position: relative;
+  height: 250px;
 }
 
-.showBorder .result {
+.showBorder .result,
+.showBorder .eachBorderResult {
+  position: absolute;
   width: 250px;
   height: 250px;
   border: 1px solid black;
@@ -47,6 +55,15 @@ select {
   justify-content: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: none;
+}
+
+.showBorder .eachBorderResult:active {
+  transform: scale(0.95);
+}
+
+.showBorder .show {
+  display: flex;
 }
 
 .borderType {

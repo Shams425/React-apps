@@ -1,4 +1,5 @@
 import { ContentCopy } from "@mui/icons-material";
+import { width } from "@mui/system";
 import React, { useReducer, useEffect } from "react";
 import "./border.css";
 
@@ -10,22 +11,22 @@ const initialValue = {
 
 const initialAllValue = {
   top: {
-    width: 5,
+    width: 1,
     style: "solid",
     color: "#c4c4c4",
   },
   right: {
-    width: 5,
+    width: 1,
     style: "solid",
     color: "#c4c4c4",
   },
   bottom: {
-    width: 5,
+    width: 1,
     style: "solid",
     color: "#c4c4c4",
   },
   left: {
-    width: 5,
+    width: 1,
     style: "solid",
     color: "#c4c4c4",
   },
@@ -49,44 +50,71 @@ function allReducer(state, action) {
     case "top":
       switch (action.type) {
         case "width":
-          return { ...state, width: action.value };
+          return { ...state, top: { ...state.top, width: action.value } };
         case "style":
-          return { ...state, style: action.value };
+          return { ...state, top: { ...state.top, style: action.value } };
         case "color":
-          return { ...state, color: action.value };
+          return { ...state, top: { ...state.top, color: action.value } };
         default:
           return state;
       }
     case "right":
       switch (action.type) {
         case "width":
-          return { ...state, width: action.value };
+          return {
+            ...state,
+            right: { ...state.right, width: action.value },
+          };
         case "style":
-          return { ...state, style: action.value };
+          return {
+            ...state,
+            right: { ...state.right, style: action.value },
+          };
         case "color":
-          return { ...state, color: action.value };
+          return {
+            ...state,
+            right: { ...state.right, color: action.value },
+          };
         default:
           return state;
       }
     case "bottom":
       switch (action.type) {
         case "width":
-          return { ...state, width: action.value };
+          return {
+            ...state,
+            bottom: { ...state.bottom, width: action.value },
+          };
         case "style":
-          return { ...state, style: action.value };
+          return {
+            ...state,
+            bottom: { ...state.bottom, style: action.value },
+          };
         case "color":
-          return { ...state, color: action.value };
+          return {
+            ...state,
+            bottom: { ...state.bottom, color: action.value },
+          };
         default:
           return state;
       }
     case "left":
       switch (action.type) {
         case "width":
-          return { ...state, width: action.value };
+          return {
+            ...state,
+            left: { ...state.left, width: action.value },
+          };
         case "style":
-          return { ...state, style: action.value };
+          return {
+            ...state,
+            left: { ...state.left, style: action.value },
+          };
         case "color":
-          return { ...state, color: action.value };
+          return {
+            ...state,
+            left: { ...state.left, color: action.value },
+          };
         default:
           return state;
       }
@@ -103,25 +131,63 @@ export default function Border() {
     );
     ele.textContent = "copied !!!";
     setTimeout(() => (ele.textContent = "click to copy"), 1500);
-    console.log("it's working");
+  }
+
+  function copyAllBordersHandler(ele) {
+    navigator.clipboard.writeText(
+      `border-top: ${allValues.top.width}px ${allValues.top.style} ${allValues.top.color};
+       border-right: ${allValues.right.width}px ${allValues.right.style} ${allValues.right.color};
+       border-bottom: ${allValues.bottom.width}px ${allValues.bottom.style} ${allValues.bottom.color};
+       border-left: ${allValues.left.width}px ${allValues.left.style} ${allValues.left.color};`
+    );
+    ele.textContent = "copied !!!";
+    setTimeout(() => (ele.textContent = "click to copy"), 1500);
   }
   useEffect(() => {
     const viewBorder = document.querySelector(".showBorder .result");
     viewBorder.style.border = `${values.width}px ${values.style} ${values.color}`;
-  }, [values]);
+
+    const viewEachBorder = document.querySelector(
+      ".showBorder .eachBorderResult"
+    );
+
+    viewEachBorder.style.borderTop = `${allValues.top.width}px ${allValues.top.style} ${allValues.top.color}`;
+    viewEachBorder.style.borderRight = `${allValues.right.width}px ${allValues.right.style} ${allValues.right.color}`;
+    viewEachBorder.style.borderBottom = `${allValues.bottom.width}px ${allValues.bottom.style} ${allValues.bottom.color}`;
+    viewEachBorder.style.borderLeft = `${allValues.left.width}px ${allValues.left.style} ${allValues.left.color}`;
+  }, [values, allValues]);
 
   function showType(event) {
     const tabs = document.querySelectorAll(".borderType .tab");
     const tabContent = document.querySelectorAll(".borderType .tabContent");
+    const codeContainer = document.querySelectorAll(".showCode");
+    const viewBorder = document.querySelectorAll(".showResult");
+
     tabs.forEach((tab) => {
       tab.classList.remove("active");
     });
     tabContent.forEach((content) => {
       content.classList.remove("show");
     });
+    codeContainer.forEach((code) => {
+      code.classList.remove("show");
+    });
+    viewBorder.forEach((border) => {
+      border.classList.remove("show");
+    });
+
     event.target.classList.add("active");
+
     document
       .querySelector(event.target.getAttribute("datatype"))
+      .classList.add("show");
+
+    document
+      .querySelector(event.target.getAttribute("data-target"))
+      .classList.add("show");
+
+    document
+      .querySelector(event.target.getAttribute("data-show-code"))
       .classList.add("show");
   }
 
@@ -129,7 +195,7 @@ export default function Border() {
     <div className="wrapper">
       <div className="borderContainer">
         <div className="showCodeContainer">
-          <div className="showCode all">
+          <div className="showCode all show" id="allCode">
             <code>
               border: {values.width}px {values.style} {values.color}
             </code>
@@ -143,23 +209,37 @@ export default function Border() {
               }
             />
           </div>
-          <div className="showCode each show">
+          <div className="showCode each" id="eachCode">
             <code>
-              border: {values.width}px {values.style} {values.color}
+              border-top: {allValues.top.width}px {allValues.top.style}{" "}
+              {allValues.top.color} <br />
+              border-right: {allValues.right.width}px {allValues.right.style}{" "}
+              {allValues.right.color} <br />
+              border-bottom: {allValues.bottom.width}px {allValues.bottom.style}{" "}
+              {allValues.bottom.color} <br />
+              border-left: {allValues.left.width}px {allValues.left.style}{" "}
+              {allValues.left.color} <br />
             </code>
             <ContentCopy
               className="copyIcon"
               titleAccess="copy"
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  `border: ${values.width} ${values.style} ${values.color}`
-                )
-              }
+              onClick={(e) => copyAllBordersHandler(e)}
             />
           </div>
         </div>
         <div className="showBorder">
-          <div className="result" onClick={(e) => copyHandler(e.target)}>
+          <div
+            className="showResult result show"
+            id="allResult"
+            onClick={(e) => copyHandler(e.target)}
+          >
+            click to copy
+          </div>
+          <div
+            className="showResult eachBorderResult"
+            id="eachResult"
+            onClick={(e) => copyAllBordersHandler(e.target)}
+          >
             click to copy
           </div>
         </div>
@@ -168,6 +248,8 @@ export default function Border() {
             <p
               className="all tab active"
               datatype="#all"
+              data-target="#allResult"
+              data-show-code="#allCode"
               onClick={(e) => showType(e)}
             >
               All Borders
@@ -175,6 +257,8 @@ export default function Border() {
             <p
               className="each tab mx-5"
               datatype="#each"
+              data-target="#eachResult"
+              data-show-code="#eachCode"
               onClick={(e) => showType(e)}
             >
               Each Border

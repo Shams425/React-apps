@@ -36,7 +36,7 @@ export default function BorderRadius() {
           />
         </div>
         <div className="showBorder">
-          <div className="result" onClick={(e) => copyHandler(e.target)}>
+          <div className="result show" onClick={(e) => copyHandler(e.target)}>
             click to copy
           </div>
         </div>
