@@ -1,0 +1,37 @@
+.borderInput div {
+  display: flex;
+  align-items: center;
+}
+
+.borderInput input,
+select {
+  margin: 20px;
+  width: 45% !important;
+}
+
+.showBorder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.showBorder .result {
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.borderInput .showResult {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(90, 90, 90, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

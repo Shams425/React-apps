@@ -159,6 +159,7 @@
   width: 2px;
   height: 50%;
   background-color: black;
+  transform-style: flat;
   transform: rotate(0deg);
 }
 

@@ -10,7 +10,7 @@ import {
 
 export default function Gradient() {
   const [values, setValues] = useState({
-    dir: "to left",
+    dir: "to top",
     color1: "#356ed5",
     color1Percent: 20,
     color2: "#00ffad",
@@ -86,7 +86,7 @@ export default function Gradient() {
             <h2>Gradient Direction</h2>
             <div className="arrows">
               <button
-                className="arrowIcon"
+                className="arrowIcon active"
                 name="dir"
                 value="to top"
                 onClick={activeHandler}
