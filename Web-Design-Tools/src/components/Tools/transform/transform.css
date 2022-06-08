@@ -1,0 +1,111 @@
+.showTransform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showTransform .results {
+  width: 100%;
+  height: 250px;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showTransform .displayResult {
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgb(0, 0, 0);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.showTransform .result {
+  position: absolute;
+  display: none;
+}
+
+.showTransform .result.show {
+  display: flex;
+}
+
+.showTransform .displayResult span.bounder {
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background-color: rgba(0, 0, 0);
+}
+
+.showTransform .displayResult span:first-child {
+  width: 47%;
+  top: -18%;
+  left: -8%;
+  transform: rotate(135deg);
+}
+
+.showTransform .displayResult span:nth-child(2) {
+  width: 101%;
+  transform: rotate(180deg);
+  top: -34%;
+  left: 32%;
+}
+
+.showTransform .displayResult span:nth-child(3) {
+  width: 47%;
+  top: -18%;
+  left: 94%;
+  transform: rotate(135deg);
+}
+
+.showTransform .displayResult span:nth-child(4) {
+  width: 1px;
+  left: 134%;
+  top: -34%;
+  height: 102%;
+  transform: rotate(180deg);
+}
+
+.showTransform .displayResult span:last-child {
+  width: 47%;
+  top: 84%;
+  left: 94%;
+  transform: rotate(135deg);
+}
+
+.showUserInput {
+  position: relative;
+  height: 550px;
+  width: 100%;
+}
+
+.showUserInput .showValue .value {
+  min-width: 80px;
+  height: 55px;
+  border: 1px solid rgba(90, 90, 90, 0.3);
+  margin: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showUserInput .inputs {
+  position: absolute;
+  display: none;
+  width: 100%;
+}
+
+.showUserInput .show {
+  display: block;
+}
+
+.showUserInput input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0 20px 10px 20px;
+}

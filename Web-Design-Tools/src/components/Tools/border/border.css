@@ -29,7 +29,7 @@
 }
 
 .borderInput .details,
-input,
+input[type="range"],
 select {
   margin: 20px;
   width: 95% !important;

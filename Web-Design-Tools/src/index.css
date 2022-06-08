@@ -31,7 +31,8 @@ ul {
 
 input,
 button,
-textarea {
+textarea,
+select {
   box-shadow: none !important;
 }
 
@@ -62,5 +63,11 @@ textarea {
 @media screen and (max-width: 990px) {
   .showCode code {
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .showCode code {
+    font-size: 10px;
   }
 }
