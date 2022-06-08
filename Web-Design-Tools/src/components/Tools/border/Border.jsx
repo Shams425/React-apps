@@ -1,5 +1,4 @@
 import { ContentCopy } from "@mui/icons-material";
-import { width } from "@mui/system";
 import React, { useReducer, useEffect } from "react";
 import "./border.css";
 
@@ -255,7 +254,7 @@ export default function Border() {
               All Borders
             </p>
             <p
-              className="each tab mx-5"
+              className="each tab"
               datatype="#each"
               data-target="#eachResult"
               data-show-code="#eachCode"
