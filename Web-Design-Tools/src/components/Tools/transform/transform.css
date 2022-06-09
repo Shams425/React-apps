@@ -98,6 +98,15 @@
   position: absolute;
   display: none;
   width: 100%;
+  margin-top: 20px;
+}
+
+.showUserInput .inputs div:first-child {
+  flex: 1;
+}
+
+.showUserInput .inputs label {
+  margin-right: 20px;
 }
 
 .showUserInput .show {

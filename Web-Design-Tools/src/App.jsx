@@ -26,9 +26,9 @@ function App() {
           <Route path="/boxShadow" element={<BoxShadow />} />
           <Route path="/textShadow" element={<TextShadow />} />
           <Route path="/gradient" element={<Gradient />} />
-          <Route path="/cursor" element={<Cursor />} />
           <Route path="/border" element={<Border />} />
           <Route path="/borderRadius" element={<BorderRadius />} />
+          <Route path="/cursor" element={<Cursor />} />
           <Route path="/transform" element={<Transform />} />
           <Route path="/colors" element={<Color />} />
           <Route path="/filter" element={<Filter />} />

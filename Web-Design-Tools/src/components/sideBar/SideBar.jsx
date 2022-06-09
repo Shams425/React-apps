@@ -35,12 +35,6 @@ export default function SideBar() {
             <p>Gradient</p>
           </li>
         </Link>
-        <Link className="link" to="/cursor">
-          <li>
-            <MouseOutlined />
-            <p>Cursor</p>
-          </li>
-        </Link>
         <Link className="link" to="/border">
           <li>
             <CheckBoxOutlineBlank />
@@ -51,6 +45,12 @@ export default function SideBar() {
           <li>
             <span className="borderRadius"></span>
             <p>Border-radius</p>
+          </li>
+        </Link>
+        <Link className="link" to="/cursor">
+          <li>
+            <MouseOutlined />
+            <p>Cursor</p>
           </li>
         </Link>
         <Link className="link" to="/transform">

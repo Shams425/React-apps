@@ -37,9 +37,9 @@ select {
 }
 
 .showCode {
-  max-width: 70%;
+  max-width: 100%;
   min-height: 70px;
-  margin: 0 auto 50px;
+  margin-bottom: 50px;
   background-color: rgb(17, 44, 66);
   padding: 20px;
   display: flex;

@@ -190,302 +190,313 @@ export default function BorderRadius() {
 
   return (
     <div className="wrapper">
-      <div className="borderRadiusContainer">
-        <div className="showCodeContainer">
-          <div className="showCode all show" id="allCode">
-            <code>border-radius: {showValue()}</code>
-            <ContentCopy
-              className="copyIcon"
-              titleAccess="copy"
-              onClick={() =>
-                navigator.clipboard.writeText(`border-radius: ${showValue()}`)
-              }
-            />
+      <div className="container borderRadiusContainer">
+        <div className="row mt-5">
+          <div className="borderType col-lg-6">
+            <h2 className="mb-3">Border Radius Params</h2>
+            <div className="choose d-flex mb-3">
+              <p
+                className="all tab active"
+                datatype="#all"
+                data-target="#allResult"
+                data-show-code="#allCode"
+                onClick={(e) => showType(e)}
+              >
+                All Borders
+              </p>
+              <p
+                className="each tab"
+                datatype="#each"
+                data-target="#eachResult"
+                data-show-code="#eachCode"
+                onClick={(e) => showType(e)}
+              >
+                Each Border
+              </p>
+            </div>
+            <div className="all tabContent show" id="all">
+              <div className="borderInput">
+                <div className="pixels">
+                  <label htmlFor="range" style={{ marginRight: "12px" }}>
+                    pixels:
+                  </label>
+                  <input
+                    type="range"
+                    name="pixels"
+                    min={1}
+                    max={40}
+                    value={radius}
+                    onChange={(e) => {
+                      setRadius(e.target.value);
+                      setPercent(false);
+                    }}
+                  />
+                  <span className="showResult">{radius}px</span>
+                </div>
+                <div className="percent">
+                  <label htmlFor="range">percent:</label>
+                  <input
+                    type="range"
+                    name="percent"
+                    min={1}
+                    max={50}
+                    value={radiusPercent}
+                    onChange={(e) => {
+                      setRadiusPercent(e.target.value);
+                      setPercent(true);
+                    }}
+                  />
+                  <span className="showResult">{radiusPercent}%</span>
+                </div>
+              </div>
+            </div>
+            <div className="each tabContent" id="each">
+              <div className="col-lg-6 col-sm-12 borderInput top-left">
+                <div className="details">
+                  <h2>Top-Left border</h2>
+                  <div className="pixels">
+                    <label htmlFor="range" style={{ marginRight: "12px" }}>
+                      pixels:
+                    </label>
+                    <input
+                      type="range"
+                      name="pixels"
+                      min={1}
+                      max={40}
+                      value={eachRadius.topLeft.pixels}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "top-left",
+                          type: "pixels",
+                          value: e.target.value,
+                        });
+                        setPercent(false);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.topLeft.pixels}px
+                    </span>
+                  </div>
+                  <div className="percent">
+                    <label htmlFor="range">percent:</label>
+                    <input
+                      type="range"
+                      name="percent"
+                      min={1}
+                      max={50}
+                      value={eachRadius.topLeft.percent}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "top-left",
+                          type: "percent",
+                          value: e.target.value,
+                        });
+                        setPercent(true);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.topLeft.percent}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12 borderInput top-right">
+                <div className="details">
+                  <h2>Top-Right border</h2>
+                  <div className="pixels">
+                    <label htmlFor="range" style={{ marginRight: "12px" }}>
+                      pixels:
+                    </label>
+                    <input
+                      type="range"
+                      name="pixels"
+                      min={1}
+                      max={40}
+                      value={eachRadius.topRight.pixels}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "top-right",
+                          type: "pixels",
+                          value: e.target.value,
+                        });
+                        setPercent(false);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.topRight.pixels}px
+                    </span>
+                  </div>
+                  <div className="percent">
+                    <label htmlFor="range">percent:</label>
+                    <input
+                      type="range"
+                      name="percent"
+                      min={1}
+                      max={50}
+                      value={eachRadius.topRight.percent}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "top-right",
+                          type: "percent",
+                          value: e.target.value,
+                        });
+
+                        setPercent(true);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.topRight.percent}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12 borderInput bottom-right">
+                <div className="details">
+                  <h2>bottom-Right border</h2>
+                  <div className="pixels">
+                    <label htmlFor="range" style={{ marginRight: "12px" }}>
+                      pixels:
+                    </label>
+                    <input
+                      type="range"
+                      name="pixels"
+                      min={1}
+                      max={40}
+                      value={eachRadius.bottomRight.pixels}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "bottom-right",
+                          type: "pixels",
+                          value: e.target.value,
+                        });
+                        setPercent(false);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.bottomRight.pixels}px
+                    </span>
+                  </div>
+                  <div className="percent">
+                    <label htmlFor="range">percent:</label>
+                    <input
+                      type="range"
+                      name="percent"
+                      min={1}
+                      max={50}
+                      value={eachRadius.bottomRight.percent}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "bottom-right",
+                          type: "percent",
+                          value: e.target.value,
+                        });
+
+                        setPercent(true);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.bottomRight.percent}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12 borderInput bottom-left">
+                <div className="details">
+                  <h2>Bottom-left border</h2>
+                  <div className="pixels">
+                    <label htmlFor="range" style={{ marginRight: "12px" }}>
+                      pixels:
+                    </label>
+                    <input
+                      type="range"
+                      name="pixels"
+                      min={1}
+                      max={40}
+                      value={eachRadius.bottomLeft.pixels}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "bottom-left",
+                          type: "pixels",
+                          value: e.target.value,
+                        });
+                        setPercent(false);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.bottomLeft.pixels}px
+                    </span>
+                  </div>
+                  <div className="percent">
+                    <label htmlFor="range">percent:</label>
+                    <input
+                      type="range"
+                      name="percent"
+                      min={1}
+                      max={50}
+                      value={eachRadius.bottomLeft.percent}
+                      onChange={(e) => {
+                        dispatch({
+                          name: "bottom-left",
+                          type: "percent",
+                          value: e.target.value,
+                        });
+
+                        setPercent(true);
+                      }}
+                    />
+                    <span className="showResult">
+                      {eachRadius.bottomLeft.percent}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="showCode each" id="eachCode">
-            <code>
-              border-top-left-radius: {showEachValue("topLeft")}; <br />
-              border-top-right-radius: {showEachValue("topRight")}; <br />
-              border-bottom-right: {showEachValue("bottomRight")}; <br />
-              border-bottom-left: {showEachValue("bottomLeft")}; <br />
-            </code>
-            <ContentCopy
-              className="copyIcon"
-              titleAccess="copy"
-              onClick={(e) => copyAllBordersHandler(e)}
-            />
-          </div>
-        </div>
-        <div className="showBorder">
-          <div
-            className="showResult result show"
-            id="allResult"
-            onClick={(e) => copyHandler(e.target)}
-          >
-            click to copy
-          </div>
-          <div
-            className="showResult eachBorderResult"
-            id="eachResult"
-            onClick={(e) => copyAllBordersHandler(e.target)}
-          >
-            click to copy
-          </div>
-        </div>
-        <div className="borderType">
-          <div className="choose d-flex mb-3">
-            <p
-              className="all tab active"
-              datatype="#all"
-              data-target="#allResult"
-              data-show-code="#allCode"
-              onClick={(e) => showType(e)}
-            >
-              All Borders
-            </p>
-            <p
-              className="each tab"
-              datatype="#each"
-              data-target="#eachResult"
-              data-show-code="#eachCode"
-              onClick={(e) => showType(e)}
-            >
-              Each Border
-            </p>
-          </div>
-          <div className="all tabContent show" id="all">
-            <div className="borderInput">
-              <div className="pixels">
-                <label htmlFor="range" style={{ marginRight: "12px" }}>
-                  pixels:
-                </label>
-                <input
-                  type="range"
-                  name="pixels"
-                  min={1}
-                  max={40}
-                  value={radius}
-                  onChange={(e) => {
-                    setRadius(e.target.value);
-                    setPercent(false);
-                  }}
+          <div className="preview col-lg-6 px-5">
+            <h2 className="mb-3">Code</h2>
+            <div className="showCodeContainer">
+              <div className="showCode all show" id="allCode">
+                <code>border-radius: {showValue()}</code>
+                <ContentCopy
+                  className="copyIcon"
+                  titleAccess="copy"
+                  onClick={() =>
+                    navigator.clipboard.writeText(
+                      `border-radius: ${showValue()}`
+                    )
+                  }
                 />
-                <span className="showResult">{radius}px</span>
               </div>
-              <div className="percent">
-                <label htmlFor="range">percent:</label>
-                <input
-                  type="range"
-                  name="percent"
-                  min={1}
-                  max={50}
-                  value={radiusPercent}
-                  onChange={(e) => {
-                    setRadiusPercent(e.target.value);
-                    setPercent(true);
-                  }}
+              <div className="showCode each" id="eachCode">
+                <code>
+                  border-top-left-radius: {showEachValue("topLeft")}; <br />
+                  border-top-right-radius: {showEachValue("topRight")}; <br />
+                  border-bottom-right: {showEachValue("bottomRight")}; <br />
+                  border-bottom-left: {showEachValue("bottomLeft")}; <br />
+                </code>
+                <ContentCopy
+                  className="copyIcon"
+                  titleAccess="copy"
+                  onClick={(e) => copyAllBordersHandler(e)}
                 />
-                <span className="showResult">{radiusPercent}%</span>
               </div>
             </div>
-          </div>
-          <div className="each tabContent" id="each">
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput top-left">
-              <div className="details">
-                <h2>Top-Left border</h2>
-                <div className="pixels">
-                  <label htmlFor="range" style={{ marginRight: "12px" }}>
-                    pixels:
-                  </label>
-                  <input
-                    type="range"
-                    name="pixels"
-                    min={1}
-                    max={40}
-                    value={eachRadius.topLeft.pixels}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "top-left",
-                        type: "pixels",
-                        value: e.target.value,
-                      });
-                      setPercent(false);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.topLeft.pixels}px
-                  </span>
+            <div className="livePreview">
+              <h2 className="mb-3">Live Preview</h2>
+              <div className="showBorder">
+                <div
+                  className="showResult result show"
+                  id="allResult"
+                  onClick={(e) => copyHandler(e.target)}
+                >
+                  click to copy
                 </div>
-                <div className="percent">
-                  <label htmlFor="range">percent:</label>
-                  <input
-                    type="range"
-                    name="percent"
-                    min={1}
-                    max={50}
-                    value={eachRadius.topLeft.percent}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "top-left",
-                        type: "percent",
-                        value: e.target.value,
-                      });
-                      setPercent(true);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.topLeft.percent}%
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput top-right">
-              <div className="details">
-                <h2>Top-Right border</h2>
-                <div className="pixels">
-                  <label htmlFor="range" style={{ marginRight: "12px" }}>
-                    pixels:
-                  </label>
-                  <input
-                    type="range"
-                    name="pixels"
-                    min={1}
-                    max={40}
-                    value={eachRadius.topRight.pixels}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "top-right",
-                        type: "pixels",
-                        value: e.target.value,
-                      });
-                      setPercent(false);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.topRight.pixels}px
-                  </span>
-                </div>
-                <div className="percent">
-                  <label htmlFor="range">percent:</label>
-                  <input
-                    type="range"
-                    name="percent"
-                    min={1}
-                    max={50}
-                    value={eachRadius.topRight.percent}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "top-right",
-                        type: "percent",
-                        value: e.target.value,
-                      });
-
-                      setPercent(true);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.topRight.percent}%
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput bottom-right">
-              <div className="details">
-                <h2>bottom-Right border</h2>
-                <div className="pixels">
-                  <label htmlFor="range" style={{ marginRight: "12px" }}>
-                    pixels:
-                  </label>
-                  <input
-                    type="range"
-                    name="pixels"
-                    min={1}
-                    max={40}
-                    value={eachRadius.bottomRight.pixels}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "bottom-right",
-                        type: "pixels",
-                        value: e.target.value,
-                      });
-                      setPercent(false);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.bottomRight.pixels}px
-                  </span>
-                </div>
-                <div className="percent">
-                  <label htmlFor="range">percent:</label>
-                  <input
-                    type="range"
-                    name="percent"
-                    min={1}
-                    max={50}
-                    value={eachRadius.bottomRight.percent}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "bottom-right",
-                        type: "percent",
-                        value: e.target.value,
-                      });
-
-                      setPercent(true);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.bottomRight.percent}%
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput bottom-left">
-              <div className="details">
-                <h2>Bottom-left border</h2>
-                <div className="pixels">
-                  <label htmlFor="range" style={{ marginRight: "12px" }}>
-                    pixels:
-                  </label>
-                  <input
-                    type="range"
-                    name="pixels"
-                    min={1}
-                    max={40}
-                    value={eachRadius.bottomLeft.pixels}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "bottom-left",
-                        type: "pixels",
-                        value: e.target.value,
-                      });
-                      setPercent(false);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.bottomLeft.pixels}px
-                  </span>
-                </div>
-                <div className="percent">
-                  <label htmlFor="range">percent:</label>
-                  <input
-                    type="range"
-                    name="percent"
-                    min={1}
-                    max={50}
-                    value={eachRadius.bottomLeft.percent}
-                    onChange={(e) => {
-                      dispatch({
-                        name: "bottom-left",
-                        type: "percent",
-                        value: e.target.value,
-                      });
-
-                      setPercent(true);
-                    }}
-                  />
-                  <span className="showResult">
-                    {eachRadius.bottomLeft.percent}%
-                  </span>
+                <div
+                  className="showResult eachBorderResult"
+                  id="eachResult"
+                  onClick={(e) => copyAllBordersHandler(e.target)}
+                >
+                  click to copy
                 </div>
               </div>
             </div>

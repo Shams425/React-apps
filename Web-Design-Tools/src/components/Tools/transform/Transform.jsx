@@ -130,6 +130,7 @@ export default function Transform() {
         break;
       case "scale":
         resultBox[2].style.transform = `scale(${allValues.scale.scaleValue})`;
+        break;
       case "scale-3d":
         resultBox[3].style.transform = `scale3d(${allValues.scale3D.scaleX},${allValues.scale3D.scaleY},${allValues.scale3D.scaleZ})`;
         break;
@@ -235,6 +236,7 @@ export default function Transform() {
             </div>
           </div>
         </div>
+
         <div className="transformInput">
           <div className="userSelect">
             <h3>Transform Type:</h3>
@@ -495,7 +497,10 @@ export default function Transform() {
             <div className="inputs translate">
               <div className="translateX d-flex align-items-center">
                 <label htmlFor="range">translate-x</label>
-                <div className="showValue d-flex align-items-center">
+                <div
+                  className="showValue d-flex align-items-center"
+                  style={{ flex: "1" }}
+                >
                   <input
                     type="range"
                     name="xAxis"
@@ -510,6 +515,7 @@ export default function Transform() {
                         value: e.target.value,
                       })
                     }
+                    style={{ width: "80%" }}
                   />
                   <span className="value">
                     {allValues.translate.translateX} px
@@ -518,7 +524,10 @@ export default function Transform() {
               </div>
               <div className="translateY d-flex align-items-center">
                 <label htmlFor="range">translate-y</label>
-                <div className="showValue d-flex align-items-center">
+                <div
+                  className="showValue d-flex align-items-center"
+                  style={{ flex: "1" }}
+                >
                   <input
                     type="range"
                     name="yAxis"
@@ -533,6 +542,7 @@ export default function Transform() {
                         value: e.target.value,
                       })
                     }
+                    style={{ width: "80%" }}
                   />
                   <span className="value">
                     {allValues.translate.translateY} px

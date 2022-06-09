@@ -142,6 +142,7 @@ export default function Border() {
     ele.textContent = "copied !!!";
     setTimeout(() => (ele.textContent = "click to copy"), 1500);
   }
+
   useEffect(() => {
     const viewBorder = document.querySelector(".showBorder .result");
     viewBorder.style.border = `${values.width}px ${values.style} ${values.color}`;
@@ -192,393 +193,406 @@ export default function Border() {
 
   return (
     <div className="wrapper">
-      <div className="borderContainer">
-        <div className="showCodeContainer">
-          <div className="showCode all show" id="allCode">
-            <code>
-              border: {values.width}px {values.style} {values.color}
-            </code>
-            <ContentCopy
-              className="copyIcon"
-              titleAccess="copy"
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  `border: ${values.width}px ${values.style} ${values.color}`
-                )
-              }
-            />
+      <div className="container borderContainer">
+        <div className="row mt-5">
+          <div className="borderType col-lg-6">
+            <h2 className="mb-3">Border Params</h2>
+            <div className="choose d-flex mb-3">
+              <p
+                className="all tab active"
+                datatype="#all"
+                data-target="#allResult"
+                data-show-code="#allCode"
+                onClick={(e) => showType(e)}
+              >
+                All Borders
+              </p>
+              <p
+                className="each tab"
+                datatype="#each"
+                data-target="#eachResult"
+                data-show-code="#eachCode"
+                onClick={(e) => showType(e)}
+              >
+                Each Border
+              </p>
+            </div>
+            <div className="all tabContent show" id="all">
+              <div className="borderInput">
+                <div className="width">
+                  <label htmlFor="range">Width: </label>
+                  <input
+                    type="range"
+                    name="width"
+                    min={1}
+                    max={40}
+                    value={values.width}
+                    onChange={(e) =>
+                      dispatch({ type: "width", value: e.target.value })
+                    }
+                  />
+                  <span className="showResult">{values.width}px</span>
+                </div>
+                <div className="style">
+                  <label htmlFor="range">style: </label>
+                  <select
+                    name="style"
+                    id=""
+                    className="form-control"
+                    onChange={(e) =>
+                      dispatch({ type: "style", value: e.target.value })
+                    }
+                  >
+                    <option value="solid" defaultValue>
+                      solid
+                    </option>
+                    <option value="dashed">dashed</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="hidden">hidden</option>
+                    <option value="inset">inset</option>
+                    <option value="none">none</option>
+                    <option value="outset">outset</option>
+                    <option value="ridge">ridge</option>
+                  </select>
+                </div>
+                <div className="color">
+                  <label htmlFor="range">color: </label>
+
+                  <input
+                    type="color"
+                    name="width"
+                    value={values.color}
+                    onChange={(e) =>
+                      dispatch({ type: "color", value: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="each tabContent" id="each">
+              <div className="col-lg-6 col-sm-12 borderInput top">
+                <div className="details">
+                  <h2>Top border</h2>
+                  <div className="width">
+                    <label htmlFor="range">Width: </label>
+                    <input
+                      type="range"
+                      name="width"
+                      min={1}
+                      max={40}
+                      value={allValues.top.width}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "width",
+                          value: e.target.value,
+                          name: "top",
+                        })
+                      }
+                    />
+                    <span className="showResult">{allValues.top.width}px</span>
+                  </div>
+                  <div className="style">
+                    <label htmlFor="range">style: </label>
+                    <select
+                      name="style"
+                      id=""
+                      className="form-control"
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "style",
+                          value: e.target.value,
+                          name: "top",
+                        })
+                      }
+                    >
+                      <option value="solid" defaultValue>
+                        solid
+                      </option>
+                      <option value="dashed">dashed</option>
+                      <option value="double">double</option>
+                      <option value="groove">groove</option>
+                      <option value="hidden">hidden</option>
+                      <option value="inset">inset</option>
+                      <option value="none">none</option>
+                      <option value="outset">outset</option>
+                      <option value="ridge">ridge</option>
+                    </select>
+                  </div>
+                  <div className="color">
+                    <label htmlFor="range">color: </label>
+
+                    <input
+                      type="color"
+                      name="width"
+                      value={allValues.top.color}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "color",
+                          value: e.target.value,
+                          name: "top",
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12 borderInput right">
+                <div className="details">
+                  <h2>Right border</h2>
+                  <div className="width">
+                    <label htmlFor="range">Width: </label>
+                    <input
+                      type="range"
+                      name="width"
+                      min={1}
+                      max={40}
+                      value={allValues.right.width}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "width",
+                          value: e.target.value,
+                          name: "right",
+                        })
+                      }
+                    />
+                    <span className="showResult">
+                      {allValues.right.width}px
+                    </span>
+                  </div>
+                  <div className="style">
+                    <label htmlFor="range">style: </label>
+                    <select
+                      name="style"
+                      id=""
+                      className="form-control"
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "style",
+                          value: e.target.value,
+                          name: "right",
+                        })
+                      }
+                    >
+                      <option value="solid" defaultValue>
+                        solid
+                      </option>
+                      <option value="dashed">dashed</option>
+                      <option value="double">double</option>
+                      <option value="groove">groove</option>
+                      <option value="hidden">hidden</option>
+                      <option value="inset">inset</option>
+                      <option value="none">none</option>
+                      <option value="outset">outset</option>
+                      <option value="ridge">ridge</option>
+                    </select>
+                  </div>
+                  <div className="color">
+                    <label htmlFor="range">color: </label>
+
+                    <input
+                      type="color"
+                      name="width"
+                      value={allValues.right.color}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "color",
+                          value: e.target.value,
+                          name: "right",
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12 borderInput bottom">
+                <div className="details">
+                  <h2>Bottom border</h2>
+
+                  <div className="width">
+                    <label htmlFor="range">Width: </label>
+                    <input
+                      type="range"
+                      name="width"
+                      min={1}
+                      max={40}
+                      value={allValues.bottom.width}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "width",
+                          value: e.target.value,
+                          name: "bottom",
+                        })
+                      }
+                    />
+                    <span className="showResult">
+                      {allValues.bottom.width}px
+                    </span>
+                  </div>
+                  <div className="style">
+                    <label htmlFor="range">style: </label>
+                    <select
+                      name="style"
+                      id=""
+                      className="form-control"
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "style",
+                          value: e.target.value,
+                          name: "bottom",
+                        })
+                      }
+                    >
+                      <option value="solid" defaultValue>
+                        solid
+                      </option>
+                      <option value="dashed">dashed</option>
+                      <option value="double">double</option>
+                      <option value="groove">groove</option>
+                      <option value="hidden">hidden</option>
+                      <option value="inset">inset</option>
+                      <option value="none">none</option>
+                      <option value="outset">outset</option>
+                      <option value="ridge">ridge</option>
+                    </select>
+                  </div>
+                  <div className="color">
+                    <label htmlFor="range">color: </label>
+
+                    <input
+                      type="color"
+                      name="width"
+                      value={allValues.bottom.color}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "color",
+                          value: e.target.value,
+                          name: "bottom",
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12 borderInput left">
+                <div className="details">
+                  <h2>left border</h2>
+                  <div className="width">
+                    <label htmlFor="range">Width: </label>
+                    <input
+                      type="range"
+                      name="width"
+                      min={1}
+                      max={40}
+                      value={allValues.left.width}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "width",
+                          value: e.target.value,
+                          name: "left",
+                        })
+                      }
+                    />
+                    <span className="showResult">{allValues.left.width}px</span>
+                  </div>
+                  <div className="style">
+                    <label htmlFor="range">style: </label>
+                    <select
+                      name="style"
+                      id=""
+                      className="form-control"
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "style",
+                          value: e.target.value,
+                          name: "left",
+                        })
+                      }
+                    >
+                      <option value="solid" defaultValue>
+                        solid
+                      </option>
+                      <option value="dashed">dashed</option>
+                      <option value="double">double</option>
+                      <option value="groove">groove</option>
+                      <option value="hidden">hidden</option>
+                      <option value="inset">inset</option>
+                      <option value="none">none</option>
+                      <option value="outset">outset</option>
+                      <option value="ridge">ridge</option>
+                    </select>
+                  </div>
+                  <div className="color">
+                    <label htmlFor="range">color: </label>
+
+                    <input
+                      type="color"
+                      name="width"
+                      value={allValues.left.color}
+                      onChange={(e) =>
+                        allDispatch({
+                          type: "color",
+                          value: e.target.value,
+                          name: "left",
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="showCode each" id="eachCode">
-            <code>
-              border-top: {allValues.top.width}px {allValues.top.style}{" "}
-              {allValues.top.color} <br />
-              border-right: {allValues.right.width}px {allValues.right.style}{" "}
-              {allValues.right.color} <br />
-              border-bottom: {allValues.bottom.width}px {allValues.bottom.style}{" "}
-              {allValues.bottom.color} <br />
-              border-left: {allValues.left.width}px {allValues.left.style}{" "}
-              {allValues.left.color} <br />
-            </code>
-            <ContentCopy
-              className="copyIcon"
-              titleAccess="copy"
-              onClick={(e) => copyAllBordersHandler(e)}
-            />
-          </div>
-        </div>
-        <div className="showBorder">
-          <div
-            className="showResult result show"
-            id="allResult"
-            onClick={(e) => copyHandler(e.target)}
-          >
-            click to copy
-          </div>
-          <div
-            className="showResult eachBorderResult"
-            id="eachResult"
-            onClick={(e) => copyAllBordersHandler(e.target)}
-          >
-            click to copy
-          </div>
-        </div>
-        <div className="borderType">
-          <div className="choose d-flex mb-3">
-            <p
-              className="all tab active"
-              datatype="#all"
-              data-target="#allResult"
-              data-show-code="#allCode"
-              onClick={(e) => showType(e)}
-            >
-              All Borders
-            </p>
-            <p
-              className="each tab"
-              datatype="#each"
-              data-target="#eachResult"
-              data-show-code="#eachCode"
-              onClick={(e) => showType(e)}
-            >
-              Each Border
-            </p>
-          </div>
-          <div className="all tabContent show" id="all">
-            <div className="borderInput">
-              <div className="width">
-                <label htmlFor="range">Width: </label>
-                <input
-                  type="range"
-                  name="width"
-                  min={1}
-                  max={40}
-                  value={values.width}
-                  onChange={(e) =>
-                    dispatch({ type: "width", value: e.target.value })
+          <div className="preview col-lg-6 px-5">
+            <div className="showCodeContainer">
+              <h2 className="mb-3">Code</h2>
+              <div className="showCode all show" id="allCode">
+                <code>
+                  border: {values.width}px {values.style} {values.color}
+                </code>
+                <ContentCopy
+                  className="copyIcon"
+                  titleAccess="copy"
+                  onClick={() =>
+                    navigator.clipboard.writeText(
+                      `border: ${values.width}px ${values.style} ${values.color}`
+                    )
                   }
                 />
-                <span className="showResult">{values.width}px</span>
               </div>
-              <div className="style">
-                <label htmlFor="range">style: </label>
-                <select
-                  name="style"
-                  id=""
-                  className="form-control"
-                  onChange={(e) =>
-                    dispatch({ type: "style", value: e.target.value })
-                  }
+              <div className="showCode each" id="eachCode">
+                <code>
+                  border-top: {allValues.top.width}px {allValues.top.style}{" "}
+                  {allValues.top.color} <br />
+                  border-right: {allValues.right.width}px{" "}
+                  {allValues.right.style} {allValues.right.color} <br />
+                  border-bottom: {allValues.bottom.width}px{" "}
+                  {allValues.bottom.style} {allValues.bottom.color} <br />
+                  border-left: {allValues.left.width}px {allValues.left.style}{" "}
+                  {allValues.left.color} <br />
+                </code>
+                <ContentCopy
+                  className="copyIcon"
+                  titleAccess="copy"
+                  onClick={(e) => copyAllBordersHandler(e)}
+                />
+              </div>
+            </div>
+            <div className="livePreview">
+              <h2 className="mb-3">Live Preview</h2>
+              <div className="showBorder">
+                <div
+                  className="showResult result show"
+                  id="allResult"
+                  onClick={(e) => copyHandler(e.target)}
                 >
-                  <option value="solid" defaultValue>
-                    solid
-                  </option>
-                  <option value="dashed">dashed</option>
-                  <option value="double">double</option>
-                  <option value="groove">groove</option>
-                  <option value="hidden">hidden</option>
-                  <option value="inset">inset</option>
-                  <option value="none">none</option>
-                  <option value="outset">outset</option>
-                  <option value="ridge">ridge</option>
-                </select>
-              </div>
-              <div className="color">
-                <label htmlFor="range">color: </label>
-
-                <input
-                  type="color"
-                  name="width"
-                  value={values.color}
-                  onChange={(e) =>
-                    dispatch({ type: "color", value: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-          </div>
-          <div className="each tabContent" id="each">
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput top">
-              <div className="details">
-                <h2>Top border</h2>
-                <div className="width">
-                  <label htmlFor="range">Width: </label>
-                  <input
-                    type="range"
-                    name="width"
-                    min={1}
-                    max={40}
-                    value={allValues.top.width}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "width",
-                        value: e.target.value,
-                        name: "top",
-                      })
-                    }
-                  />
-                  <span className="showResult">{allValues.top.width}px</span>
+                  click to copy
                 </div>
-                <div className="style">
-                  <label htmlFor="range">style: </label>
-                  <select
-                    name="style"
-                    id=""
-                    className="form-control"
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "style",
-                        value: e.target.value,
-                        name: "top",
-                      })
-                    }
-                  >
-                    <option value="solid" defaultValue>
-                      solid
-                    </option>
-                    <option value="dashed">dashed</option>
-                    <option value="double">double</option>
-                    <option value="groove">groove</option>
-                    <option value="hidden">hidden</option>
-                    <option value="inset">inset</option>
-                    <option value="none">none</option>
-                    <option value="outset">outset</option>
-                    <option value="ridge">ridge</option>
-                  </select>
-                </div>
-                <div className="color">
-                  <label htmlFor="range">color: </label>
-
-                  <input
-                    type="color"
-                    name="width"
-                    value={allValues.top.color}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "color",
-                        value: e.target.value,
-                        name: "top",
-                      })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput right">
-              <div className="details">
-                <h2>Right border</h2>
-                <div className="width">
-                  <label htmlFor="range">Width: </label>
-                  <input
-                    type="range"
-                    name="width"
-                    min={1}
-                    max={40}
-                    value={allValues.right.width}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "width",
-                        value: e.target.value,
-                        name: "right",
-                      })
-                    }
-                  />
-                  <span className="showResult">{allValues.right.width}px</span>
-                </div>
-                <div className="style">
-                  <label htmlFor="range">style: </label>
-                  <select
-                    name="style"
-                    id=""
-                    className="form-control"
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "style",
-                        value: e.target.value,
-                        name: "right",
-                      })
-                    }
-                  >
-                    <option value="solid" defaultValue>
-                      solid
-                    </option>
-                    <option value="dashed">dashed</option>
-                    <option value="double">double</option>
-                    <option value="groove">groove</option>
-                    <option value="hidden">hidden</option>
-                    <option value="inset">inset</option>
-                    <option value="none">none</option>
-                    <option value="outset">outset</option>
-                    <option value="ridge">ridge</option>
-                  </select>
-                </div>
-                <div className="color">
-                  <label htmlFor="range">color: </label>
-
-                  <input
-                    type="color"
-                    name="width"
-                    value={allValues.right.color}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "color",
-                        value: e.target.value,
-                        name: "right",
-                      })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput bottom">
-              <div className="details">
-                <h2>Bottom border</h2>
-
-                <div className="width">
-                  <label htmlFor="range">Width: </label>
-                  <input
-                    type="range"
-                    name="width"
-                    min={1}
-                    max={40}
-                    value={allValues.bottom.width}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "width",
-                        value: e.target.value,
-                        name: "bottom",
-                      })
-                    }
-                  />
-                  <span className="showResult">{allValues.bottom.width}px</span>
-                </div>
-                <div className="style">
-                  <label htmlFor="range">style: </label>
-                  <select
-                    name="style"
-                    id=""
-                    className="form-control"
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "style",
-                        value: e.target.value,
-                        name: "bottom",
-                      })
-                    }
-                  >
-                    <option value="solid" defaultValue>
-                      solid
-                    </option>
-                    <option value="dashed">dashed</option>
-                    <option value="double">double</option>
-                    <option value="groove">groove</option>
-                    <option value="hidden">hidden</option>
-                    <option value="inset">inset</option>
-                    <option value="none">none</option>
-                    <option value="outset">outset</option>
-                    <option value="ridge">ridge</option>
-                  </select>
-                </div>
-                <div className="color">
-                  <label htmlFor="range">color: </label>
-
-                  <input
-                    type="color"
-                    name="width"
-                    value={allValues.bottom.color}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "color",
-                        value: e.target.value,
-                        name: "bottom",
-                      })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-sm-12 px-3 mb-5 borderInput left">
-              <div className="details">
-                <h2>left border</h2>
-                <div className="width">
-                  <label htmlFor="range">Width: </label>
-                  <input
-                    type="range"
-                    name="width"
-                    min={1}
-                    max={40}
-                    value={allValues.left.width}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "width",
-                        value: e.target.value,
-                        name: "left",
-                      })
-                    }
-                  />
-                  <span className="showResult">{allValues.left.width}px</span>
-                </div>
-                <div className="style">
-                  <label htmlFor="range">style: </label>
-                  <select
-                    name="style"
-                    id=""
-                    className="form-control"
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "style",
-                        value: e.target.value,
-                        name: "left",
-                      })
-                    }
-                  >
-                    <option value="solid" defaultValue>
-                      solid
-                    </option>
-                    <option value="dashed">dashed</option>
-                    <option value="double">double</option>
-                    <option value="groove">groove</option>
-                    <option value="hidden">hidden</option>
-                    <option value="inset">inset</option>
-                    <option value="none">none</option>
-                    <option value="outset">outset</option>
-                    <option value="ridge">ridge</option>
-                  </select>
-                </div>
-                <div className="color">
-                  <label htmlFor="range">color: </label>
-
-                  <input
-                    type="color"
-                    name="width"
-                    value={allValues.left.color}
-                    onChange={(e) =>
-                      allDispatch({
-                        type: "color",
-                        value: e.target.value,
-                        name: "left",
-                      })
-                    }
-                  />
+                <div
+                  className="showResult eachBorderResult"
+                  id="eachResult"
+                  onClick={(e) => copyAllBordersHandler(e.target)}
+                >
+                  click to copy
                 </div>
               </div>
             </div>

@@ -60,95 +60,77 @@ export default function Gradient() {
 
   return (
     <div className="wrapper">
-      <div className="showGradient">
-        <div className="showCode">
-          <code>
-            background: liner-gradient({values.dir}, {values.color1}{" "}
-            {values.color1Percent}%,
-            {values.color2} {values.color2Percent}%);
-          </code>
-          <ContentCopy
-            className="copyIcon"
-            titleAccess="copy"
-            onClick={() =>
-              navigator.clipboard
-                .writeText(`background: liner-gradient(${values.dir}, ${values.color1}
-            ${values.color1Percent}%,
-            ${values.color2} ${values.color2Percent}%);`)
-            }
-          />
-        </div>
-        <div className="gradientResult mb-5">
-          <button className="gradientBox" onClick={copyHandler}></button>
-        </div>
-        <div className="gradientInput">
-          <div className="gradientDirection">
-            <h2>Gradient Direction</h2>
-            <div className="arrows">
-              <button
-                className="arrowIcon active"
-                name="dir"
-                value="to top"
-                onClick={activeHandler}
-              >
-                <ArrowUpward />
-              </button>
-              <button
-                className="arrowIcon rotate"
-                name="dir"
-                value="45deg"
-                onClick={activeHandler}
-              >
-                <ArrowUpward />
-              </button>
-              <button
-                className="arrowIcon"
-                name="dir"
-                value="to right"
-                onClick={activeHandler}
-              >
-                <ArrowForward name="dir" value="right" />
-              </button>
-              <button
-                className="arrowIcon rotate"
-                name="dir"
-                value="135deg"
-                onClick={activeHandler}
-              >
-                <ArrowForward name="dir" value="right" />
-              </button>
-              <button
-                className="arrowIcon"
-                name="dir"
-                value="to bottom"
-                onClick={activeHandler}
-              >
-                <ArrowDownward />
-              </button>
-              <button
-                className="arrowIcon rotate"
-                name="dir"
-                value="225deg"
-                onClick={activeHandler}
-              >
-                <ArrowDownward />
-              </button>
-              <button
-                className="arrowIcon"
-                name="dir"
-                value="to left"
-                onClick={activeHandler}
-              >
-                <ArrowBack />
-              </button>
-              <button
-                className="arrowIcon rotate"
-                name="dir"
-                value="315deg"
-                onClick={activeHandler}
-              >
-                <ArrowBack />
-              </button>
+      <div className="container showGradient">
+        <div className="row mt-5">
+          <div className="gradientInput col-lg-6">
+            <div className="gradientDirection">
+              <h2 className="mb-3">Gradient Direction</h2>
+              <div className="arrows mb-3">
+                <button
+                  className="arrowIcon active"
+                  name="dir"
+                  value="to top"
+                  onClick={activeHandler}
+                >
+                  <ArrowUpward />
+                </button>
+                <button
+                  className="arrowIcon rotate"
+                  name="dir"
+                  value="45deg"
+                  onClick={activeHandler}
+                >
+                  <ArrowUpward />
+                </button>
+                <button
+                  className="arrowIcon"
+                  name="dir"
+                  value="to right"
+                  onClick={activeHandler}
+                >
+                  <ArrowForward name="dir" value="right" />
+                </button>
+                <button
+                  className="arrowIcon rotate"
+                  name="dir"
+                  value="135deg"
+                  onClick={activeHandler}
+                >
+                  <ArrowForward name="dir" value="right" />
+                </button>
+                <button
+                  className="arrowIcon"
+                  name="dir"
+                  value="to bottom"
+                  onClick={activeHandler}
+                >
+                  <ArrowDownward />
+                </button>
+                <button
+                  className="arrowIcon rotate"
+                  name="dir"
+                  value="225deg"
+                  onClick={activeHandler}
+                >
+                  <ArrowDownward />
+                </button>
+                <button
+                  className="arrowIcon"
+                  name="dir"
+                  value="to left"
+                  onClick={activeHandler}
+                >
+                  <ArrowBack />
+                </button>
+                <button
+                  className="arrowIcon rotate"
+                  name="dir"
+                  value="315deg"
+                  onClick={activeHandler}
+                >
+                  <ArrowBack />
+                </button>
+              </div>
             </div>
             <div className="angle">
               <h2>Gradient angle: </h2>
@@ -193,7 +175,10 @@ export default function Gradient() {
                     value={values.color1}
                     id=""
                     onChange={(e) =>
-                      setValues({ ...values, [e.target.name]: e.target.value })
+                      setValues({
+                        ...values,
+                        [e.target.name]: e.target.value,
+                      })
                     }
                   />
                 </div>
@@ -226,7 +211,10 @@ export default function Gradient() {
                     id=""
                     value={values.color2}
                     onChange={(e) => {
-                      setValues({ ...values, [e.target.name]: e.target.value });
+                      setValues({
+                        ...values,
+                        [e.target.name]: e.target.value,
+                      });
                     }}
                   />
                 </div>
@@ -249,6 +237,32 @@ export default function Gradient() {
                   />
                   <span className="showPercent">{values.color2Percent}%</span>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="preview col-lg-6">
+            <h2 className="mb-3">Code</h2>
+            <div className="showCode">
+              <code>
+                background: liner-gradient({values.dir}, {values.color1}{" "}
+                {values.color1Percent}%,
+                {values.color2} {values.color2Percent}%);
+              </code>
+              <ContentCopy
+                className="copyIcon"
+                titleAccess="copy"
+                onClick={() =>
+                  navigator.clipboard
+                    .writeText(`background: liner-gradient(${values.dir}, ${values.color1}
+            ${values.color1Percent}%,
+            ${values.color2} ${values.color2Percent}%);`)
+                }
+              />
+            </div>
+            <div className="showGradientResult mb-5">
+              <h2 className="mb-3">Live Preview</h2>
+              <div className="gradientResult">
+                <button className="gradientBox" onClick={copyHandler}></button>
               </div>
             </div>
           </div>
