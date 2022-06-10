@@ -1,17 +1,25 @@
 import { ContentCopy } from "@mui/icons-material";
 import React from "react";
 import "./input.css";
-import { inputBGEffect, inputBorderEffect } from "../../../shared/showCode";
+import {
+  inputBGEffect,
+  inputBorderEffect,
+  inputLabelEffect,
+  jsCode,
+} from "../../../shared/showCode";
 
 export default function Inputs() {
   function showCode(ele) {
-    const codeHTML = document.querySelector("code.html");
-    const codeCSS = document.querySelector("code.css");
+    const codeJs = document.querySelector("code.jsCode");
+
+    const codeHTML = document.querySelector("code.htmlCode");
+    const codeCSS = document.querySelector("code.cssCode");
     console.log(ele);
     switch (ele.id) {
       case "effect1": {
         codeHTML.innerHTML = inputBorderEffect.effect1.html;
         codeCSS.innerHTML = inputBorderEffect.effect1.css;
+        codeJs.innerHTML = "focus on effects 19 - 24";
         break;
       }
       case "effect2": {
@@ -84,17 +92,76 @@ export default function Inputs() {
         codeCSS.innerHTML = inputBGEffect.effect15.css;
         break;
       }
+      case "effect16": {
+        codeHTML.innerHTML = inputLabelEffect.effect16.html;
+        codeCSS.innerHTML = inputLabelEffect.effect16.css;
+        break;
+      }
+      case "effect17": {
+        codeHTML.innerHTML = inputLabelEffect.effect17.html;
+        codeCSS.innerHTML = inputLabelEffect.effect17.css;
+        break;
+      }
+      case "effect18": {
+        codeHTML.innerHTML = inputLabelEffect.effect18.html;
+        codeCSS.innerHTML = inputLabelEffect.effect18.css;
+        break;
+      }
+      case "effect19": {
+        codeHTML.innerHTML = inputLabelEffect.effect19.html;
+        codeCSS.innerHTML = inputLabelEffect.effect19.css;
+        codeJs.innerHTML = jsCode;
+        break;
+      }
+      case "effect20": {
+        codeHTML.innerHTML = inputLabelEffect.effect20.html;
+        codeCSS.innerHTML = inputLabelEffect.effect20.css;
+        codeJs.innerHTML = jsCode;
+
+        break;
+      }
+      case "effect21": {
+        codeHTML.innerHTML = inputLabelEffect.effect21.html;
+        codeCSS.innerHTML = inputLabelEffect.effect21.css;
+        codeJs.innerHTML = jsCode;
+
+        break;
+      }
+      case "effect22": {
+        codeHTML.innerHTML = inputLabelEffect.effect22.html;
+        codeCSS.innerHTML = inputLabelEffect.effect22.css;
+        codeJs.innerHTML = jsCode;
+
+        break;
+      }
+      case "effect23": {
+        codeHTML.innerHTML = inputLabelEffect.effect23.html;
+        codeCSS.innerHTML = inputLabelEffect.effect23.css;
+        codeJs.innerHTML = jsCode;
+
+        break;
+      }
+      case "effect24": {
+        codeHTML.innerHTML = inputLabelEffect.effect24.html;
+        codeCSS.innerHTML = inputLabelEffect.effect24.css;
+        codeJs.innerHTML = jsCode;
+
+        break;
+      }
       default:
         return;
     }
   }
 
   function displayCodeContainer(elem) {
-    elem.classList.add("show");
-    document.querySelector(elem.dataset.change).classList.remove("show");
+    const codeTitles = document.querySelectorAll(".codeTitle");
+    const codeContainer = document.querySelectorAll(".codeContainer");
 
+    codeTitles.forEach((title) => title.classList.remove("show"));
+    elem.classList.add("show");
+
+    codeContainer.forEach((container) => container.classList.remove("show"));
     document.querySelector(elem.dataset.target).classList.add("show");
-    document.querySelector(elem.dataset.container).classList.remove("show");
   }
 
   return (
@@ -268,54 +335,108 @@ export default function Inputs() {
               </div>
               <div className="labelEffects">
                 <div class="col-3 input-effect">
-                  <input class="effect-16" type="text" placeholder="" />
+                  <input
+                    class="effect-16"
+                    type="text"
+                    id="effect16"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 16</label>
                   <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-17" type="text" placeholder="" />
+                  <input
+                    class="effect-17"
+                    id="effect17"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 17</label>
                   <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-18" type="text" placeholder="" />
+                  <input
+                    class="effect-18"
+                    id="effect18"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 18</label>
                   <span class="focus-border"></span>
                 </div>
 
                 <div class="col-3 input-effect">
-                  <input class="effect-19" type="text" placeholder="" />
+                  <input
+                    class="effect-19"
+                    id="effect19"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 19</label>
                   <span class="focus-border">
                     <i></i>
                   </span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-20" type="text" placeholder="" />
+                  <input
+                    class="effect-20"
+                    id="effect20"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 20</label>
                   <span class="focus-border">
                     <i></i>
                   </span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-21" type="text" placeholder="" />
+                  <input
+                    class="effect-21"
+                    id="effect21"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 21</label>
                   <span class="focus-border">
                     <i></i>
                   </span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-22" type="text" placeholder="" />
+                  <input
+                    class="effect-22"
+                    id="effect22"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 22</label>
                   <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-23" type="text" placeholder="" />
+                  <input
+                    class="effect-23"
+                    id="effect23"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 23</label>
                   <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                  <input class="effect-24" type="text" placeholder="" />
+                  <input
+                    class="effect-24"
+                    id="effect24"
+                    type="text"
+                    placeholder=""
+                    onFocus={(e) => showCode(e.target)}
+                  />
                   <label>Effect 24</label>
                   <span class="focus-bg"></span>
                 </div>
@@ -324,47 +445,60 @@ export default function Inputs() {
             <div className="viewCodeContainer col-lg-6">
               <div className="title d-flex">
                 <code
-                  className="htmlTitle show"
-                  id="htmlTitle"
+                  className="codeTitle html show"
                   data-target="#htmlContainer"
-                  data-change="#cssTitle"
-                  data-container="#cssContainer"
                   onClick={(e) => displayCodeContainer(e.target)}
                 >
                   HTML
                 </code>
                 <code
-                  className="cssTitle"
-                  id="cssTitle"
+                  className="codeTitle css"
                   data-target="#cssContainer"
-                  data-change="#htmlTitle"
-                  data-container="#htmlContainer"
                   onClick={(e) => displayCodeContainer(e.target)}
                 >
                   CSS
                 </code>
+                <code
+                  className="codeTitle js"
+                  data-target="#jsContainer"
+                  onClick={(e) => displayCodeContainer(e.target)}
+                >
+                  JS
+                </code>
               </div>
               <div className="showCode">
-                <div className="htmlCodeContainer show" id="htmlContainer">
-                  <code className="html">Focus to show HTML Code </code>
+                <div className="codeContainer show" id="htmlContainer">
+                  <code className="htmlCode">Focus to show HTML Code </code>
                   <ContentCopy
                     className="copyIcon"
                     titleAccess="copy"
                     onClick={() =>
                       navigator.clipboard.writeText(
-                        document.querySelector("code.html").textContent
+                        document.querySelector("code.htmlCode").textContent
                       )
                     }
                   />
                 </div>
-                <div className="cssCodeContainer" id="cssContainer">
-                  <code className="css">Focus to show CSS Code</code>
+                <div className="codeContainer" id="cssContainer">
+                  <code className="cssCode">Focus to show CSS Code</code>
                   <ContentCopy
                     className="copyIcon"
                     titleAccess="copy"
                     onClick={() =>
                       navigator.clipboard.writeText(
-                        document.querySelector("code.css").textContent
+                        document.querySelector("code.cssCode").textContent
+                      )
+                    }
+                  />
+                </div>
+                <div className="codeContainer show" id="jsContainer">
+                  <code className="jsCode">focus on effects 19 - 24</code>
+                  <ContentCopy
+                    className="copyIcon"
+                    titleAccess="copy"
+                    onClick={() =>
+                      navigator.clipboard.writeText(
+                        document.querySelector("code.jsCode").textContent
                       )
                     }
                   />

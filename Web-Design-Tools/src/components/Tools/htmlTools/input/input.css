@@ -9,22 +9,27 @@
 .viewCodeContainer .title {
 }
 
-.viewCodeContainer .htmlTitle,
-.viewCodeContainer .cssTitle {
+.viewCodeContainer .codeTitle {
   width: 50%;
   padding: 20px;
 }
 
-.viewCodeContainer .htmlTitle:hover,
-.viewCodeContainer .title .htmlTitle.show {
+.viewCodeContainer .title .html:hover,
+.viewCodeContainer .title .html.show {
   background-color: rgb(17 29 38 / 52%);
   cursor: pointer;
   border-right: 1px solid white;
   border-top-left-radius: 15px;
 }
 
-.viewCodeContainer .cssTitle:hover,
-.viewCodeContainer .title .cssTitle.show {
+.viewCodeContainer .title .css:hover,
+.viewCodeContainer .title .css.show {
+  background-color: rgb(17 29 38 / 52%);
+  cursor: pointer;
+  border-left: 1px solid white;
+}
+.viewCodeContainer .title .js:hover,
+.viewCodeContainer .title .js.show {
   background-color: rgb(17 29 38 / 52%);
   cursor: pointer;
   border-left: 1px solid white;
@@ -36,8 +41,7 @@
   height: 500px;
 }
 
-.viewCodeContainer .showCode .htmlCodeContainer,
-.viewCodeContainer .showCode .cssCodeContainer {
+.viewCodeContainer .showCode .codeContainer {
   position: absolute;
   height: 100%;
   width: 90%;
@@ -45,14 +49,12 @@
   padding-bottom: 15px;
 }
 
-.viewCodeContainer .showCode .htmlCodeContainer.show,
-.viewCodeContainer .showCode .cssCodeContainer.show {
+.viewCodeContainer .showCode .codeContainer.show {
   display: flex;
   justify-content: space-between;
 }
 
-.viewCodeContainer .showCode .htmlCodeContainer code,
-.viewCodeContainer .showCode .cssCodeContainer code {
+.viewCodeContainer .showCode .codeContainer code {
   width: 100%;
 }
 /*= input focus background effects css
@@ -633,7 +635,7 @@ input[type="text"] {
   position: absolute;
   left: 0;
   width: 100%;
-  top: 9px;
+  top: 5px;
   color: #aaa;
   transition: 0.3s;
   z-index: -1;
@@ -845,7 +847,7 @@ input[type="text"] {
   transition: 0.2s;
 }
 .effect-21:focus ~ .focus-border i:after,
-.has-conten.effect-21 ~ .focus-border i:after {
+.has-content.effect-21 ~ .focus-border i:after {
   transition-delay: 0.4s;
 }
 .effect-21 ~ label {
