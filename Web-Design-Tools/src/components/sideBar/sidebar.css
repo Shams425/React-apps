@@ -1,13 +1,23 @@
 .sideWrapper {
   flex: 2;
-  height: 100vh;
   padding-top: 15px;
+  position: sticky;
+  height: calc(100vh - 90px);
 }
 
 @media screen and (max-width: 990px) {
   .sideWrapper {
     flex: 3;
   }
+}
+
+.accordion {
+  width: 80% !important;
+}
+
+.accordion button[aria-expanded="true"] {
+  background: #262e36f5 !important;
+  color: white !important;
 }
 
 a.border-radius:hover span {
