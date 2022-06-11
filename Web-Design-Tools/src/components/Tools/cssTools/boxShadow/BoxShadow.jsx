@@ -127,15 +127,14 @@ export default function BoxShadow() {
             <div className="showCode">
               <code>
                 box-shadow: {values.offsetX}px {values.offsetY}px {values.blur}
-                px
-                {values.spread}px {values.color}
+                px {values.spread}px {values.color};
               </code>
               <ContentCopy
                 className="copyIcon"
                 titleAccess="copy"
                 onClick={() =>
                   navigator.clipboard.writeText(
-                    `box-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color}`
+                    `box-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color};`
                   )
                 }
               />

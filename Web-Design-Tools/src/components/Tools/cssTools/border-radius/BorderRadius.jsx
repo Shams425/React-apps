@@ -143,7 +143,6 @@ export default function BorderRadius() {
       ".showBorder .eachBorderResult"
     );
 
-    console.log(window.getComputedStyle(viewEachBorder).borderTopLeftRadius);
     viewEachBorder.style.borderTopLeftRadius = `${showEachValue("topLeft")}`;
     viewEachBorder.style.borderTopRightRadius = `${showEachValue("topRight")}`;
     viewEachBorder.style.borderBottomRightRadius = `${showEachValue(

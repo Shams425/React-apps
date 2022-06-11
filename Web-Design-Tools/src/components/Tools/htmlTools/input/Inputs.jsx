@@ -160,273 +160,273 @@ export default function Inputs() {
             <div className="effects col-lg-6">
               <h2 className="mb-3">Input Focus Effects: </h2>
               <div className="borderEffects">
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-1"
+                    className="effect-1"
                     id="effect1"
                     type="text"
                     placeholder="Effect 1"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-2"
+                    className="effect-2"
                     id="effect2"
                     type="text"
                     placeholder="Effect 2"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-3"
+                    className="effect-3"
                     id="effect3"
                     type="text"
                     placeholder="Effect 3"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
 
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-4"
+                    className="effect-4"
                     id="effect4"
                     type="text"
                     placeholder="Effect 4"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-5"
+                    className="effect-5"
                     id="effect5"
                     type="text"
                     placeholder="Effect 5"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-6"
+                    className="effect-6"
                     id="effect6"
                     type="text"
                     placeholder="Effect 6"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
 
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-7"
+                    className="effect-7"
                     id="effect7"
                     type="text"
                     placeholder="Effect 7"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border">
+                  <span className="focus-border">
                     <i></i>
                   </span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-8"
+                    className="effect-8"
                     id="effect8"
                     type="text"
                     placeholder="Effect 8"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border">
+                  <span className="focus-border">
                     <i></i>
                   </span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-9"
+                    className="effect-9"
                     id="effect9"
                     type="text"
                     placeholder="Effect 9"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-border">
+                  <span className="focus-border">
                     <i></i>
                   </span>
                 </div>
               </div>
               <div className="backgroundEffects">
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-10"
+                    className="effect-10"
                     type="text"
                     id="effect10"
                     placeholder="Effect 10"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-11"
+                    className="effect-11"
                     type="text"
                     id="effect11"
                     placeholder="Effect 11"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-12"
+                    className="effect-12"
                     type="text"
                     id="effect12"
                     placeholder="Effect 12"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-13"
+                    className="effect-13"
                     type="text"
                     id="effect13"
                     placeholder="Effect 13"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-14"
+                    className="effect-14"
                     type="text"
                     id="effect14"
                     placeholder="Effect 14"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <input
-                    class="effect-15"
+                    className="effect-15"
                     type="text"
                     id="effect15"
                     placeholder="Effect 15"
                     onFocus={(e) => showCode(e.target)}
                   />
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
               </div>
               <div className="labelEffects">
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-16"
+                    className="effect-16"
                     type="text"
                     id="effect16"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 16</label>
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-17"
+                    className="effect-17"
                     id="effect17"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 17</label>
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-18"
+                    className="effect-18"
                     id="effect18"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 18</label>
-                  <span class="focus-border"></span>
+                  <span className="focus-border"></span>
                 </div>
 
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-19"
+                    className="effect-19"
                     id="effect19"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 19</label>
-                  <span class="focus-border">
+                  <span className="focus-border">
                     <i></i>
                   </span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-20"
+                    className="effect-20"
                     id="effect20"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 20</label>
-                  <span class="focus-border">
+                  <span className="focus-border">
                     <i></i>
                   </span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-21"
+                    className="effect-21"
                     id="effect21"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 21</label>
-                  <span class="focus-border">
+                  <span className="focus-border">
                     <i></i>
                   </span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-22"
+                    className="effect-22"
                     id="effect22"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 22</label>
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-23"
+                    className="effect-23"
                     id="effect23"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 23</label>
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
-                <div class="col-3 input-effect">
+                <div className="col-3 input-effect">
                   <input
-                    class="effect-24"
+                    className="effect-24"
                     id="effect24"
                     type="text"
                     placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 24</label>
-                  <span class="focus-bg"></span>
+                  <span className="focus-bg"></span>
                 </div>
               </div>
             </div>

@@ -20,11 +20,11 @@ export default function SideBar() {
   return (
     <aside className="sideWrapper">
       <div className="cssTools mb-4">
-        <div class="accordion" id="cssTools">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
+        <div className="accordion" id="cssTools">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingOne">
               <button
-                class="accordion-button"
+                className="accordion-button"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#cssToolsContainer"
@@ -36,11 +36,11 @@ export default function SideBar() {
             </h2>
             <div
               id="cssToolsContainer"
-              class="accordion-collapse collapse show"
+              className="accordion-collapse collapse show"
               aria-labelledby="headingOne"
               data-bs-parent="#cssTools"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 <ul className="tools">
                   <Link className="link" to="cssTools/boxShadow">
                     <li>
@@ -106,11 +106,11 @@ export default function SideBar() {
         </div>
       </div>
       <div className="htmlTools">
-        <div class="accordion" id="htmlTool">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
+        <div className="accordion" id="htmlTool">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingOne">
               <button
-                class="accordion-button"
+                className="accordion-button"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#htmlElements"
@@ -122,11 +122,11 @@ export default function SideBar() {
             </h2>
             <div
               id="htmlElements"
-              class="accordion-collapse collapse"
+              className="accordion-collapse collapse"
               aria-labelledby="headingOne"
               data-bs-parent="#htmlTool"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 <ul>
                   <Link to="/htmlTools/inputs" className="link">
                     <li>

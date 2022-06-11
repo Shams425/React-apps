@@ -51,6 +51,7 @@ select {
 
 .showCode code {
   margin: 10px 0;
+  padding-left: 3px;
 }
 
 .showCode .copyIcon {

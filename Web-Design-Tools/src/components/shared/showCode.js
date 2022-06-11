@@ -1625,3 +1625,802 @@ export const inputLabelEffect = {
     </pre>`,
   },
 };
+
+export const ButtonEffects = {
+  button1: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-1"&gt;
+      Button 1
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-1::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      transition: width 0.3s ease-in-out;
+      background-color: #343434;
+      border-radius: 0.25rem;
+      z-index: -1;
+    }
+    
+    .btn-effect-1:hover {
+      color: #f3f3f3;
+    }
+    
+    .btn-effect-1:hover::before {
+      width: 100%;
+    }
+    </pre>`,
+  },
+  button2: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-2"&gt;
+      Button 2
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
+      transition: width 0.3s ease-in-out;
+      background-color: #343434;
+      border-radius: 0.25rem;
+      z-index: -2;
+    }
+    .btn-effect-2:hover {
+      color: #f3f3f3;
+    }
+    .btn-effect-2:hover::before {
+      width: 100%;
+    }
+    <pre/>`,
+  },
+  button3: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-3"&gt;
+      Button 3
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-3::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 0%;
+      transition: height 0.3s ease-in-out;
+      background-color: #343434;
+      border-radius: 0.25rem;
+      z-index: -3;
+    }
+    .btn-effect-3:hover {
+      color: #f3f3f3;
+    }
+    .btn-effect-3:hover::before {
+      height: 100%;
+    }
+    <pre/>`,
+  },
+  button4: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-4"&gt;
+      Button 4
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-4::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 0%;
+      transition: height 0.3s ease-in-out;
+      background-color: #343434;
+      border-radius: 0.25rem;
+      z-index: -4;
+    }
+    .btn-effect-4:hover {
+      color: #f3f3f3;
+    }
+    .btn-effect-4:hover::before {
+      height: 100%;
+    }
+    <pre/>`,
+  },
+  button5: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-5"&gt;
+      Button 5
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-5 {
+      overflow: hidden;
+    }
+    .btn-effect-5::before,
+    .btn-effect-5::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #343434;
+      border-radius: 0.25rem 0.25rem 0 0;
+      z-index: -1;
+      transition: top 0.5s ease-in-out;
+    }
+    .btn-effect-5::after {
+      top: 100%;
+      border-radius: 0 0 0.25rem 0.25rem;
+    }
+    .btn-effect-5:hover {
+      color: #f3f3f3;
+    }
+    .btn-effect-5:hover::before {
+      top: 0;
+    }
+    .btn-effect-5:hover::after {
+      top: 50%;
+    }
+    <pre/>`,
+  },
+  button6: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-6"&gt;
+      Button 6
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-6:hover {
+      animation: animateX 0.6s linear infinite;
+    }
+    @keyframes animateX {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-5px);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    <pre/>`,
+  },
+  button7: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-7"&gt;
+      Button 7
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-7:hover {
+      animation: animateY 0.6s linear infinite;
+    }
+    @keyframes animateY {
+      0% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-5px);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    <pre/>`,
+  },
+  button8: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-8"&gt;
+      Button 8
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-8:hover {
+      animation: pulse 0.5s linear infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+    <pre/>`,
+  },
+  button9: {
+    html: `<pre>
+    &lt;div className="btn btn-effect-9"&gt;
+      &lt;div className="top-face"&gt; Top Face &lt;/div&gt;
+      &lt;div className="front-face"&gt; Front Face &lt;/div&gt;
+    &lt;/div&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-9 {
+      position: relative;
+      transform-style: preserve-3d;
+      border-radius: 0;
+    }
+    .btn-effect-9 .top-face,
+    .btn-effect-9 .front-face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+    }
+    .btn-effect-9 .front-face {
+      transform: translateZ(38.5px);
+      background-color: #fff;
+    }
+    .btn-effect-9 .top-face {
+      background-color: #343434;
+      color: #f3f3f3;
+      transform: rotateX(90deg) translateZ(38.5px);
+    }
+    .btn-effect-9:hover {
+      transform: rotateX(-90deg);
+      transition: 0.5s ease-in-out;
+    }
+    <pre/>`,
+  },
+  button10: {
+    html: `<pre>
+    &lt;div className="btn btn-effect-10"&gt;
+      &lt;div className="top-face"&gt; Top Face &lt;/div&gt;
+      &lt;div className="front-face"&gt; Front Face &lt;/div&gt;
+    &lt;/div&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    
+    .btn:active {
+      transform: scale(0.9);
+    }<pre/>`,
+  },
+  button11: {
+    html: `<pre>
+    &lt;div className="btn btn-effect-11"&gt;
+      &lt;div className="frontFace"&gt;Front Face&lt;/div&gt;
+      &lt;div className="leftFace"&gt;left Face&lt;/div&gt;
+    &lt;/div&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-11 {
+      width: 150px;
+      height: 80px;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease-in-out;
+      padding: 0;
+    }
+    .btn-effect-11 > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+    }
+    .btn-effect-11 .frontFace {
+      transform: translateZ(38.5px);
+      background-color: #fff;
+    }
+    .btn-effect-11 .leftFace {
+      background-color: #343434;
+      color: #f3f3f3;
+      transform: rotateY(-90deg) translateZ(75px);
+    }
+    .btn-effect-11:hover {
+      transform: rotateY(90deg);
+      transition: 0.5s ease-in-out;
+    }
+    <pre/>`,
+  },
+  button12: {
+    html: `<pre>
+    &lt;div className="btn btn-effect-12"&gt;
+      &lt;div className="frontFace"&gt;Front Face&lt;/div&gt;
+      &lt;div className="rightFace"&gt;right Face&lt;/div&gt;
+    &lt;/div&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-12 {
+      width: 150px;
+      height: 80px;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease-in-out;
+      padding: 0;
+    }
+    .btn-effect-12 > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+    }
+    .btn-effect-12 .frontFace {
+      transform: translateZ(38.5px);
+      background-color: #fff;
+    }
+    .btn-effect-12 .rightFace {
+      background-color: #343434;
+      color: #f3f3f3;
+      transform: rotateY(90deg) translateZ(75px);
+    }
+    .btn-effect-12:hover {
+      transform: rotateY(-90deg);
+      transition: 0.5s ease-in-out;
+    }
+    <pre/>`,
+  },
+  button13: {
+    html: `<pre>
+    &lt;div className="btn btn-effect-13"&gt;
+      &lt;div className="frontFace"&gt;Front Face&lt;/div&gt;
+      &lt;div className="backFace"&gt;back Face&lt;/div&gt;
+    &lt;/div&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-13 {
+      width: 150px;
+      height: 80px;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease-in-out;
+      padding: 0;
+    }
+    .btn-effect-13 > div {
+      z-index: 2;
+      margin: 0px auto;
+      padding: 10px;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+    }
+    .btn-effect-13 .frontFace {
+      z-index: 1;
+      backface-visibility: hidden;
+      background-color: #fff;
+    }
+    .btn-effect-13 .backFace {
+      z-index: 2;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      color: #fff;
+      background-color: #343434;
+    }
+    .btn-effect-13:hover {
+      transform: rotateY(180deg);
+      transition: all 0.5s ease-in-out;
+    }
+    <pre/>`,
+  },
+  button14: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-14"&gt;
+      Button 14
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-14:hover {
+      animation: changeBG 2s ease-in-out infinite;
+    }
+    @keyframes changeBG {
+      0% {
+        background-color: #12d8fa;
+      }
+      25% {
+        background-color: turquoise;
+      }
+      50% {
+        background-color: yellowgreen;
+      }
+      75% {
+        background-color: thistle;
+      }
+      100% {
+        background-color: #12d8fa;
+      }
+    }`,
+  },
+  button15: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-15"&gt;
+      Button 15
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-15 {
+      background-image: linear-gradient(
+        to right,
+        #1fa2ff 0%,
+        #12d8fa 51%,
+        #1fa2ff 100%
+      );
+      background-size: 200% auto;
+      color: #fff;
+      transition: all 0.5s ease-in-out;
+    }
+    
+    .btn-effect-15:hover {
+      background-position: right;
+    }
+    </pre>`,
+  },
+  button16: {
+    html: `<pre>
+    &lt;button class="btn btn-effect-16"&gt;
+      Button 16
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-16 {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-effect-16::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      height: 4px;
+      background-color: #343434;
+      transform: translateX(-50%) scale(0);
+      transition: transform 0.5s ease-in-out;
+    }
+    .btn-effect-16:hover::before {
+      transform: translateX(-50%) scale(1);
+    }
+    </pre>`,
+  },
+  button17: {
+    html: `<pre>
+    &lt!-- but this Link in the head tag --&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    /&gt;
+    &lt;button class="btn btn-effect-17"&gt;
+      &lt;span&gt;
+        Button 17 &lt;i class="fas fa-angle-right"&gt;&lt;/i&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+    </pre>`,
+    css: `<pre>
+    .btn {
+      position: relative;
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      border-radius: 0.25rem;
+      background-color: rgb(179 179 179 / 56%);
+      cursor: pointer;
+      z-index: 1;
+      margin: 10px;
+      transition: 0.5s;
+    }
+    .btn:active {
+      transform: scale(0.9);
+    }
+    .btn-effect-17 span {
+      position: relative;
+      transition: 0.5s;
+    }
+    .btn-effect-17 span i {
+      position: absolute;
+      right: -1.5rem;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+    .btn-effect-17:hover span {
+      padding-right: 1.5rem;
+    }
+    .btn-effect-17:hover i {
+      right: 0;
+      opacity: 1;
+    }
+    <pre/>`,
+  },
+};
