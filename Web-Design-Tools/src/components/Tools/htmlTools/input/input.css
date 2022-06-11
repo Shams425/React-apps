@@ -6,9 +6,6 @@
   margin-bottom: 30px;
 }
 
-.viewCodeContainer .title {
-}
-
 .viewCodeContainer .codeTitle {
   width: 50%;
   padding: 20px;
@@ -24,12 +21,6 @@
 
 .viewCodeContainer .title .css:hover,
 .viewCodeContainer .title .css.show {
-  background-color: rgb(17 29 38 / 52%);
-  cursor: pointer;
-  border-left: 1px solid white;
-}
-.viewCodeContainer .title .js:hover,
-.viewCodeContainer .title .js.show {
   background-color: rgb(17 29 38 / 52%);
   cursor: pointer;
   border-left: 1px solid white;
@@ -57,8 +48,10 @@
 .viewCodeContainer .showCode .codeContainer code {
   width: 100%;
 }
-/*= input focus background effects css
-=========================== */
+
+/************************************************
+ ***Background focus Effects 
+ ***********************************************/
 :focus {
   outline: none;
 }
@@ -225,11 +218,9 @@ input[type="text"] {
   right: 0;
 }
 
-/*= input focus background effects css End
-=============================== */
-
-/*= input border  effects css start
-=============================== */
+/************************************************
+ ***Border focus Effects 
+ ***********************************************/
 .borderEffects .col-3 {
   float: left;
   margin: 40px 3%;
@@ -521,11 +512,32 @@ input[type="text"] {
   transition-delay: 0.4s;
 }
 
-/*= input border effects css End
-=============================== */
+/************************************************
+ ***label focus Effects 
+ ***********************************************/
 
-/*= input label effects css start
-=============================== */
+:focus {
+  outline: none;
+}
+
+.col-3 {
+  float: left;
+  width: 27.33%;
+  margin: 40px 3%;
+  position: relative;
+} /* necessary to give position: relative to parent. */
+input[type="text"] {
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: #333;
+  font-size: 1.3rem;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
 
 .effect-16,
 .effect-17,
@@ -546,7 +558,7 @@ input[type="text"] {
   transition: 0.4s;
 }
 .effect-16:focus ~ .focus-border,
-.has-content.effect-16 ~ .focus-border {
+.effect-16:not(:placeholder-shown) ~ .focus-border {
   width: 100%;
   transition: 0.4s;
 }
@@ -561,7 +573,7 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-16:focus ~ label,
-.has-content.effect-16 ~ label {
+.effect-16:not(:placeholder-shown) ~ label {
   top: -16px;
   font-size: 12px;
   color: #3399ff;
@@ -578,7 +590,7 @@ input[type="text"] {
   transition: 0.4s;
 }
 .effect-17:focus ~ .focus-border,
-.has-content.effect-17 ~ .focus-border {
+.effect-17:not(:placeholder-shown) ~ .focus-border {
   width: 100%;
   transition: 0.4s;
   left: 0;
@@ -594,7 +606,7 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-17:focus ~ label,
-.has-content.effect-17 ~ label {
+.effect-17:not(:placeholder-shown) ~ label {
   top: -16px;
   font-size: 12px;
   color: #3399ff;
@@ -626,8 +638,8 @@ input[type="text"] {
 }
 .effect-18:focus ~ .focus-border:before,
 .effect-18:focus ~ .focus-border:after,
-.has-content.effect-18 ~ .focus-border:before,
-.has-content.effect-18 ~ .focus-border:after {
+.effect-18:not(:placeholder-shown) ~ .focus-border:before,
+.effect-18:not(:placeholder-shown) ~ .focus-border:after {
   width: 50%;
   transition: 0.4s;
 }
@@ -635,14 +647,14 @@ input[type="text"] {
   position: absolute;
   left: 0;
   width: 100%;
-  top: 5px;
+  top: 9px;
   color: #aaa;
   transition: 0.3s;
   z-index: -1;
   letter-spacing: 0.5px;
 }
 .effect-18:focus ~ label,
-.has-content.effect-18 ~ label {
+.effect-18:not(:placeholder-shown) ~ label {
   top: -16px;
   font-size: 12px;
   color: #3399ff;
@@ -690,16 +702,16 @@ input[type="text"] {
 }
 .effect-19:focus ~ .focus-border:before,
 .effect-19:focus ~ .focus-border:after,
-.has-content.effect-19 ~ .focus-border:before,
-.has-content.effect-19 ~ .focus-border:after {
+.effect-19:not(:placeholder-shown) ~ .focus-border:before,
+.effect-19:not(:placeholder-shown) ~ .focus-border:after {
   left: 0;
   width: 100%;
   transition: 0.4s;
 }
 .effect-19:focus ~ .focus-border i:before,
 .effect-19:focus ~ .focus-border i:after,
-.has-content.effect-19 ~ .focus-border i:before,
-.has-content.effect-19 ~ .focus-border i:after {
+.effect-19:not(:placeholder-shown) ~ .focus-border i:before,
+.effect-19:not(:placeholder-shown) ~ .focus-border i:after {
   top: -1px;
   height: 100%;
   transition: 0.6s;
@@ -715,12 +727,16 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-19:focus ~ label,
-.has-content.effect-19 ~ label {
+.effect-19:not(:placeholder-shown) ~ label {
   top: -18px;
   left: 0;
   font-size: 12px;
   color: #3399ff;
   transition: 0.3s;
+}
+
+.effect-19:not(:placeholder-shown) ~ label {
+  color: #aaa;
 }
 
 .effect-20 ~ .focus-border:before,
@@ -759,15 +775,15 @@ input[type="text"] {
 }
 .effect-20:focus ~ .focus-border:before,
 .effect-20:focus ~ .focus-border:after,
-.has-content.effect-20 ~ .focus-border:before,
-.has-content.effect-20 ~ .focus-border:after {
+.effect-20:not(:placeholder-shown):focus ~ .focus-border:before,
+.effect-20:not(:placeholder-shown):focus ~ .focus-border:after {
   width: 100%;
   transition: 0.3s;
 }
 .effect-20:focus ~ .focus-border i:before,
 .effect-20:focus ~ .focus-border i:after,
-.has-content.effect-20 ~ .focus-border i:before,
-.has-content.effect-20 ~ .focus-border i:after {
+.effect-20:not(:placeholder-shown):focus ~ .focus-border i:before,
+.effect-20:not(:placeholder-shown):focus ~ .focus-border i:after {
   height: 100%;
   transition: 0.4s;
 }
@@ -782,12 +798,16 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-20:focus ~ label,
-.has-content.effect-20 ~ label {
+.effect-20:not(:placeholder-shown) ~ label {
   top: -18px;
   left: 0;
   font-size: 12px;
   color: #3399ff;
   transition: 0.3s;
+}
+
+.effect-20:not(:placeholder-shown) ~ label {
+  color: #aaa;
 }
 
 .effect-21 ~ .focus-border:before,
@@ -829,25 +849,25 @@ input[type="text"] {
 }
 .effect-21:focus ~ .focus-border:before,
 .effect-21:focus ~ .focus-border:after,
-.has-content.effect-21 ~ .focus-border:before,
-.has-content.effect-21 ~ .focus-border:after {
+.effect-21:not(:placeholder-shown):focus ~ .focus-border:before,
+.effect-21:not(:placeholder-shown):focus ~ .focus-border:after {
   width: 100%;
   transition: 0.2s;
   transition-delay: 0.6s;
 }
 .effect-21:focus ~ .focus-border:after,
-.has-content.effect-21 ~ .focus-border:after {
+.effect-21:not(:placeholder-shown):focus ~ .focus-border:after {
   transition-delay: 0.2s;
 }
 .effect-21:focus ~ .focus-border i:before,
 .effect-21:focus ~ .focus-border i:after,
-.has-content.effect-21 ~ .focus-border i:before,
-.has-content.effect-21 ~ .focus-border i:after {
+.effect-21:not(:placeholder-shown):focus ~ .focus-border i:before,
+.effect-21:not(:placeholder-shown):focus ~ .focus-border i:after {
   height: 100%;
   transition: 0.2s;
 }
 .effect-21:focus ~ .focus-border i:after,
-.has-content.effect-21 ~ .focus-border i:after {
+.effect-21 ~ .focus-border i:after {
   transition-delay: 0.4s;
 }
 .effect-21 ~ label {
@@ -861,12 +881,16 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-21:focus ~ label,
-.has-content.effect-21 ~ label {
+.effect-21:not(:placeholder-shown) ~ label {
   top: -18px;
   left: 0;
   font-size: 12px;
   color: #3399ff;
   transition: 0.3s;
+}
+
+.effect-21:not(:placeholder-shown) ~ label {
+  color: #aaa;
 }
 
 .effect-22,
@@ -890,7 +914,7 @@ input[type="text"] {
   z-index: -1;
 }
 .effect-22:focus ~ .focus-bg,
-.has-content.effect-22 ~ .focus-bg {
+.effect-22:not(:placeholder-shown):focus ~ .focus-bg {
   transition: 0.4s;
   width: 100%;
   background-color: #ededed;
@@ -906,7 +930,7 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-22:focus ~ label,
-.has-content.effect-22 ~ label {
+.effect-22:not(:placeholder-shown) ~ label {
   top: -18px;
   left: 0;
   font-size: 12px;
@@ -927,7 +951,7 @@ input[type="text"] {
   z-index: -1;
 }
 .effect-23:focus ~ .focus-bg:before,
-.has-content.effect-23 ~ .focus-bg:before {
+.effect-23:not(:placeholder-shown):focus ~ .focus-bg:before {
   transition: 0.3s;
   width: 50%;
   height: 100%;
@@ -939,7 +963,7 @@ input[type="text"] {
   bottom: 0;
 }
 .effect-23:focus ~ .focus-bg:after,
-.has-content.effect-23 ~ .focus-bg:after {
+.effect-23:not(:placeholder-shown):focus ~ .focus-bg:after {
   transition: 0.3s;
   width: 50%;
   height: 100%;
@@ -955,7 +979,7 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-23:focus ~ label,
-.has-content.effect-23 ~ label {
+.effect-23:not(:placeholder-shown) ~ label {
   top: -18px;
   left: 0;
   font-size: 12px;
@@ -976,7 +1000,7 @@ input[type="text"] {
   z-index: -1;
 }
 .effect-24:focus ~ .focus-bg:before,
-.has-content.effect-24 ~ .focus-bg:before {
+.effect-24:not(:placeholder-shown):focus ~ .focus-bg:before {
   transition: 0.3s;
   width: 50%;
   left: 0;
@@ -990,7 +1014,7 @@ input[type="text"] {
   bottom: 50%;
 }
 .effect-24:focus ~ .focus-bg:after,
-.has-content.effect-24 ~ .focus-bg:after {
+.effect-24:not(:placeholder-shown):focus ~ .focus-bg:after {
   transition: 0.3s;
   width: 50%;
   height: 100%;
@@ -1008,7 +1032,7 @@ input[type="text"] {
   letter-spacing: 0.5px;
 }
 .effect-24:focus ~ label,
-.has-content.effect-24 ~ label {
+.effect-24:not(:placeholder-shown) ~ label {
   top: -18px;
   left: 0;
   font-size: 12px;

@@ -5,21 +5,17 @@ import {
   inputBGEffect,
   inputBorderEffect,
   inputLabelEffect,
-  jsCode,
 } from "../../../shared/showCode";
 
 export default function Inputs() {
   function showCode(ele) {
-    const codeJs = document.querySelector("code.jsCode");
-
     const codeHTML = document.querySelector("code.htmlCode");
     const codeCSS = document.querySelector("code.cssCode");
-    console.log(ele);
+
     switch (ele.id) {
       case "effect1": {
         codeHTML.innerHTML = inputBorderEffect.effect1.html;
         codeCSS.innerHTML = inputBorderEffect.effect1.css;
-        codeJs.innerHTML = "focus on effects 19 - 24";
         break;
       }
       case "effect2": {
@@ -110,42 +106,34 @@ export default function Inputs() {
       case "effect19": {
         codeHTML.innerHTML = inputLabelEffect.effect19.html;
         codeCSS.innerHTML = inputLabelEffect.effect19.css;
-        codeJs.innerHTML = jsCode;
         break;
       }
       case "effect20": {
         codeHTML.innerHTML = inputLabelEffect.effect20.html;
         codeCSS.innerHTML = inputLabelEffect.effect20.css;
-        codeJs.innerHTML = jsCode;
 
         break;
       }
       case "effect21": {
         codeHTML.innerHTML = inputLabelEffect.effect21.html;
         codeCSS.innerHTML = inputLabelEffect.effect21.css;
-        codeJs.innerHTML = jsCode;
 
         break;
       }
       case "effect22": {
         codeHTML.innerHTML = inputLabelEffect.effect22.html;
         codeCSS.innerHTML = inputLabelEffect.effect22.css;
-        codeJs.innerHTML = jsCode;
-
         break;
       }
       case "effect23": {
         codeHTML.innerHTML = inputLabelEffect.effect23.html;
         codeCSS.innerHTML = inputLabelEffect.effect23.css;
-        codeJs.innerHTML = jsCode;
 
         break;
       }
       case "effect24": {
         codeHTML.innerHTML = inputLabelEffect.effect24.html;
         codeCSS.innerHTML = inputLabelEffect.effect24.css;
-        codeJs.innerHTML = jsCode;
-
         break;
       }
       default:
@@ -339,7 +327,7 @@ export default function Inputs() {
                     class="effect-16"
                     type="text"
                     id="effect16"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 16</label>
@@ -350,7 +338,7 @@ export default function Inputs() {
                     class="effect-17"
                     id="effect17"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 17</label>
@@ -361,7 +349,7 @@ export default function Inputs() {
                     class="effect-18"
                     id="effect18"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 18</label>
@@ -373,7 +361,7 @@ export default function Inputs() {
                     class="effect-19"
                     id="effect19"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 19</label>
@@ -386,7 +374,7 @@ export default function Inputs() {
                     class="effect-20"
                     id="effect20"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 20</label>
@@ -399,7 +387,7 @@ export default function Inputs() {
                     class="effect-21"
                     id="effect21"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 21</label>
@@ -412,7 +400,7 @@ export default function Inputs() {
                     class="effect-22"
                     id="effect22"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 22</label>
@@ -423,7 +411,7 @@ export default function Inputs() {
                     class="effect-23"
                     id="effect23"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 23</label>
@@ -434,7 +422,7 @@ export default function Inputs() {
                     class="effect-24"
                     id="effect24"
                     type="text"
-                    placeholder=""
+                    placeholder=" "
                     onFocus={(e) => showCode(e.target)}
                   />
                   <label>Effect 24</label>
@@ -458,13 +446,6 @@ export default function Inputs() {
                 >
                   CSS
                 </code>
-                <code
-                  className="codeTitle js"
-                  data-target="#jsContainer"
-                  onClick={(e) => displayCodeContainer(e.target)}
-                >
-                  JS
-                </code>
               </div>
               <div className="showCode">
                 <div className="codeContainer show" id="htmlContainer">
@@ -487,18 +468,6 @@ export default function Inputs() {
                     onClick={() =>
                       navigator.clipboard.writeText(
                         document.querySelector("code.cssCode").textContent
-                      )
-                    }
-                  />
-                </div>
-                <div className="codeContainer show" id="jsContainer">
-                  <code className="jsCode">focus on effects 19 - 24</code>
-                  <ContentCopy
-                    className="copyIcon"
-                    titleAccess="copy"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        document.querySelector("code.jsCode").textContent
                       )
                     }
                   />
