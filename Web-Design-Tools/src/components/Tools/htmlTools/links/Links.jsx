@@ -18,8 +18,9 @@ export default function Links() {
       <div className="linksContainer">
         <div className="container">
           <div className="row">
-            <h2 className="mb-3">Links Hover Effect</h2>
             <div className="links col-lg-6">
+              <h2 className="mb-3">Links Hover Effect</h2>
+              <h4 className="my-4">Underline effects</h4>
               <div className="underLineLinks">
                 <div className="link">
                   <p href="#" className="linkEffect-1" role="link">
@@ -69,6 +70,118 @@ export default function Links() {
                 <div className="link">
                   <p href="#" className="linkEffect-10">
                     Effect 10
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" class="linkEffect-11">
+                    <span>Effect-11</span>
+                    <svg
+                      class="linkWave linkWave--slide"
+                      width="300%"
+                      height="100%"
+                      viewBox="0 0 1200 60"
+                      preserveAspectRatio="none"
+                    >
+                      <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                    </svg>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" class="linkEffect-12">
+                    <span>Effect 12</span>
+                    <svg
+                      class="linkHalfWave linkHalfWave--stroke linkHalfWave--arc"
+                      width="100%"
+                      height="18"
+                      viewBox="0 0 59 18"
+                    >
+                      <path
+                        d="M.945.149C12.3 16.142 43.573 22.572 58.785 10.842"
+                        pathLength="1"
+                      />
+                    </svg>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-13">
+                    <span>Effect 13</span>
+                  </p>
+                </div>
+                <div class="link">
+                  <p class="linkEffect-14">Effect 14</p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-15">
+                    Effect 15
+                  </p>
+                </div>
+              </div>
+              <h4 className="my-4">Border effects</h4>
+              <div className="borderLinks">
+                <div className="link">
+                  <p href="#" className="linkEffect-16">
+                    <span>Effect 16</span>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-17">
+                    Effect 17
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-18">
+                    Effect 18
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-19">
+                    Effect 19
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-20">
+                    Effect 20
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-21">
+                    Effect 21
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-22">
+                    Effect 22
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-23" data-hover="Effect 23">
+                    <span>Effect 23</span>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-24" data-hover="Effect 24">
+                    <span>Effect 24</span>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-25">
+                    <span>Effect 25</span>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-26">
+                    <span>Effect 26</span>
+                  </p>
+                </div>
+
+                <div className="link">
+                  <p href="#" className="linkEffect-27">
+                    <span>Effect 27</span>
+                  </p>
+                </div>
+                <div className="link">
+                  <p href="#" className="linkEffect-28">
+                    <span>Effect 28</span>
                   </p>
                 </div>
               </div>

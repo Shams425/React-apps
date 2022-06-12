@@ -1,6 +1,6 @@
 import React from "react";
-import "./form.css";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Forms() {
-  return <div className="wrapper">Form is working</div>;
+  return <div className="wrapper">It's working</div>;
 }
