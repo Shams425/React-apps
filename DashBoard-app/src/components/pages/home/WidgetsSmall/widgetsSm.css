@@ -21,8 +21,9 @@
 }
 
 .widgetSmImg {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
   border-radius: 50%;
   background-image: url(../../../../assets/img/profile.jpg);
 }

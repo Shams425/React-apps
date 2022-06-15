@@ -19,7 +19,11 @@ export default function WidgetsLarge() {
         <tbody>
           <tr>
             <td className="widgetLgUser">
-              <img src="" alt="" className="widgetLgImg" />
+              <img
+                src={require("../../../../assets/img/profile.jpg")}
+                alt=""
+                className="widgetLgImg"
+              />
               <span className="widgetLgName">Susan Carol</span>
             </td>
             <td className="widgetLgDate">
@@ -35,7 +39,11 @@ export default function WidgetsLarge() {
 
           <tr>
             <td className="widgetLgUser">
-              <img src="" alt="" className="widgetLgImg" />
+              <img
+                src={require("../../../../assets/img/profile-2.jpg")}
+                alt=""
+                className="widgetLgImg"
+              />
               <span className="widgetLgName">Susan Carol</span>
             </td>
             <td className="widgetLgDate">
@@ -51,7 +59,11 @@ export default function WidgetsLarge() {
 
           <tr>
             <td className="widgetLgUser">
-              <img src="" alt="" className="widgetLgImg" />
+              <img
+                src={require("../../../../assets/img/profile-3.jpg")}
+                alt=""
+                className="widgetLgImg"
+              />
               <span className="widgetLgName">Susan Carol</span>
             </td>
             <td className="widgetLgDate">
@@ -67,7 +79,11 @@ export default function WidgetsLarge() {
 
           <tr>
             <td className="widgetLgUser">
-              <img src="" alt="" className="widgetLgImg" />
+              <img
+                src={require("../../../../assets/img/profile-4.jpg")}
+                alt=""
+                className="widgetLgImg"
+              />
               <span className="widgetLgName">Susan Carol</span>
             </td>
             <td className="widgetLgDate">

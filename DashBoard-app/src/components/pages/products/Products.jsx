@@ -22,7 +22,11 @@ export default function Products({ dataRow }) {
       renderCell: (params) => {
         return (
           <div className="productList">
-            <img src={params.row.img} alt="" className="productListImg" />
+            <img
+              src={require("../../../assets/img/airpods.jpg")}
+              alt=""
+              className="productListImg"
+            />
             {params.row.name}
           </div>
         );

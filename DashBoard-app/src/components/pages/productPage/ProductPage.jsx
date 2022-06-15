@@ -20,7 +20,11 @@ export default function ProductPage() {
         </div>
         <div className="productTopRight">
           <div className="productInfoTop">
-            <img src="" alt="" className="productImg" />
+            <img
+              src={require("../../../assets/img/airpods.jpg")}
+              alt=""
+              className="productImg"
+            />
             <span className="productName">Apple Airpods</span>
           </div>
           <div className="productInfoBottom">
@@ -61,7 +65,11 @@ export default function ProductPage() {
           </div>
           <div className="productFormRight">
             <div className="productUpload">
-              <img src="" alt="" className="productUploadImg" />
+              <img
+                src={require("../../../assets/img/airpods.jpg")}
+                alt=""
+                className="productUploadImg"
+              />
               <label htmlFor="file">
                 <Publish />
               </label>

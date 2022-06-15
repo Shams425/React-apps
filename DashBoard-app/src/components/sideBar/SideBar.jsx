@@ -28,11 +28,11 @@ export default function SideBar() {
                 <p>Home</p>
               </li>
             </Link>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Analytics className="sideBarIcon" />
               <p>Analytics</p>
             </li>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <TrendingUp className="sideBarIcon" />
               <p>Sales</p>
             </li>
@@ -53,11 +53,11 @@ export default function SideBar() {
                 <p>Products</p>
               </li>
             </Link>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Money className="sideBarIcon" />
               <p>Transactions</p>
             </li>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Report className="sideBarIcon" />
               <p>Reports</p>
             </li>
@@ -66,15 +66,15 @@ export default function SideBar() {
         <div className="sideBarMenu">
           <h3 className="sideBarTitle">Notifications</h3>
           <ul className="sideBarList">
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Mail className="sideBarIcon" />
               <p>Mail</p>
             </li>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Feedback className="sideBarIcon" />
               <p>FeedBack</p>
             </li>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Message className="sideBarIcon" />
               <p>Messages</p>
             </li>
@@ -83,15 +83,15 @@ export default function SideBar() {
         <div className="sideBarMenu">
           <h3 className="sideBarTitle">Staff</h3>
           <ul className="sideBarList">
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <ManageAccounts className="sideBarIcon" />
               <p>Mange</p>
             </li>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Analytics className="sideBarIcon" />
               <p>Analytics</p>
             </li>
-            <li className="sideBarItem">
+            <li className="sideBarItem" disable="true">
               <Report className="sideBarIcon" />
               <p>Reports</p>
             </li>

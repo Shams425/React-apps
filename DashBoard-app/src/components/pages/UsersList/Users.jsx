@@ -5,7 +5,7 @@ import { rows } from "../../../Shared/dummyData";
 import { useState } from "react";
 import { DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import {} from "../../../assets/img/profile.jpg";
+import {} from "../../../assets/img/profile-2.jpg";
 
 export default function DataTable({ dataRow, dataCol }) {
   const [data, setData] = useState(rows);
@@ -21,7 +21,7 @@ export default function DataTable({ dataRow, dataCol }) {
       renderCell: (params) => {
         return (
           <div className="userList">
-            <img src={params.row.Avatar} alt="" />
+            <img src={require("../../../assets/img/profile-2.jpg")} alt="" />
             {params.row.username}
           </div>
         );

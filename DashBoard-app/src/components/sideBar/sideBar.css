@@ -55,3 +55,8 @@
   text-decoration: none;
   color: inherit;
 }
+
+.sideBar ul li[disable="true"] {
+  color: #c3abab;
+  cursor: default;
+}

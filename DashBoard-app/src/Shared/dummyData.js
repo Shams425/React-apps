@@ -55,7 +55,7 @@ export const rows = [
   {
     id: 1,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$120.00",
@@ -63,7 +63,7 @@ export const rows = [
   {
     id: 2,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$200.00",
@@ -71,7 +71,7 @@ export const rows = [
   {
     id: 3,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$170.00",
@@ -79,7 +79,7 @@ export const rows = [
   {
     id: 4,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$250.00",
@@ -87,7 +87,7 @@ export const rows = [
   {
     id: 5,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$100.00",
@@ -95,7 +95,7 @@ export const rows = [
   {
     id: 6,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$300.00",
@@ -103,7 +103,7 @@ export const rows = [
   {
     id: 7,
     username: "John Snow",
-    Avatar: "../../../assets/img/profile.jpg",
+    Avata: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$380.00",
@@ -115,7 +115,7 @@ export const productRows = [
   {
     id: 1,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$120.00",
@@ -123,7 +123,7 @@ export const productRows = [
   {
     id: 2,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$200.00",
@@ -131,7 +131,7 @@ export const productRows = [
   {
     id: 3,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$170.00",
@@ -139,7 +139,7 @@ export const productRows = [
   {
     id: 4,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$250.00",
@@ -147,7 +147,7 @@ export const productRows = [
   {
     id: 5,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$100.00",
@@ -155,7 +155,7 @@ export const productRows = [
   {
     id: 6,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$300.00",
@@ -163,7 +163,7 @@ export const productRows = [
   {
     id: 7,
     name: "Apple Airpods",
-    img: "../../../assets/img/profile.jpg",
+    img: "../../../assets/img/profile-2.jpg",
     stock: 123,
     status: "active",
     price: "$380.00",
