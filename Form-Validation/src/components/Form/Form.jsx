@@ -44,7 +44,7 @@ export default function Form() {
     {
       id: 4,
       name: "password",
-      type: "text",
+      type: "password",
       placeholder: "Your password",
       errorMessage:
         "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character",
@@ -55,7 +55,7 @@ export default function Form() {
     {
       id: 5,
       name: "confirmPassword",
-      type: "text",
+      type: "password",
       placeholder: "confirm your password",
       errorMessage: "Password don't match",
       label: "password confirm",
