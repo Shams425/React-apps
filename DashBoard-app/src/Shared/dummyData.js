@@ -50,7 +50,7 @@ export const UserData = [
   },
 ];
 
-// the @material/ui table data row
+// the @material/ui users table data row
 export const rows = [
   {
     id: 1,
@@ -103,14 +103,14 @@ export const rows = [
   {
     id: 7,
     username: "John Snow",
-    Avata: "../../../assets/img/profile-2.jpg",
+    Avatar: "../../../assets/img/profile-2.jpg",
     email: "john@gmail.com",
     status: "active",
     transaction: "$380.00",
   },
 ];
 
-// the @material/ui table data column
+// the @material/ui product table data row
 export const productRows = [
   {
     id: 1,

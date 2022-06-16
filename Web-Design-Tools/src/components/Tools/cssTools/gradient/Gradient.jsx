@@ -10,6 +10,7 @@ import {
 
 export default function Gradient() {
   const [values, setValues] = useState({
+    type: "linear-gradient",
     dir: "to top",
     color1: "#356ed5",
     color1Percent: 20,
@@ -20,10 +21,7 @@ export default function Gradient() {
 
   function copyHandler(e) {
     const gradientBox = document.querySelector(".gradientBox");
-    navigator.clipboard.writeText(
-      `background: linear-gradient(${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%);`
-    );
-    console.log(gradientBox);
+    navigator.clipboard.writeText(document.querySelector("code").textContent);
   }
 
   function activeHandler(e) {
@@ -55,7 +53,14 @@ export default function Gradient() {
 
   useEffect(() => {
     const gradientBox = document.querySelector(".gradientBox");
-    gradientBox.style.backgroundImage = `linear-gradient(${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%)`;
+    const code = document.querySelector("code");
+    if (values.type === "linear-gradient") {
+      gradientBox.style.backgroundImage = `${values.type}(${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%)`;
+      code.textContent = `backgroundImage: ${values.type}(${values.dir}, ${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%);`;
+    } else {
+      gradientBox.style.backgroundImage = `${values.type}(${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%)`;
+      code.textContent = `backgroundImage: ${values.type}(${values.color1} ${values.color1Percent}%, ${values.color2} ${values.color2Percent}%)`;
+    }
   }, [values]);
 
   return (
@@ -132,8 +137,26 @@ export default function Gradient() {
                 </button>
               </div>
             </div>
+            <div className="gradientType mb-5">
+              <h2 className="mb-3">Gradient Type</h2>
+              <div className="mb-3">
+                <select
+                  className="form-control"
+                  name="type"
+                  id=""
+                  onChange={(e) =>
+                    setValues({ ...values, [e.target.name]: e.target.value })
+                  }
+                >
+                  <option value="linear-gradient" defaultValue>
+                    Linear Gradient
+                  </option>
+                  <option value="radial-gradient">Radial Gradient</option>
+                </select>
+              </div>
+            </div>
             <div className="angle">
-              <h2>Gradient angle: </h2>
+              <h2>Gradient angle</h2>
               <div className="showAngle">
                 <div className="showAngleDeg">
                   <span className="deg"></span>
@@ -243,11 +266,7 @@ export default function Gradient() {
           <div className="preview col-lg-6">
             <h2 className="mb-3">Code</h2>
             <div className="showCode">
-              <code>
-                background: liner-gradient({values.dir}, {values.color1}{" "}
-                {values.color1Percent}%,
-                {values.color2} {values.color2Percent}%);
-              </code>
+              <code></code>
               <ContentCopy
                 className="copyIcon"
                 titleAccess="copy"

@@ -152,12 +152,12 @@ export default function SideBar() {
                       <p>Forms</p>
                     </li>
                   </Link>
-                  <Link to="/htmlTools/cards" className="link">
+                  {/* <Link to="/htmlTools/cards" className="link">
                     <li>
                       <AppRegistrationSharp />
                       <p>Cards</p>
                     </li>
-                  </Link>
+                  </Link> */}
                 </ul>
               </div>
             </div>

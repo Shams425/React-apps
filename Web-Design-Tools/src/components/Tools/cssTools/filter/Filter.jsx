@@ -146,7 +146,7 @@ export default function Filter() {
                   name="contrast"
                   id=""
                   min={0}
-                  max={10}
+                  max={2}
                   step={0.1}
                   value={allValues.contrast}
                   onChange={(e) => {

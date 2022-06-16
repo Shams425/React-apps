@@ -124,25 +124,6 @@ export default function Border() {
   const [values, dispatch] = useReducer(reducer, initialValue);
   const [allValues, allDispatch] = useReducer(allReducer, initialAllValue);
 
-  function copyHandler(ele) {
-    navigator.clipboard.writeText(
-      `border: ${values.width}px ${values.style} ${values.color}`
-    );
-    ele.textContent = "copied !!!";
-    setTimeout(() => (ele.textContent = "click to copy"), 1500);
-  }
-
-  function copyAllBordersHandler(ele) {
-    navigator.clipboard.writeText(
-      `border-top: ${allValues.top.width}px ${allValues.top.style} ${allValues.top.color};
-       border-right: ${allValues.right.width}px ${allValues.right.style} ${allValues.right.color};
-       border-bottom: ${allValues.bottom.width}px ${allValues.bottom.style} ${allValues.bottom.color};
-       border-left: ${allValues.left.width}px ${allValues.left.style} ${allValues.left.color};`
-    );
-    ele.textContent = "copied !!!";
-    setTimeout(() => (ele.textContent = "click to copy"), 1500);
-  }
-
   useEffect(() => {
     const viewBorder = document.querySelector(".showBorder .result");
     viewBorder.style.border = `${values.width}px ${values.style} ${values.color}`;
@@ -546,7 +527,7 @@ export default function Border() {
             <div className="showCodeContainer">
               <h2 className="mb-3">Code</h2>
               <div className="showCode all show" id="allCode">
-                <code>
+                <code className="allBorders">
                   border: {values.width}px {values.style} {values.color}
                 </code>
                 <ContentCopy
@@ -554,13 +535,13 @@ export default function Border() {
                   titleAccess="copy"
                   onClick={() =>
                     navigator.clipboard.writeText(
-                      `border: ${values.width}px ${values.style} ${values.color}`
+                      document.querySelector("code.allBorders").textContent
                     )
                   }
                 />
               </div>
               <div className="showCode each" id="eachCode">
-                <code>
+                <code className="eachBorder">
                   border-top: {allValues.top.width}px {allValues.top.style}{" "}
                   {allValues.top.color} <br />
                   border-right: {allValues.right.width}px{" "}
@@ -573,7 +554,11 @@ export default function Border() {
                 <ContentCopy
                   className="copyIcon"
                   titleAccess="copy"
-                  onClick={(e) => copyAllBordersHandler(e)}
+                  onClick={(e) =>
+                    navigator.clipboard.writeText(
+                      document.querySelector("code.eachBorder").textContent
+                    )
+                  }
                 />
               </div>
             </div>
@@ -583,14 +568,32 @@ export default function Border() {
                 <div
                   className="showResult result show"
                   id="allResult"
-                  onClick={(e) => copyHandler(e.target)}
+                  onClick={(e) => {
+                    e.target.textContent = "copied !!!";
+                    setTimeout(
+                      () => (e.target.textContent = "click to copy"),
+                      1500
+                    );
+                    navigator.clipboard.writeText(
+                      document.querySelector("code.allBorders").textContent
+                    );
+                  }}
                 >
                   click to copy
                 </div>
                 <div
                   className="showResult eachBorderResult"
                   id="eachResult"
-                  onClick={(e) => copyAllBordersHandler(e.target)}
+                  onClick={(e) => {
+                    e.target.textContent = "copied !!!";
+                    setTimeout(
+                      () => (e.target.textContent = "click to copy"),
+                      1500
+                    );
+                    navigator.clipboard.writeText(
+                      document.querySelector("code.eachBorder").textContent
+                    );
+                  }}
                 >
                   click to copy
                 </div>

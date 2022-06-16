@@ -251,18 +251,6 @@ export default function Buttons() {
                 >
                   Button 16
                 </button>
-                <button
-                  className="btn btn-effect-17"
-                  id="button17"
-                  onClick={(e) => showCode(e.target.id)}
-                >
-                  <span
-                    className="button17"
-                    onClick={(e) => showCode(e.target.getAttribute("class"))}
-                  >
-                    Button 17 <i className="fas fa-angle-right"></i>
-                  </span>
-                </button>
               </div>
             </div>
 

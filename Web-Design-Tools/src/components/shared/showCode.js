@@ -1987,9 +1987,9 @@ export const ButtonEffects = {
   },
   button9: {
     html: `<pre>
-    &lt;div className="btn btn-effect-9"&gt;
-      &lt;div className="top-face"&gt; Top Face &lt;/div&gt;
-      &lt;div className="front-face"&gt; Front Face &lt;/div&gt;
+    &lt;div class="btn btn-effect-9"&gt;
+      &lt;div class="top-face"&gt; Top Face &lt;/div&gt;
+      &lt;div class="front-face"&gt; Front Face &lt;/div&gt;
     &lt;/div&gt;
     </pre>`,
     css: `<pre>
@@ -2043,9 +2043,9 @@ export const ButtonEffects = {
   },
   button10: {
     html: `<pre>
-    &lt;div className="btn btn-effect-10"&gt;
-      &lt;div className="top-face"&gt; Top Face &lt;/div&gt;
-      &lt;div className="front-face"&gt; Front Face &lt;/div&gt;
+    &lt;div class="btn btn-effect-10"&gt;
+      &lt;div class="top-face"&gt; Top Face &lt;/div&gt;
+      &lt;div class="front-face"&gt; Front Face &lt;/div&gt;
     &lt;/div&gt;
     </pre>`,
     css: `<pre>
@@ -2069,9 +2069,9 @@ export const ButtonEffects = {
   },
   button11: {
     html: `<pre>
-    &lt;div className="btn btn-effect-11"&gt;
-      &lt;div className="frontFace"&gt;Front Face&lt;/div&gt;
-      &lt;div className="leftFace"&gt;left Face&lt;/div&gt;
+    &lt;div class="btn btn-effect-11"&gt;
+      &lt;div class="frontFace"&gt;Front Face&lt;/div&gt;
+      &lt;div class="leftFace"&gt;left Face&lt;/div&gt;
     &lt;/div&gt;
     </pre>`,
     css: `<pre>
@@ -2126,9 +2126,9 @@ export const ButtonEffects = {
   },
   button12: {
     html: `<pre>
-    &lt;div className="btn btn-effect-12"&gt;
-      &lt;div className="frontFace"&gt;Front Face&lt;/div&gt;
-      &lt;div className="rightFace"&gt;right Face&lt;/div&gt;
+    &lt;div class="btn btn-effect-12"&gt;
+      &lt;div class="frontFace"&gt;Front Face&lt;/div&gt;
+      &lt;div class="rightFace"&gt;right Face&lt;/div&gt;
     &lt;/div&gt;
     </pre>`,
     css: `<pre>
@@ -2183,9 +2183,9 @@ export const ButtonEffects = {
   },
   button13: {
     html: `<pre>
-    &lt;div className="btn btn-effect-13"&gt;
-      &lt;div className="frontFace"&gt;Front Face&lt;/div&gt;
-      &lt;div className="backFace"&gt;back Face&lt;/div&gt;
+    &lt;div class="btn btn-effect-13"&gt;
+      &lt;div class="frontFace"&gt;Front Face&lt;/div&gt;
+      &lt;div class="backFace"&gt;back Face&lt;/div&gt;
     &lt;/div&gt;
     </pre>`,
     css: `<pre>
@@ -3124,11 +3124,11 @@ export const linkEffects = {
   },
   linkEffect11: {
     html: `<pre>
-    &lt;div className="link"&gt;
-      &lt;a href="#" className="linkEffect-11"&gt;
+    &lt;div class="link"&gt;
+      &lt;a href="#" class="linkEffect-11"&gt;
         &lt;span&gt; Effect 11 &lt;/span&gt;
         &lt;svg&gt;
-          className="linkWave linkWave--slide"
+          class="linkWave linkWave--slide"
           width="300%"
           height="100%"
           viewBox="0 0 1200 60"
@@ -3187,11 +3187,11 @@ export const linkEffects = {
   },
   linkEffect12: {
     html: `<pre>
-    &lt;div className="link"&gt;
-      &lt;a href="#" className="linkEffect-12"&gt;
+    &lt;div class="link"&gt;
+      &lt;a href="#" class="linkEffect-12"&gt;
         &lt;span&gt; Effect 12 &lt;/span&gt;
         &lt;svg&gt;
-          className="linkHalfWave linkHalfWave--stroke linkHalfWave--arc"
+          class="linkHalfWave linkHalfWave--stroke linkHalfWave--arc"
           width="100%"
           height="18"
           viewBox="0 0 59 18"
@@ -3861,10 +3861,10 @@ export const linkEffects = {
   },
   linkEffect23: {
     html: `<pre>
-    &lt;div className="link"&gt;
+    &lt;div class="link"&gt;
       &lt;a
         href="#"
-        className="linkEffect-23"
+        class="linkEffect-23"
         data-hover="Effect 23"
       >
         &lt;span>Effect 23&lt;/span&gt;
@@ -3939,10 +3939,10 @@ export const linkEffects = {
   },
   linkEffect24: {
     html: `<pre>
-    &lt;div className="link"&gt;
+    &lt;div class="link"&gt;
       &lt;a
         href="#"
-        className="linkEffect-24"
+        class="linkEffect-24"
         data-hover="Effect 24"
       >
         &lt;span>Effect 24&lt;/span&gt;

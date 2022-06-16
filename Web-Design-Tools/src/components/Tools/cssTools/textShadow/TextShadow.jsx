@@ -43,7 +43,7 @@ export default function TextShadow() {
                 type="range"
                 name="offsetX"
                 id=""
-                min={0}
+                min={-30}
                 max={30}
                 value={values.offsetX}
                 onChange={(e) =>
@@ -60,7 +60,7 @@ export default function TextShadow() {
                 type="range"
                 name="offsetY"
                 id=""
-                min={0}
+                min={-30}
                 max={30}
                 value={values.offsetY}
                 onChange={(e) =>
@@ -106,14 +106,14 @@ export default function TextShadow() {
             <div className="showCode">
               <code>
                 text-shadow: {values.offsetX}px {values.offsetY}px {values.blur}
-                px {values.color}
+                px {values.color};
               </code>
               <ContentCopy
                 className="copyIcon"
                 titleAccess="copy"
                 onClick={() =>
                   navigator.clipboard.writeText(
-                    `text-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.color}`
+                    document.querySelector("code").textContent
                   )
                 }
               />

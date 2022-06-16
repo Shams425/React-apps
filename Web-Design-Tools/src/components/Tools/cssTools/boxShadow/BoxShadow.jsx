@@ -10,11 +10,12 @@ export default function BoxShadow() {
     blur: 15,
     spread: 0,
     color: "#00000059",
+    inset: "",
   });
 
   useEffect(() => {
     let result = document.querySelector(".result");
-    result.style.boxShadow = `${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color}`;
+    result.style.boxShadow = `${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color} ${values.inset}`;
     result.addEventListener("click", () => {
       copyStyle();
       result.innerHTML = "copied !!!";
@@ -26,9 +27,7 @@ export default function BoxShadow() {
   }, [values]);
 
   const copyStyle = () => {
-    navigator.clipboard.writeText(
-      `box-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color}`
-    );
+    navigator.clipboard.writeText(document.querySelector("code").textContent);
   };
 
   return (
@@ -45,7 +44,7 @@ export default function BoxShadow() {
                 type="range"
                 name="offsetX"
                 id=""
-                min={0}
+                min={-30}
                 max={30}
                 value={values.offsetX}
                 onChange={(e) =>
@@ -62,7 +61,7 @@ export default function BoxShadow() {
                 type="range"
                 name="offsetY"
                 id=""
-                min={0}
+                min={-30}
                 max={30}
                 value={values.offsetY}
                 onChange={(e) =>
@@ -79,7 +78,7 @@ export default function BoxShadow() {
                 type="range"
                 name="blur"
                 id=""
-                min={0}
+                min={-1}
                 max={30}
                 value={values.blur}
                 onChange={(e) =>
@@ -96,7 +95,7 @@ export default function BoxShadow() {
                 type="range"
                 name="spread"
                 id=""
-                min={0}
+                min={-15}
                 max={30}
                 value={values.spread}
                 onChange={(e) =>
@@ -105,6 +104,7 @@ export default function BoxShadow() {
               />
               <span className="showValue">{values.spread} px</span>
             </div>
+
             <div className="color mb-3">
               <label htmlFor="" className="form-label">
                 Color
@@ -121,20 +121,40 @@ export default function BoxShadow() {
                 />
               </div>
             </div>
+            <div className="inset">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  name="inset"
+                  id=""
+                  onChange={(e) =>
+                    setValues({
+                      ...values,
+                      [e.target.name]: e.target.checked ? "inset" : "",
+                    })
+                  }
+                />
+                <label class="form-check-label" for="">
+                  Inset
+                </label>
+              </div>
+            </div>
           </div>
           <div className="preview col-lg-6">
             <h2 className="mb-3">Code</h2>
             <div className="showCode">
               <code>
                 box-shadow: {values.offsetX}px {values.offsetY}px {values.blur}
-                px {values.spread}px {values.color};
+                px {values.spread}px {values.color} {values.inset};
               </code>
               <ContentCopy
                 className="copyIcon"
                 titleAccess="copy"
                 onClick={() =>
                   navigator.clipboard.writeText(
-                    `box-shadow: ${values.offsetX}px ${values.offsetY}px ${values.blur}px ${values.spread}px ${values.color};`
+                    document.querySelector("code").textContent
                   )
                 }
               />

@@ -65,7 +65,7 @@ export default function Products({ dataRow }) {
   return (
     <div className="productsWrapper">
       <DataGrid
-        rows={dataRow}
+        rows={data}
         columns={columns}
         pageSize={9}
         rowsPerPageOptions={[5]}

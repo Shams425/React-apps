@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 1;
 }
 
 .shadow-input input {
@@ -24,6 +23,7 @@
   height: 50px;
   flex: 1;
   margin-left: 15px;
+  box-shadow: 12px 12px 12px 12px black;
 }
 
 .show-shadow {
@@ -53,6 +53,7 @@
 .result span {
   border: none;
   width: unset;
+  background-image: gra;
 }
 
 .shadow-input .showValue {
@@ -62,4 +63,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.color {
+  justify-content: flex-start !important;
+}
+
+.inset input[type="checkbox"] {
+  width: 30px !important;
+  height: 30px !important;
+  margin-right: 10px;
 }
