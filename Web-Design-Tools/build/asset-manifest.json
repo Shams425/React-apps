@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Template/static/css/main.137d3575.css",
+    "main.js": "/Template/static/js/main.65ba8e99.js",
+    "static/js/787.ccaefb89.chunk.js": "/Template/static/js/787.ccaefb89.chunk.js",
+    "static/media/wallpaperflare.com_wallpaper (8).jpg": "/Template/static/media/wallpaperflare.com_wallpaper (8).c8c879bbfebd638db755.jpg",
+    "static/media/regeist 1.png": "/Template/static/media/regeist 1.8b7e9a3740e7ffa2af3c.png",
+    "static/media/regesit 2.png": "/Template/static/media/regesit 2.0240e328c965e6d582f0.png",
+    "static/media/contact2.png": "/Template/static/media/contact2.caae4435e0353e23dcc1.png",
+    "static/media/sign up.png": "/Template/static/media/sign up.319f938d450a6e25ca95.png",
+    "static/media/sign in.png": "/Template/static/media/sign in.7fcf00591bb6b3c4182d.png",
+    "static/media/contact3.png": "/Template/static/media/contact3.0c433315e32e3805abfc.png",
+    "static/media/contact.png": "/Template/static/media/contact.913d0f4535693a4126b5.png",
+    "static/media/logo.svg": "/Template/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Template/index.html",
+    "main.137d3575.css.map": "/Template/static/css/main.137d3575.css.map",
+    "main.65ba8e99.js.map": "/Template/static/js/main.65ba8e99.js.map",
+    "787.ccaefb89.chunk.js.map": "/Template/static/js/787.ccaefb89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.137d3575.css",
+    "static/js/main.65ba8e99.js"
+  ]
+}

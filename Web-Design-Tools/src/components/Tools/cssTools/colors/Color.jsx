@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { ChromePicker } from "react-color";
 import "./color.css";
 
 export default function Color() {
-  return <div className="wrapper">Color</div>;
+  const [color, setColor] = useState("fff");
+  return (
+    <div className="wrapper">
+      <ChromePicker color={color} onChange={(e) => setColor(e.hex)} />
+    </div>
+  );
 }
