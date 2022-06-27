@@ -45,6 +45,7 @@ function reducer(state, action) {
 }
 
 function allReducer(state, action) {
+  // eslint-disable-next-line default-case
   switch (action.name) {
     case "top":
       switch (action.type) {

@@ -1,0 +1,39 @@
+.colorTitleContainer {
+  position: relative;
+  min-height: 800px;
+}
+
+.colorTitleContainer .tabContent .content {
+  margin-top: 30px;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
+.colorTitleContainer .content.show {
+  display: block;
+}
+
+.choose .all,
+.choose .each {
+  width: 140px;
+  height: 70%;
+  padding: 15px;
+  position: relative;
+  bottom: 1px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.choose .active {
+  border: 1px solid rgba(90, 90, 90, 0.3);
+  border-bottom: white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  bottom: -1px;
+}
