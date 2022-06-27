@@ -7,6 +7,15 @@ export default function Color() {
   const [showColorPicker, setShowColorPicker] = useState(false);
   return (
     <div className="wrapper">
+      <div className="container">
+        <div className="row">
+          <div className="title d-flex">
+            <p>Pick Color</p>
+            <p>Select Color</p>
+            <p>Select template</p>
+          </div>
+        </div>
+      </div>
       <button
         onClick={() => {
           console.log(showColorPicker);
