@@ -4,7 +4,6 @@ import "./color.css";
 
 export default function Color() {
   const [color, setColor] = useState("fff");
-  const [showColorPicker, setShowColorPicker] = useState(false);
 
   function showType(event) {
     const tabs = document.querySelectorAll(".choose .colorTab");
@@ -67,11 +66,18 @@ export default function Color() {
 
             <div className="tabContent">
               <div className="content colorPicker show" id="picker">
-                <ChromePicker
-                  color={color}
-                  onChange={(e) => setColor(e.hex)}
-                  className="mt-3"
-                />
+                <div className="showColor d-flex align-items-center justify-content-between">
+                  <ChromePicker
+                    color={color}
+                    onChange={(e) => setColor(e.hex)}
+                    className="mt-3 col-lg-4 col-md-6 col-sm-12"
+                  />
+                  <div className="colorPreview col-lg-8 col-md-6 col-sm-12">
+                    <span className="result" style={{ backgroundColor: color }}>
+                      It's working
+                    </span>
+                  </div>
+                </div>
 
                 <h3 className="text-center">{color}</h3>
               </div>
