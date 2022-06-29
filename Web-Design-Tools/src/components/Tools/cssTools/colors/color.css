@@ -40,11 +40,23 @@
 
 .colorPreview {
   width: 100%;
-  height: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .colorPreview .result {
   width: 350px;
   height: 350px;
   background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+}
+
+ChromePicker {
+  width: 450px;
+  height: 450px;
 }

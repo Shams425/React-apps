@@ -73,13 +73,12 @@ export default function Color() {
                     className="mt-3 col-lg-4 col-md-6 col-sm-12"
                   />
                   <div className="colorPreview col-lg-8 col-md-6 col-sm-12">
-                    <span className="result" style={{ backgroundColor: color }}>
-                      It's working
-                    </span>
+                    <span
+                      className="result"
+                      style={{ backgroundColor: color }}
+                    ></span>
                   </div>
                 </div>
-
-                <h3 className="text-center">{color}</h3>
               </div>
               <div className="content selectColor" id="select">
                 <h2>Select Color is working</h2>
