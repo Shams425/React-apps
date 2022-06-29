@@ -31,6 +31,29 @@ export default function Color() {
     document
       .querySelector(event.target.getAttribute("data-target"))
       .classList.add("show");
+
+    getColorHex();
+  }
+
+  //for the selectColor tab
+  function getColorHex() {
+    const colors = document.querySelectorAll(".colorsContainer .color");
+    colors.forEach((color, index) => {
+      color.textContent = window.getComputedStyle(
+        colors[index]
+      ).backgroundColor;
+
+      color.addEventListener("click", (evevnt) => {
+        evevnt.textContent = "copied !!!";
+        console.log("it's working");
+        setTimeout(() => {
+          evevnt.textContent = window.getComputedStyle(
+            colors[index]
+          ).backgroundColor;
+        });
+        navigator.clipboard.writeText(evevnt.textContent);
+      });
+    });
   }
   return (
     <div className="wrapper">
@@ -81,7 +104,56 @@ export default function Color() {
                 </div>
               </div>
               <div className="content selectColor" id="select">
-                <h2>Select Color is working</h2>
+                <div className="background">
+                  <h2 className="colorTitle">Colors For Background</h2>
+                  <div className="colorsContainer d-flex flex-wrap">
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                    <div
+                      className="color col-lg-4 col-md-6 col-sm-12"
+                      title="click to copy"
+                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                    ></div>
+                  </div>
+                </div>
               </div>
               <div className="content colorTemplates" id="template">
                 <h2>Select template colors is working</h2>

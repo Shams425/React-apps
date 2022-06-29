@@ -65,7 +65,7 @@
   justify-content: center;
 }
 
-.color {
+.shadow-input .color {
   justify-content: flex-start !important;
 }
 

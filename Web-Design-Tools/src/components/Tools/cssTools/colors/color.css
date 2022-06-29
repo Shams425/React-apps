@@ -60,3 +60,23 @@ ChromePicker {
   width: 450px;
   height: 450px;
 }
+
+.colorsContainer {
+  gap: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.3);
+  padding-bottom: 30px;
+}
+
+.colorTitle {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.colorsContainer .color {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
