@@ -43,15 +43,15 @@ export default function Color() {
         colors[index]
       ).backgroundColor;
 
-      color.addEventListener("click", (evevnt) => {
-        evevnt.textContent = "copied !!!";
-        console.log("it's working");
+      color.addEventListener("click", (e) => {
+        navigator.clipboard.writeText(e.target.textContent);
+
+        e.target.textContent = "copied !!!";
         setTimeout(() => {
-          evevnt.textContent = window.getComputedStyle(
+          e.target.textContent = window.getComputedStyle(
             colors[index]
           ).backgroundColor;
-        });
-        navigator.clipboard.writeText(evevnt.textContent);
+        }, 1500);
       });
     });
   }

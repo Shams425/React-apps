@@ -79,4 +79,9 @@ ChromePicker {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.colorsContainer .color:active {
+  transform: scale(0.9);
 }
