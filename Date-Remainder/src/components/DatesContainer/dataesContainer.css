@@ -2,6 +2,17 @@ section {
   width: 100vw;
   height: calc(100vh - 90px);
   display: flex;
-  align-items: center;
   justify-content: center;
+}
+
+.datesContainer {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.datesContainer:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
 }
