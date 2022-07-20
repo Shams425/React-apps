@@ -5,14 +5,53 @@ section {
   justify-content: center;
 }
 
+.container {
+  padding: 0 !important;
+}
+
 .datesContainer {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  max-height: 600px;
+  height: 600px;
+  width: 600px;
+  flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.datesContainer:hover::-webkit-scrollbar-thumb {
-  opacity: 1;
+.datesContainer .showDates {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.datesContainer .showDates.active {
+  transform: translateX(100%);
+}
+
+.wrapper .addDate {
+  padding: 0;
+}
+
+.wrapper .addDate button {
+  width: 100%;
+}
+
+.datesContainer .addDate {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 0 20px;
+  height: 100%;
+  transform: translateX(0%);
+  transition: all 0.3s ease-in-out;
+}
+
+.datesContainer .addDate.active {
+  transform: translateX(-200%);
 }
