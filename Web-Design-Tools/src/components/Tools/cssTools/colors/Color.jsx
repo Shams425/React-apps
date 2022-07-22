@@ -32,11 +32,11 @@ export default function Color() {
       .querySelector(event.target.getAttribute("data-target"))
       .classList.add("show");
 
-    getColorHex();
+    getColors();
   }
 
   //for the selectColor tab
-  function getColorHex() {
+  function getColors() {
     const colors = document.querySelectorAll(".colorsContainer .color");
     colors.forEach((color, index) => {
       color.textContent = window.getComputedStyle(

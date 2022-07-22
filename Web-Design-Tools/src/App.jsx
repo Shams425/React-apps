@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import SideBar from "./components/sideBar/SideBar";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/sideBar/pages/home/Home";
 import Header from "./components/header/Header";
 import BoxShadow from "./components/Tools/cssTools/boxShadow/BoxShadow";
