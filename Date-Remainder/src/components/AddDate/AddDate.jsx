@@ -1,32 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import "./addDate.css";
+import axios from "axios";
+import { allUsersData } from "../shared/datesData";
 
-export default function AddDate() {
+export default function AddDate({ data }) {
+  const [dateValues, setDateValues] = useState({
+    name: "",
+    place: "",
+    time: "",
+    subject: "",
+  });
+
+  async function addHandler() {
+    try {
+      const res = await axios.post("http://localhost:4000/posts", dateValues);
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+
+    document
+      .querySelectorAll(".form-control")
+      .forEach((elem) => (elem.value = ""));
+    setDateValues("");
+    getAllDates();
+  }
+
+  async function getAllDates() {
+    try {
+      const res = await axios.get("http://localhost:4000/posts");
+      allUsersData = {};
+      res.data.map((date) => allUsersData.push(date));
+    } catch (err) {
+      console.log(err);
+    }
+  }
   return (
     <div className="add-date">
-      <h1 className="text-center mb-5">Add New Date</h1>
+      <h1 className="text-center mb-3">Add New Date</h1>
       <div className="dateTitle mb-4">
         <h3>Date with </h3>
-        <input type="text" className="form-control" />
+        <input
+          type="text"
+          name="name"
+          className="form-control"
+          value={dateValues.name || ""}
+          onChange={(e) =>
+            setDateValues({ ...dateValues, [e.target.name]: e.target.value })
+          }
+        />
       </div>
 
       <div className="datePlace mb-4">
         <h3>Date Place </h3>
-        <input type="text" className="form-control" />
+        <input
+          type="text"
+          name="place"
+          className="form-control"
+          value={dateValues.place || ""}
+          onChange={(e) =>
+            setDateValues({ ...dateValues, [e.target.name]: e.target.value })
+          }
+        />
       </div>
 
       <div className="dateSubject mb-4">
         <h3>Subject </h3>
-        <textarea className="form-control" />
+        <textarea
+          name="subject"
+          className="form-control"
+          value={dateValues.subject || ""}
+          onChange={(e) =>
+            setDateValues({ ...dateValues, [e.target.name]: e.target.value })
+          }
+        />
       </div>
 
       <div className="dateTime mb-4">
         <h3>Date Time </h3>
-        <input type="date" className="form-control" />
+        <input
+          type="date"
+          name="time"
+          className="form-control"
+          value={dateValues.time || ""}
+          onChange={(e) =>
+            setDateValues({ ...dateValues, [e.target.name]: e.target.value })
+          }
+        />
       </div>
 
       <div className="submitAdd">
-        <button className="btn btn-primary">Add</button>
+        <button className="btn btn-primary" onClick={addHandler}>
+          Add
+        </button>
       </div>
     </div>
   );

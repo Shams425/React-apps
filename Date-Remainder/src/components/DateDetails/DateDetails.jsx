@@ -1,15 +1,16 @@
 import { Info, Close, Edit } from "@mui/icons-material";
 import React from "react";
 import "./datesDetails.css";
-export default function DateDetails() {
+export default function DateDetails(props) {
+  const data = props.data;
   return (
     <div className="dateDetailsContainer">
       <div className="profileImg">
         <img src={require("../../components/assets/img/profile.jpg")} alt="" />
       </div>
       <div className="dateInfo">
-        <p className="personName">You have date with Ahmed</p>
-        <p className="dateTime">Today at 4pm</p>
+        <p className="personName">You have date with {data.name}</p>
+        <p className="dateTime">Today at {data.time} pm</p>
       </div>
       <div className="dateBehavior">
         <button
@@ -42,7 +43,7 @@ export default function DateDetails() {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Your Date with Ahmed</h5>
+              <h5 className="modal-title">Your Date with {data.name}</h5>
               <button
                 type="button"
                 className="btn-close"
@@ -52,13 +53,13 @@ export default function DateDetails() {
             </div>
             <div className="modal-body">
               <h3 className="meetingTitle">Place :</h3>
-              <p className="meetingPlace">We are Going to meet in Khartoum</p>
-              <h3 className="meetingTitle">Meeting is About :</h3>
-              <p className="meetingAbout">
-                Take Care about the company money problems
+              <p className="meetingPlace">
+                We are Going to meet in {data.place}
               </p>
+              <h3 className="meetingTitle">Meeting is About :</h3>
+              {/* <p className="meetingAbout">dateInfo.subject}</p> */}
               <h3 className="meetingTitle">Meeting Time :</h3>
-              <p className="meetingTime">Today at 4pm</p>
+              <p className="meetingTime">Today at {data.time}</p>
             </div>
             <div className="modal-footer">
               <button

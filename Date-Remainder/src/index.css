@@ -39,3 +39,7 @@ img {
   border-radius: 50%;
   object-fit: cover;
 }
+
+textarea {
+  max-height: 80px;
+}
