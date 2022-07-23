@@ -10,7 +10,7 @@ export default function DateDetails(props) {
       </div>
       <div className="dateInfo">
         <p className="personName">You have date with {data.name}</p>
-        <p className="dateTime">Today at {data.time} pm</p>
+        <p className="dateTime">Today at {data.time}</p>
       </div>
       <div className="dateBehavior">
         <button

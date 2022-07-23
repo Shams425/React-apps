@@ -3,7 +3,7 @@ import "./addDate.css";
 import axios from "axios";
 import { allUsersData } from "../shared/datesData";
 
-export default function AddDate({ data }) {
+export default function AddDate({ addElem }) {
   const [dateValues, setDateValues] = useState({
     name: "",
     place: "",
@@ -11,30 +11,24 @@ export default function AddDate({ data }) {
     subject: "",
   });
 
-  async function addHandler() {
-    try {
-      const res = await axios.post("http://localhost:4000/posts", dateValues);
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+  function addHandler() {
+    allUsersData.push({
+      id: Math.random(),
+      name: dateValues.name,
+      time: dateValues.time,
+      place: dateValues.place,
+      subject: dateValues.subject,
+    });
 
+    addElem({ ...dateValues });
     document
       .querySelectorAll(".form-control")
       .forEach((elem) => (elem.value = ""));
+
     setDateValues("");
-    getAllDates();
+    console.log(allUsersData);
   }
 
-  async function getAllDates() {
-    try {
-      const res = await axios.get("http://localhost:4000/posts");
-      allUsersData = {};
-      res.data.map((date) => allUsersData.push(date));
-    } catch (err) {
-      console.log(err);
-    }
-  }
   return (
     <div className="add-date">
       <h1 className="text-center mb-3">Add New Date</h1>

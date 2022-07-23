@@ -3,15 +3,12 @@ import "./dataesContainer.css";
 import AddDate from "../AddDate/AddDate";
 import { useRef } from "react";
 import { Add, DeleteOutlined, Home } from "@mui/icons-material";
-import axios from "axios";
 import { allUsersData } from "../shared/datesData";
 
-export default function DatesContainer() {
+export default function DatesContainer({ allData, rerender }) {
   const showDates = useRef(null);
   const addDate = useRef(null);
   const addBtn = useRef(null);
-
-  let allDates = [...allUsersData];
 
   function addDateHandler() {
     if (showDates.current.classList.contains("active")) return;
@@ -20,19 +17,16 @@ export default function DatesContainer() {
   }
 
   function returnHome() {
-    console.log(allUsersData);
+    console.log(allData);
     if (addDate.current.classList.contains("active")) return;
     showDates.current.classList.remove("active");
     addDate.current.classList.add("active");
   }
 
   function removeDates() {
-    allDates.map((_, index) =>
-      axios
-        .delete(`http://localhost:4000/posts/${allDates[index].id}`)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err))
-    );
+    allUsersData.splice(0, allUsersData.length);
+    rerender("");
+    console.log(allUsersData);
   }
   return (
     <section>
@@ -47,14 +41,14 @@ export default function DatesContainer() {
             <div className="datesContainer p-4 mb-3">
               {/* show today dates */}
               <div className="showDates" ref={showDates}>
-                {allUsersData.map((date, index) => {
+                {allData.map((date, index) => {
                   return <DateDetails data={date} key={index} />;
                 })}
               </div>
 
               {/* add date form */}
               <div className="addDate" ref={addDate}>
-                <AddDate data={allDates} />
+                <AddDate addElem={rerender} />
               </div>
             </div>
 
