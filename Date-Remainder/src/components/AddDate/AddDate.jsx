@@ -3,8 +3,6 @@ import "./addDate.css";
 import { allUsersData } from "../shared/datesData";
 
 export default function AddDate({ addElem, update, navigator }) {
-  console.log(update.value, update.item, allUsersData[update.item]);
-
   const [dateValues, setDateValues] = useState({
     id: Math.random(),
     name: "",
@@ -48,9 +46,7 @@ export default function AddDate({ addElem, update, navigator }) {
 
   return (
     <div className="add-date">
-      <h1 className="text-center mb-3">
-        {!update.value ? `Update Your Date` : `Add New Date`}
-      </h1>
+      <h1 className="text-center mb-3">Add New Date</h1>
       {/* add form */}
       <form action="">
         {/* name input */}
@@ -142,7 +138,7 @@ export default function AddDate({ addElem, update, navigator }) {
           className="btn btn-primary"
           onClick={update.value ? addHandler : updateHandler}
         >
-          {!update.value ? "Update" : "Add"}
+          Add
         </button>
       </div>
     </div>

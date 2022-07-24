@@ -18,7 +18,8 @@ export default function DatesContainer({
   function navToAdd() {
     setUpdatedData({
       ...setData,
-      value: true,
+      update: true,
+      showInfo: true,
     });
 
     if (showDates.current.classList.contains("active")) return;
@@ -26,14 +27,27 @@ export default function DatesContainer({
     addDate.current.classList.remove("active");
   }
 
-  function setUpdated(index) {
+  function navToUpdate(index) {
     showDates.current.classList.add("active");
     addDate.current.classList.remove("active");
 
     setUpdatedData({
       ...setData,
       value: false,
+      showInfo: true,
       item: index,
+    });
+  }
+
+  function navToInfo() {
+    showDates.current.classList.add("active");
+    addDate.current.classList.remove("active");
+
+    setUpdatedData({
+      ...setData,
+      value: false,
+
+      showInfo: false,
     });
   }
 
@@ -73,7 +87,8 @@ export default function DatesContainer({
                         key={index}
                         index={index}
                         rerender={rerender}
-                        navigator={setUpdated}
+                        navToUpdate={navToUpdate}
+                        navToInfo={navToInfo}
                       />
                     ))}
                   </div>

@@ -8,6 +8,7 @@ function App() {
 
   const [update, setUpdatedData] = useState({
     value: true,
+    showInfo: false,
     item: 0,
   });
 
