@@ -9,6 +9,7 @@ export default function AddDate({ addElem, update, navigator }) {
     place: "",
     time: "",
     date: "",
+    timeFormat: "",
     subject: "",
   });
 
@@ -19,6 +20,7 @@ export default function AddDate({ addElem, update, navigator }) {
       place: dateValues.place,
       subject: dateValues.subject,
       time: dateValues.time,
+      timeFormat: dateValues.timeFormat,
       date: dateValues.date,
     });
 
@@ -101,46 +103,81 @@ export default function AddDate({ addElem, update, navigator }) {
             placeholder="Meeting about . . ."
           />
         </div>
+
+        {/* Time input */}
+        <div className="dateTime mb-4">
+          <label className="mb-2">Time </label>
+          <input
+            type="number"
+            name="time"
+            className="form-control"
+            value={dateValues.time}
+            onChange={(e) =>
+              setDateValues({ ...dateValues, [e.target.name]: e.target.value })
+            }
+            placeholder="Meeting Time in Hours . . ."
+          />
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="timeFormat"
+              value={dateValues.timeFormat}
+              onChange={(e) =>
+                setDateValues({
+                  ...dateValues,
+                  [e.target.name]: "am",
+                })
+              }
+            />
+            <label class="form-check-label" for="">
+              am
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="timeFormat"
+              value={dateValues.timeFormat}
+              onChange={(e) =>
+                setDateValues({
+                  ...dateValues,
+                  [e.target.name]: "pm",
+                })
+              }
+            />
+            <label class="form-check-label" for="">
+              pm
+            </label>
+          </div>
+        </div>
+
+        {/* date input */}
+        <div className="dateTime mb-4">
+          <label className="mb-2">Date </label>
+          <input
+            type="date"
+            name="date"
+            className="form-control"
+            value={dateValues.date}
+            onChange={(e) =>
+              setDateValues({ ...dateValues, [e.target.name]: e.target.value })
+            }
+            placeholder="Meeting Date . . ."
+          />
+        </div>
+
+        <div className="submitAdd">
+          <button
+            className="btn btn-primary"
+            onClick={update.value ? addHandler : updateHandler}
+          >
+            Add
+          </button>
+        </div>
       </form>
-
-      {/* Time input */}
-      <div className="dateTime mb-4">
-        <label className="mb-2">Time </label>
-        <input
-          type="number"
-          name="time"
-          className="form-control"
-          value={dateValues.time}
-          onChange={(e) =>
-            setDateValues({ ...dateValues, [e.target.name]: e.target.value })
-          }
-          placeholder="Meeting Time in Hours . . ."
-        />
-      </div>
-
-      {/* date input */}
-      <div className="dateTime mb-4">
-        <label className="mb-2">Date </label>
-        <input
-          type="date"
-          name="date"
-          className="form-control"
-          value={dateValues.date}
-          onChange={(e) =>
-            setDateValues({ ...dateValues, [e.target.name]: e.target.value })
-          }
-          placeholder="Meeting Date . . ."
-        />
-      </div>
-
-      <div className="submitAdd">
-        <button
-          className="btn btn-primary"
-          onClick={update.value ? addHandler : updateHandler}
-        >
-          Add
-        </button>
-      </div>
     </div>
   );
 }

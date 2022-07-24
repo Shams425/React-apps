@@ -100,6 +100,41 @@ export default function DateUpdate({ addElem, update, navigator }) {
               placeholder="Meeting Time in Hours . . ."
               required="true"
             />
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="timeFormat"
+                value={dateValues.timeFormat}
+                onChange={(e) =>
+                  setDateValues({
+                    ...dateValues,
+                    [e.target.name]: "am",
+                  })
+                }
+              />
+              <label class="form-check-label" for="">
+                am
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="timeFormat"
+                value={dateValues.timeFormat}
+                onChange={(e) =>
+                  setDateValues({
+                    ...dateValues,
+                    [e.target.name]: "pm",
+                  })
+                }
+              />
+              <label class="form-check-label" for="">
+                pm
+              </label>
+            </div>
           </div>
 
           {/* date input */}
@@ -122,11 +157,7 @@ export default function DateUpdate({ addElem, update, navigator }) {
           </div>
 
           <div className="submitAdd">
-            <button
-              className="btn btn-primary"
-              onClick={updateHandler}
-              type="submit"
-            >
+            <button className="btn btn-primary" onClick={updateHandler}>
               Update
             </button>
           </div>
@@ -148,7 +179,8 @@ export default function DateUpdate({ addElem, update, navigator }) {
           </p>
           <p>
             Meeting Time at <br />
-            {dateValues.time} In {dateValues.date}
+            {dateValues.time}
+            {dateValues.timeFormat} In {dateValues.date}
           </p>
         </div>
       )}

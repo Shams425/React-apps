@@ -3,7 +3,7 @@ import "./dataesContainer.css";
 import AddDate from "../AddDate/AddDate";
 import { useRef } from "react";
 import { Add, DeleteOutlined, Home } from "@mui/icons-material";
-import { allUsersData, setUpdates } from "../shared/datesData";
+import { allUsersData } from "../shared/datesData";
 import DateUpdate from "../DateUpdate/DateUpdate";
 
 export default function DatesContainer({
@@ -18,7 +18,7 @@ export default function DatesContainer({
   function navToAdd() {
     setUpdatedData({
       ...setData,
-      update: true,
+      value: true,
       showInfo: true,
     });
 
@@ -46,7 +46,6 @@ export default function DatesContainer({
     setUpdatedData({
       ...setData,
       value: false,
-
       showInfo: false,
     });
   }

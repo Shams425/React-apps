@@ -5,6 +5,7 @@ export const allUsersData = [
     time: 4,
     date: "2022-07-23",
     place: "Khartoum",
+    timeFormat: "pm",
     subject: "Talking about the Cash flow problem",
   },
 ];
