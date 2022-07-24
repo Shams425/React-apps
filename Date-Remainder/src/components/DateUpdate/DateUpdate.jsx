@@ -1,39 +1,16 @@
-import React, { useState } from "react";
-import "./addDate.css";
+import React, { useRef, useState } from "react";
+import "./dateUpdate.css";
 import { allUsersData } from "../shared/datesData";
 
-export default function AddDate({ addElem, update, navigator }) {
-  console.log(update.value, update.item, allUsersData[update.item]);
-
-  const [dateValues, setDateValues] = useState({
-    id: Math.random(),
-    name: "",
-    place: "",
-    time: "",
-    date: "",
-    subject: "",
-  });
-
-  function addHandler() {
-    allUsersData.push({
-      id: Math.random(),
-      name: dateValues.name,
-      place: dateValues.place,
-      subject: dateValues.subject,
-      time: dateValues.time,
-      date: dateValues.date,
-    });
-
-    addElem({ ...dateValues });
-    document
-      .querySelectorAll(".form-control")
-      .forEach((elem) => (elem.value = ""));
-
-    setDateValues("");
-    console.log(update.value, allUsersData[update.item]);
-  }
+export default function DateUpdate({ addElem, update, navigator }) {
+  const [dateValues, setDateValues] = useState(allUsersData[update.item]);
+  const UpdateForm = useRef(null);
 
   function updateHandler() {
+    UpdateForm.current.onSubmit = (e) => {
+      e.preventDefault();
+    };
+
     allUsersData[update.item] = { ...dateValues };
 
     addElem({ ...dateValues });
@@ -43,16 +20,13 @@ export default function AddDate({ addElem, update, navigator }) {
 
     setDateValues("");
     navigator();
-    console.log(update.value);
   }
 
   return (
     <div className="add-date">
-      <h1 className="text-center mb-3">
-        {!update.value ? `Update Your Date` : `Add New Date`}
-      </h1>
-      {/* add form */}
-      <form action="">
+      <h1 className="text-center mb-3">Update Your Date</h1>
+      {/* Update form start */}
+      <form action="" ref={UpdateForm}>
         {/* name input */}
         <div className="name mb-3">
           <label className="mb-2">Name </label>
@@ -68,6 +42,7 @@ export default function AddDate({ addElem, update, navigator }) {
               })
             }
             placeholder="Meeting With . . ."
+            required="true"
           />
         </div>
 
@@ -86,6 +61,7 @@ export default function AddDate({ addElem, update, navigator }) {
               })
             }
             placeholder="Meeting In . . ."
+            required="true"
           />
         </div>
 
@@ -103,6 +79,7 @@ export default function AddDate({ addElem, update, navigator }) {
               })
             }
             placeholder="Meeting about . . ."
+            required="true"
           />
         </div>
       </form>
@@ -119,6 +96,7 @@ export default function AddDate({ addElem, update, navigator }) {
             setDateValues({ ...dateValues, [e.target.name]: e.target.value })
           }
           placeholder="Meeting Time in Hours . . ."
+          required="true"
         />
       </div>
 
@@ -134,16 +112,17 @@ export default function AddDate({ addElem, update, navigator }) {
             setDateValues({ ...dateValues, [e.target.name]: e.target.value })
           }
           placeholder="Meeting Date . . ."
+          required="true"
         />
       </div>
 
       <div className="submitAdd">
-        <button
-          className="btn btn-primary"
-          onClick={update.value ? addHandler : updateHandler}
-        >
-          {!update.value ? "Update" : "Add"}
-        </button>
+        <input
+          type="submit"
+          value="Update"
+          className="form-control btn btn-primary"
+          onClick={updateHandler}
+        />
       </div>
     </div>
   );

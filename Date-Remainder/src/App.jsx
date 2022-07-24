@@ -4,18 +4,22 @@ import Header from "./components/Header/Header";
 import { allUsersData } from "./components/shared/datesData";
 
 function App() {
-  const [datesData, setDateData] = useState({
-    id: 0,
-    name: "",
-    time: "",
-    place: "",
-    subject: "",
+  const [, setDateData] = useState(allUsersData);
+
+  const [update, setUpdatedData] = useState({
+    value: true,
+    item: 0,
   });
 
   return (
     <div className="App">
       <Header />
-      <DatesContainer allData={allUsersData} rerender={setDateData} />
+      <DatesContainer
+        allData={allUsersData}
+        setUpdatedData={setUpdatedData}
+        setData={update}
+        rerender={setDateData}
+      />
     </div>
   );
 }

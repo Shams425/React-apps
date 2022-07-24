@@ -1,8 +1,16 @@
 import { Info, Close, Edit } from "@mui/icons-material";
 import React from "react";
+import { allUsersData } from "../shared/datesData";
 import "./datesDetails.css";
-export default function DateDetails(props) {
-  const data = props.data;
+export default function DateDetails({ data, index, rerender, navigator }) {
+  function showInfo() {
+    document.querySelector(".trigger").click();
+  }
+
+  function moveToAdd() {
+    navigator(index);
+  }
+
   return (
     <div className="dateDetailsContainer">
       <div className="profileImg">
@@ -10,28 +18,38 @@ export default function DateDetails(props) {
       </div>
       <div className="dateInfo">
         <p className="personName">You have date with {data.name}</p>
-        <p className="dateTime">Today at {data.time}</p>
+        <p className="dateTime">At {data.time}</p>
       </div>
       <div className="dateBehavior">
-        <button
-          type="button"
-          className="btn"
-          data-bs-toggle="modal"
-          data-bs-target="#modelId"
-        >
+        <button type="button" className="btn" onClick={showInfo}>
           <Info className="infoIcon" />
         </button>
 
-        <button className="btn">
+        <button className="btn" onClick={moveToAdd}>
           <Edit />
         </button>
 
-        <button className="btn">
+        <button
+          className="btn"
+          onClick={() => {
+            allUsersData.splice(index, 1);
+            rerender([...allUsersData]);
+          }}
+        >
           <Close />
         </button>
       </div>
 
       {/* modal for showing more information about dates */}
+
+      {/* modal trigger */}
+      <button
+        type="button"
+        className="btn trigger"
+        data-bs-toggle="modal"
+        data-bs-target="#modelId"
+        style={{ display: "none" }}
+      ></button>
       <div
         className="modal fade"
         id="modelId"
@@ -43,7 +61,9 @@ export default function DateDetails(props) {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Your Date with {data.name}</h5>
+              <h5 className="modal-title">
+                Your Date with {allUsersData[index].name}
+              </h5>
               <button
                 type="button"
                 className="btn-close"
@@ -54,12 +74,15 @@ export default function DateDetails(props) {
             <div className="modal-body">
               <h3 className="meetingTitle">Place :</h3>
               <p className="meetingPlace">
-                We are Going to meet in {data.place}
+                We are Going to meet in {allUsersData[index].place}
               </p>
               <h3 className="meetingTitle">Meeting is About :</h3>
-              {/* <p className="meetingAbout">dateInfo.subject}</p> */}
+              <p className="meetingAbout">{allUsersData[index].subject}</p>
               <h3 className="meetingTitle">Meeting Time :</h3>
-              <p className="meetingTime">Today at {data.time}</p>
+              <p className="meetingTime">
+                Meeting At {allUsersData[index].time} In{" "}
+                {allUsersData[index].date}
+              </p>
             </div>
             <div className="modal-footer">
               <button

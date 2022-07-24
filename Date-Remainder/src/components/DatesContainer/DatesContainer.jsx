@@ -3,21 +3,46 @@ import "./dataesContainer.css";
 import AddDate from "../AddDate/AddDate";
 import { useRef } from "react";
 import { Add, DeleteOutlined, Home } from "@mui/icons-material";
-import { allUsersData } from "../shared/datesData";
+import { allUsersData, setUpdates } from "../shared/datesData";
+import DateUpdate from "../DateUpdate/DateUpdate";
 
-export default function DatesContainer({ allData, rerender }) {
+export default function DatesContainer({
+  allData,
+  rerender,
+  setData,
+  setUpdatedData,
+}) {
   const showDates = useRef(null);
   const addDate = useRef(null);
-  const addBtn = useRef(null);
 
-  function addDateHandler() {
+  function navToAdd() {
+    setUpdatedData({
+      ...setData,
+      value: true,
+    });
+
     if (showDates.current.classList.contains("active")) return;
     showDates.current.classList.add("active");
     addDate.current.classList.remove("active");
   }
 
-  function returnHome() {
-    console.log(allData);
+  function setUpdated(index) {
+    showDates.current.classList.add("active");
+    addDate.current.classList.remove("active");
+
+    setUpdatedData({
+      ...setData,
+      value: false,
+      item: index,
+    });
+  }
+
+  function navToHome() {
+    setUpdatedData({
+      ...setData,
+      value: true,
+    });
+
     if (addDate.current.classList.contains("active")) return;
     showDates.current.classList.remove("active");
     addDate.current.classList.add("active");
@@ -26,7 +51,6 @@ export default function DatesContainer({ allData, rerender }) {
   function removeDates() {
     allUsersData.splice(0, allUsersData.length);
     rerender("");
-    console.log(allUsersData);
   }
   return (
     <section>
@@ -41,14 +65,38 @@ export default function DatesContainer({ allData, rerender }) {
             <div className="datesContainer p-4 mb-3">
               {/* show today dates */}
               <div className="showDates" ref={showDates}>
-                {allData.map((date, index) => {
-                  return <DateDetails data={date} key={index} />;
-                })}
+                {allData.length > 0 ? (
+                  <div className="dateDetails">
+                    {allData.map((date, index) => (
+                      <DateDetails
+                        data={date}
+                        key={index}
+                        index={index}
+                        rerender={rerender}
+                        navigator={setUpdated}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <h2>No Dates For Today</h2>
+                )}
               </div>
 
               {/* add date form */}
               <div className="addDate" ref={addDate}>
-                <AddDate addElem={rerender} />
+                {setData.value ? (
+                  <AddDate
+                    addElem={rerender}
+                    update={setData}
+                    navigator={navToHome}
+                  />
+                ) : (
+                  <DateUpdate
+                    addElem={rerender}
+                    update={setData}
+                    navigator={navToHome}
+                  />
+                )}
               </div>
             </div>
 
@@ -56,16 +104,14 @@ export default function DatesContainer({ allData, rerender }) {
             <div className="showPages d-flex align-items-center justify-content-between">
               <button
                 className="btn btn-success mb-2"
-                onClick={addDateHandler}
-                ref={addBtn}
+                onClick={navToAdd}
                 title="Add date"
               >
                 <Add />
               </button>
               <button
                 className="btn btn-success mb-2"
-                onClick={returnHome}
-                ref={addBtn}
+                onClick={navToHome}
                 title="Home Page"
               >
                 <Home />
@@ -73,7 +119,6 @@ export default function DatesContainer({ allData, rerender }) {
               <button
                 className="btn btn-success mb-2"
                 onClick={removeDates}
-                ref={addBtn}
                 title="Home Page"
               >
                 <DeleteOutlined />
