@@ -3,7 +3,7 @@ import "./dataesContainer.css";
 import AddDate from "../AddDate/AddDate";
 import { useRef } from "react";
 import { Add, DeleteOutlined, Home } from "@mui/icons-material";
-import { allUsersData } from "../Shared/datesData";
+import { allUsersData, setUpdates } from "../Shared/datesData";
 import DateUpdate from "../DateUpdate/DateUpdate";
 import ShowInfo from "../ShowInfo/ShowInfo";
 
@@ -17,10 +17,12 @@ export default function DatesContainer({
   const addDate = useRef(null);
 
   function navToAdd() {
+    console.log({ ...updateData });
+
     setUpdatedData({
       ...updateData,
       value: true,
-      showInfo: true,
+      showInfo: false,
     });
 
     if (showDates.current.classList.contains("active")) return;
@@ -28,19 +30,20 @@ export default function DatesContainer({
     addDate.current.classList.remove("active");
   }
 
-  function navToUpdate(index) {
-    showDates.current.classList.add("active");
-    addDate.current.classList.remove("active");
-
+  function navToHome() {
+    console.log({ ...updateData });
     setUpdatedData({
       ...updateData,
       value: false,
-      showInfo: true,
-      item: index,
+      showInfo: false,
     });
+
+    if (addDate.current.classList.contains("active")) return;
+    showDates.current.classList.remove("active");
+    addDate.current.classList.add("active");
   }
 
-  function navToInfo(index) {
+  function navToUpdate(index) {
     showDates.current.classList.add("active");
     addDate.current.classList.remove("active");
 
@@ -52,15 +55,18 @@ export default function DatesContainer({
     });
   }
 
-  function navToHome() {
+  function navToInfo(index) {
+    console.log({ ...updateData });
+
+    showDates.current.classList.add("active");
+    addDate.current.classList.remove("active");
+
     setUpdatedData({
       ...updateData,
-      value: true,
+      value: false,
+      showInfo: true,
+      item: index,
     });
-
-    if (addDate.current.classList.contains("active")) return;
-    showDates.current.classList.remove("active");
-    addDate.current.classList.add("active");
   }
 
   function removeDates() {
@@ -110,7 +116,7 @@ export default function DatesContainer({
                     update={updateData}
                     navigator={navToHome}
                   />
-                ) : updateData.showInfo ? (
+                ) : !updateData.showInfo ? (
                   <DateUpdate
                     addElem={rerender}
                     update={updateData}
