@@ -1,7 +1,5 @@
 import React, { useRef, useState } from "react";
-import "./dateUpdate.css";
 import { allUsersData } from "../Shared/datesData";
-import { DateRange, Description, Person, Place } from "@mui/icons-material";
 
 export default function DateUpdate({ addElem, update, navigator }) {
   const [dateValues, setDateValues] = useState(allUsersData[update.item]);
@@ -24,7 +22,7 @@ export default function DateUpdate({ addElem, update, navigator }) {
   }
 
   return (
-    <div className="add-date">
+    <div className="Update-date">
       {/*  update form */}
       <form action="" ref={UpdateForm}>
         <h1 className="text-center mb-3">Update Your Date</h1>

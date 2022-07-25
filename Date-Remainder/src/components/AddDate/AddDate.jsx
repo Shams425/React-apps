@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./addDate.css";
 import { allUsersData } from "../Shared/datesData";
 
 export default function AddDate({ addElem, update, navigator }) {

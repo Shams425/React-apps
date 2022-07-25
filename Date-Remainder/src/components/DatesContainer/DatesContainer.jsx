@@ -10,7 +10,7 @@ import ShowInfo from "../ShowInfo/ShowInfo";
 export default function DatesContainer({
   allData,
   rerender,
-  setData,
+  updateData,
   setUpdatedData,
 }) {
   const showDates = useRef(null);
@@ -18,7 +18,7 @@ export default function DatesContainer({
 
   function navToAdd() {
     setUpdatedData({
-      ...setData,
+      ...updateData,
       value: true,
       showInfo: true,
     });
@@ -33,7 +33,7 @@ export default function DatesContainer({
     addDate.current.classList.remove("active");
 
     setUpdatedData({
-      ...setData,
+      ...updateData,
       value: false,
       showInfo: true,
       item: index,
@@ -45,7 +45,7 @@ export default function DatesContainer({
     addDate.current.classList.remove("active");
 
     setUpdatedData({
-      ...setData,
+      ...updateData,
       value: false,
       showInfo: false,
       item: index,
@@ -54,7 +54,7 @@ export default function DatesContainer({
 
   function navToHome() {
     setUpdatedData({
-      ...setData,
+      ...updateData,
       value: true,
     });
 
@@ -73,7 +73,11 @@ export default function DatesContainer({
         <div className="wrapper container">
           <div className="row">
             <div className="title">
-              <h2 className="mb-4">Today Dates</h2>
+              <h2 className="mb-4">
+                {allData.length > 0
+                  ? `You Have ${allUsersData.length} Date`
+                  : "You Don't Have Dates"}
+              </h2>
             </div>
 
             {/* datesContainer */}
@@ -100,20 +104,20 @@ export default function DatesContainer({
 
               {/* add date form */}
               <div className="addDate" ref={addDate}>
-                {setData.value ? (
+                {updateData.value ? (
                   <AddDate
                     addElem={rerender}
-                    update={setData}
+                    update={updateData}
                     navigator={navToHome}
                   />
-                ) : setData.showInfo ? (
+                ) : updateData.showInfo ? (
                   <DateUpdate
                     addElem={rerender}
-                    update={setData}
+                    update={updateData}
                     navigator={navToHome}
                   />
                 ) : (
-                  <ShowInfo update={setData} />
+                  <ShowInfo update={updateData} />
                 )}
               </div>
             </div>

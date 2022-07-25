@@ -6,7 +6,7 @@ import { allUsersData } from "./components/Shared/datesData";
 function App() {
   const [, setDateData] = useState(allUsersData);
 
-  const [update, setUpdatedData] = useState({
+  const [updateData, setUpdatedData] = useState({
     value: true,
     showInfo: false,
     item: 0,
@@ -18,7 +18,7 @@ function App() {
       <DatesContainer
         allData={allUsersData}
         setUpdatedData={setUpdatedData}
-        setData={update}
+        updateData={updateData}
         rerender={setDateData}
       />
     </div>
