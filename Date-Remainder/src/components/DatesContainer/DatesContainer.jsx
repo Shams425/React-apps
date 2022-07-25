@@ -3,7 +3,7 @@ import "./dataesContainer.css";
 import AddDate from "../AddDate/AddDate";
 import { useRef } from "react";
 import { Add, DeleteOutlined, Home } from "@mui/icons-material";
-import { allUsersData } from "../shared/datesData";
+import { allUsersData } from "../Shared/datesData";
 import DateUpdate from "../DateUpdate/DateUpdate";
 
 export default function DatesContainer({
@@ -39,7 +39,7 @@ export default function DatesContainer({
     });
   }
 
-  function navToInfo() {
+  function navToInfo(index) {
     showDates.current.classList.add("active");
     addDate.current.classList.remove("active");
 
@@ -47,6 +47,7 @@ export default function DatesContainer({
       ...setData,
       value: false,
       showInfo: false,
+      item: index,
     });
   }
 
@@ -119,7 +120,7 @@ export default function DatesContainer({
               <button
                 className="btn btn-success mb-2"
                 onClick={navToAdd}
-                title="Add date"
+                title="Add new Date"
               >
                 <Add />
               </button>
@@ -133,7 +134,7 @@ export default function DatesContainer({
               <button
                 className="btn btn-success mb-2"
                 onClick={removeDates}
-                title="Home Page"
+                title="Delete All Dates"
               >
                 <DeleteOutlined />
               </button>

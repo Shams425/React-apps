@@ -1,6 +1,6 @@
 import { Info, Close, Edit } from "@mui/icons-material";
 import React from "react";
-import { allUsersData } from "../shared/datesData";
+import { allUsersData } from "../Shared/datesData";
 import "./datesDetails.css";
 export default function DateDetails({
   data,
@@ -14,7 +14,7 @@ export default function DateDetails({
   }
 
   function showInfo() {
-    navToInfo();
+    navToInfo(index);
   }
 
   return (
@@ -24,7 +24,10 @@ export default function DateDetails({
       </div>
       <div className="dateInfo">
         <p className="personName">You have date with {data.name}</p>
-        <p className="dateTime">At {data.time}</p>
+        <p className="dateTime">
+          At {data.time}
+          {data.timeFormat}
+        </p>
       </div>
       <div className="dateBehavior">
         <button type="button" className="btn" onClick={showInfo}>

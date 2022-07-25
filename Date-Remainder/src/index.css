@@ -4,7 +4,8 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 code {
@@ -43,4 +44,9 @@ img {
 
 textarea {
   max-height: 80px;
+}
+
+.info-icon {
+  font-size: 35px !important;
+  margin-right: 20px;
 }

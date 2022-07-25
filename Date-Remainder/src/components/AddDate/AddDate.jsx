@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./addDate.css";
-import { allUsersData } from "../shared/datesData";
+import { allUsersData } from "../Shared/datesData";
 
 export default function AddDate({ addElem, update, navigator }) {
   const [dateValues, setDateValues] = useState({
@@ -172,7 +172,8 @@ export default function AddDate({ addElem, update, navigator }) {
         <div className="submitAdd">
           <button
             className="btn btn-primary"
-            onClick={update.value ? addHandler : updateHandler}
+            onClick={addHandler}
+            type="button"
           >
             Add
           </button>

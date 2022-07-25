@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DatesContainer from "./components/DatesContainer/DatesContainer";
 import Header from "./components/Header/Header";
-import { allUsersData } from "./components/shared/datesData";
+import { allUsersData } from "./components/Shared/datesData";
 
 function App() {
   const [, setDateData] = useState(allUsersData);

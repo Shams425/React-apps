@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./dateUpdate.css";
-import { allUsersData } from "../shared/datesData";
+import { allUsersData } from "../Shared/datesData";
+import { DateRange, Description, Person, Place } from "@mui/icons-material";
 
 export default function DateUpdate({ addElem, update, navigator }) {
   const [dateValues, setDateValues] = useState(allUsersData[update.item]);
@@ -165,23 +166,36 @@ export default function DateUpdate({ addElem, update, navigator }) {
       ) : (
         <div className="showInfo">
           <h1 className="text-center mb-5">More Info About your Date </h1>
-          <p>
-            You have Date With
-            <br /> {dateValues.name}
-          </p>
-          <p>
-            Meeting is about <br />
-            {dateValues.subject}
-          </p>
-          <p>
-            You are Going to meet in
-            <br /> {dateValues.place}
-          </p>
-          <p>
-            Meeting Time at <br />
-            {dateValues.time}
-            {dateValues.timeFormat} In {dateValues.date}
-          </p>
+          <div className="person d-flex mb-4">
+            <Person className="info-icon" />
+            <p>
+              You have Date With
+              <br /> {allUsersData[update.item].name}
+            </p>
+          </div>
+          <div className="subject d-flex mb-4">
+            <Description className="info-icon" />
+            <p>
+              Meeting is about <br />
+              {allUsersData[update.item].subject}
+            </p>
+          </div>
+          <div className="place d-flex mb-4">
+            <Place className="info-icon" />
+            <p>
+              You are Going to meet in
+              <br /> {allUsersData[update.item].place}
+            </p>
+          </div>
+          <div className="time d-flex">
+            <DateRange className="info-icon" />
+            <p>
+              Meeting Time at <br />
+              {allUsersData[update.item].time}
+              {allUsersData[update.item].timeFormat} In{" "}
+              {allUsersData[update.item].date}
+            </p>
+          </div>
         </div>
       )}
     </div>
