@@ -25,179 +25,144 @@ export default function DateUpdate({ addElem, update, navigator }) {
 
   return (
     <div className="add-date">
-      {update.showInfo ? (
-        <form action="" ref={UpdateForm}>
-          <h1 className="text-center mb-3">Update Your Date</h1>
-          {/* name input */}
-          <div className="name mb-3">
-            <label className="mb-2">Name </label>
+      {/*  update form */}
+      <form action="" ref={UpdateForm}>
+        <h1 className="text-center mb-3">Update Your Date</h1>
+        {/* name input */}
+        <div className="name mb-3">
+          <label className="mb-2">Name </label>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            value={dateValues.name}
+            onChange={(e) =>
+              setDateValues({
+                ...dateValues,
+                [e.target.name]: e.target.value,
+              })
+            }
+            placeholder="Meeting With . . ."
+            required="true"
+          />
+        </div>
+
+        {/* Place input */}
+        <div className="datePlace mb-4">
+          <label className="mb-2">Place </label>
+          <input
+            type="text"
+            name="place"
+            className="form-control"
+            value={dateValues.place}
+            onChange={(e) =>
+              setDateValues({
+                ...dateValues,
+                [e.target.name]: e.target.value,
+              })
+            }
+            placeholder="Meeting In . . ."
+            required="true"
+          />
+        </div>
+
+        {/* Subject input */}
+        <div className="dateSubject mb-4">
+          <label className="mb-2">Subject </label>
+          <textarea
+            name="subject"
+            className="form-control"
+            value={dateValues.subject}
+            onChange={(e) =>
+              setDateValues({
+                ...dateValues,
+                [e.target.name]: e.target.value,
+              })
+            }
+            placeholder="Meeting about . . ."
+            required="true"
+          />
+        </div>
+
+        {/* Time input */}
+        <div className="dateTime mb-4">
+          <label className="mb-2">Time </label>
+          <input
+            type="number"
+            name="time"
+            className="form-control"
+            value={dateValues.time}
+            onChange={(e) =>
+              setDateValues({
+                ...dateValues,
+                [e.target.name]: e.target.value,
+              })
+            }
+            placeholder="Meeting Time in Hours . . ."
+            required="true"
+          />
+
+          <div class="form-check">
             <input
-              type="text"
-              name="name"
-              className="form-control"
-              value={dateValues.name}
+              class="form-check-input"
+              type="radio"
+              name="timeFormat"
+              value={dateValues.timeFormat}
               onChange={(e) =>
                 setDateValues({
                   ...dateValues,
-                  [e.target.name]: e.target.value,
+                  [e.target.name]: "am",
                 })
               }
-              placeholder="Meeting With . . ."
-              required="true"
             />
+            <label class="form-check-label" for="">
+              am
+            </label>
           </div>
-
-          {/* Place input */}
-          <div className="datePlace mb-4">
-            <label className="mb-2">Place </label>
+          <div class="form-check">
             <input
-              type="text"
-              name="place"
-              className="form-control"
-              value={dateValues.place}
+              class="form-check-input"
+              type="radio"
+              name="timeFormat"
+              value={dateValues.timeFormat}
               onChange={(e) =>
                 setDateValues({
                   ...dateValues,
-                  [e.target.name]: e.target.value,
+                  [e.target.name]: "pm",
                 })
               }
-              placeholder="Meeting In . . ."
-              required="true"
             />
-          </div>
-
-          {/* Subject input */}
-          <div className="dateSubject mb-4">
-            <label className="mb-2">Subject </label>
-            <textarea
-              name="subject"
-              className="form-control"
-              value={dateValues.subject}
-              onChange={(e) =>
-                setDateValues({
-                  ...dateValues,
-                  [e.target.name]: e.target.value,
-                })
-              }
-              placeholder="Meeting about . . ."
-              required="true"
-            />
-          </div>
-
-          {/* Time input */}
-          <div className="dateTime mb-4">
-            <label className="mb-2">Time </label>
-            <input
-              type="number"
-              name="time"
-              className="form-control"
-              value={dateValues.time}
-              onChange={(e) =>
-                setDateValues({
-                  ...dateValues,
-                  [e.target.name]: e.target.value,
-                })
-              }
-              placeholder="Meeting Time in Hours . . ."
-              required="true"
-            />
-
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="timeFormat"
-                value={dateValues.timeFormat}
-                onChange={(e) =>
-                  setDateValues({
-                    ...dateValues,
-                    [e.target.name]: "am",
-                  })
-                }
-              />
-              <label class="form-check-label" for="">
-                am
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="timeFormat"
-                value={dateValues.timeFormat}
-                onChange={(e) =>
-                  setDateValues({
-                    ...dateValues,
-                    [e.target.name]: "pm",
-                  })
-                }
-              />
-              <label class="form-check-label" for="">
-                pm
-              </label>
-            </div>
-          </div>
-
-          {/* date input */}
-          <div className="dateTime mb-4">
-            <label className="mb-2">Date </label>
-            <input
-              type="date"
-              name="date"
-              className="form-control"
-              value={dateValues.date}
-              onChange={(e) =>
-                setDateValues({
-                  ...dateValues,
-                  [e.target.name]: e.target.value,
-                })
-              }
-              placeholder="Meeting Date . . ."
-              required="true"
-            />
-          </div>
-
-          <div className="submitAdd">
-            <button className="btn btn-primary" onClick={updateHandler}>
-              Update
-            </button>
-          </div>
-        </form>
-      ) : (
-        <div className="showInfo">
-          <h1 className="text-center mb-5">More Info About your Date </h1>
-          <div className="person d-flex mb-4">
-            <Person className="info-icon" />
-            <p>
-              You have Date With
-              <br /> {allUsersData[update.item].name}
-            </p>
-          </div>
-          <div className="subject d-flex mb-4">
-            <Description className="info-icon" />
-            <p>
-              Meeting is about <br />
-              {allUsersData[update.item].subject}
-            </p>
-          </div>
-          <div className="place d-flex mb-4">
-            <Place className="info-icon" />
-            <p>
-              You are Going to meet in
-              <br /> {allUsersData[update.item].place}
-            </p>
-          </div>
-          <div className="time d-flex">
-            <DateRange className="info-icon" />
-            <p>
-              Meeting Time at <br />
-              {allUsersData[update.item].time}
-              {allUsersData[update.item].timeFormat} In{" "}
-              {allUsersData[update.item].date}
-            </p>
+            <label class="form-check-label" for="">
+              pm
+            </label>
           </div>
         </div>
-      )}
+
+        {/* date input */}
+        <div className="dateTime mb-4">
+          <label className="mb-2">Date </label>
+          <input
+            type="date"
+            name="date"
+            className="form-control"
+            value={dateValues.date}
+            onChange={(e) =>
+              setDateValues({
+                ...dateValues,
+                [e.target.name]: e.target.value,
+              })
+            }
+            placeholder="Meeting Date . . ."
+            required="true"
+          />
+        </div>
+
+        <div className="submitAdd">
+          <button className="btn btn-primary" onClick={updateHandler}>
+            Update
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

@@ -48,7 +48,7 @@ export default function AddDate({ addElem, update, navigator }) {
 
   return (
     <div className="add-date">
-      <h1 className="text-center mb-3">Add New Date</h1>
+      <h1 className="text-center mb-3 pt-3">Add New Date</h1>
       {/* add form */}
       <form action="">
         {/* name input */}

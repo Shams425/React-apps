@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Add, DeleteOutlined, Home } from "@mui/icons-material";
 import { allUsersData } from "../Shared/datesData";
 import DateUpdate from "../DateUpdate/DateUpdate";
+import ShowInfo from "../ShowInfo/ShowInfo";
 
 export default function DatesContainer({
   allData,
@@ -105,12 +106,14 @@ export default function DatesContainer({
                     update={setData}
                     navigator={navToHome}
                   />
-                ) : (
+                ) : setData.showInfo ? (
                   <DateUpdate
                     addElem={rerender}
                     update={setData}
                     navigator={navToHome}
                   />
+                ) : (
+                  <ShowInfo update={setData} />
                 )}
               </div>
             </div>

@@ -30,11 +30,16 @@ export default function DateDetails({
         </p>
       </div>
       <div className="dateBehavior">
-        <button type="button" className="btn" onClick={showInfo}>
+        <button
+          type="button"
+          className="btn"
+          onClick={showInfo}
+          title="show more info"
+        >
           <Info className="infoIcon" />
         </button>
 
-        <button className="btn" onClick={moveToAdd}>
+        <button className="btn" onClick={moveToAdd} title="Edit Date data">
           <Edit />
         </button>
 
@@ -44,6 +49,7 @@ export default function DateDetails({
             allUsersData.splice(index, 1);
             rerender([...allUsersData]);
           }}
+          title="Delete This Date"
         >
           <Close />
         </button>
