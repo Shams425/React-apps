@@ -160,7 +160,10 @@ export default function Color() {
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{
+                        backgroundColor: "darkslateblue",
+                        cursor: "pointer",
+                      }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
