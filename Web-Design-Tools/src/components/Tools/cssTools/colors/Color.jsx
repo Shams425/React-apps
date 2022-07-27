@@ -89,7 +89,7 @@ export default function Color() {
 
             <div className="tabContent">
               <div className="content colorPicker show" id="picker">
-                <div className="showColor d-flex align-items-center justify-content-between">
+                <div className="showColor d-flex">
                   <ChromePicker
                     color={color}
                     onChange={(e) => setColor(e.hex)}

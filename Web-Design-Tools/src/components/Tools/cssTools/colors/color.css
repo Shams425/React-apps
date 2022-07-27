@@ -38,12 +38,14 @@
   bottom: -1px;
 }
 
+.showColor {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 .colorPreview {
-  width: 100%;
   height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .colorPreview .result {
@@ -54,6 +56,7 @@
   align-items: center;
   justify-content: center;
   font-size: 45px;
+  border-radius: 25px;
 }
 
 ChromePicker {
@@ -78,7 +81,6 @@ ChromePicker {
   height: 150px;
   display: flex;
   align-items: center;
-  justify-content: center;
   transition: all 0.3s ease;
   border-radius: 20px;
 }
