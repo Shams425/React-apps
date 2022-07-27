@@ -115,32 +115,47 @@ export default function Color() {
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{
+                        backgroundColor: "darkblue",
+                        cursor: "pointer",
+                      }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{
+                        backgroundColor: "whitesmoke",
+                        cursor: "pointer",
+                      }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{ backgroundColor: "aqua", cursor: "pointer" }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{
+                        backgroundColor: "cornflowerblue",
+                        cursor: "pointer",
+                      }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{
+                        backgroundColor: "darkorange",
+                        cursor: "pointer",
+                      }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"
                       title="click to copy"
-                      style={{ backgroundColor: "red", cursor: "pointer" }}
+                      style={{
+                        backgroundColor: "yellowgreen",
+                        cursor: "pointer",
+                      }}
                     ></div>
                     <div
                       className="color col-lg-4 col-md-6 col-sm-12"

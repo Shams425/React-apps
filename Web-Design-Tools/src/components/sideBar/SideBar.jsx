@@ -12,7 +12,6 @@ import {
   LinkOutlined,
   Input,
   Forum,
-  AppRegistrationSharp,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
