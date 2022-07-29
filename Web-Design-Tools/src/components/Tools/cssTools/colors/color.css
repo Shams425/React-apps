@@ -81,6 +81,7 @@ ChromePicker {
   height: 150px;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
   border-radius: 20px;
 }

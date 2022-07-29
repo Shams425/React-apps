@@ -29,6 +29,10 @@ ul {
   color: black;
 }
 
+code {
+  color: #ad3;
+}
+
 input,
 button,
 textarea,
